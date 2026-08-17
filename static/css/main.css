@@ -715,8 +715,20 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
   margin-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+/* The two figure modifiers only mean anything once this grid has more than one column,
+   so they live in the same breakpoint it does. Below it every figure is its own
+   full-width row already, which is what both of them want anyway. */
 @media (min-width: 45rem) {
   .figure-grid { grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+
+  /* Diagrams and drawing sheets are wide and full of small labels, so a single grid
+     cell makes them unreadable. This takes the whole row instead. */
+  .figure--wide { grid-column: 1 / -1; }
+
+  /* An odd number of figures leaves the last one hanging on the left of its own row.
+     This takes the row but keeps one column's width, so it sits centred instead.
+     `calc(50% - 0.5rem)` is that column: half the row, less half the 1rem gap. */
+  .figure--center { grid-column: 1 / -1; justify-self: center; width: calc(50% - 0.5rem); }
 }
 
 .figure { margin: 0; }

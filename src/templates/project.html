@@ -62,10 +62,10 @@
         {{#if this.images}}
         <div class="figure-grid">
           {{#each this.images}}
-          <figure class="figure">
+          <figure class="figure{{#if this.wide}} figure--wide{{/if}}{{#if this.center}} figure--center{{/if}}">
             {{#if this.src}}
             <img src="{{ this.src }}" srcset="{{ this.srcSet }}"
-                 sizes="(min-width: 45rem) 34rem, 100vw"
+                 sizes="{{#if this.wide}}(min-width: 45rem) 44rem, 100vw{{else}}(min-width: 45rem) 34rem, 100vw{{/if}}"
                  alt="{{ this.alt }}" width="1200" height="900" loading="lazy">
             {{else}}
             <div class="placeholder" role="img" aria-label="{{ this.alt }}">

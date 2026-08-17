@@ -51,7 +51,6 @@
         "Vành cây được làm như một bánh xe nước, đặt lệch trên đỉnh máy để nhìn từ xa vẫn thấy rõ mảng xanh."
       ],
       "images": [
-        { "src": "/img/projects/aeterna/studio", "alt": "Ảnh dựng máy Aeterna trên nền trắng, vành cây mở nghiêng" },
         { "src": "/img/projects/aeterna/countertop", "alt": "Máy Aeterna đặt trên mặt bàn đá, phiên bản dùng cho bếp nhỏ" },
         {
           "src": "/img/projects/aeterna/detail",
@@ -71,27 +70,26 @@
         { "src": "/img/projects/aeterna/loading", "alt": "Đầu bếp trút khay rác thực phẩm vào miệng máy Aeterna" },
         { "src": "/img/projects/aeterna/compost", "alt": "Đầu bếp xúc phân đã ủ từ ngăn kéo dưới chân máy Aeterna" },
         {
-          "src": "/img/projects/aeterna/grinder",
-          "alt": "Bản dựng cụm nghiền của Aeterna, gồm vỏ, lưới lọc và mặt cắt bên trong",
-          "caption": "Cụm nghiền: vỏ ngoài, lưới lọc và mặt cắt."
-        },
-        { "src": "/img/projects/aeterna/parts", "alt": "Bản vẽ kỹ thuật vành cây và nắp máy Aeterna" },
-        { "src": "/img/projects/aeterna/drawings-body", "alt": "Bản vẽ kỹ thuật thân máy Aeterna theo các hướng chiếu" }
+          "src": "/img/projects/aeterna/display1",
+          "wide": true,
+          "alt": "Sơ đồ tách rời các bộ phận của Aeterna: cụm nghiền, nắp, khe thoát hơi, khung giữ chậu và chậu cây",
+          "caption": "Các cụm chi tiết tách rời, và hệ khung giữ chậu bóp để tháo chậu cây."
+        }
       ]
     },
     {
       "heading": "Nơi sử dụng",
       "body": [
         "Máy được dựng cảnh trong ba bối cảnh khác nhau: bếp nhà hàng, căng tin trường đại học và căng tin trường phổ thông.",
-        "Đặt ở nơi đông người qua lại là một phần của thiết kế. Khi vườn cây nằm ngay trên máy, người bỏ rác nhìn thấy ngay kết quả của việc mình vừa làm."
+        "Đặt ở nơi đông người qua lại là một phần của thiết kế. Khi vườn cây nằm ngay trên máy, người bỏ rác nhìn thấy ngay kết quả của việc mình vừa làm. Vòng khép kín đóng lại ở chỗ đầu bếp hái rau thơm ngay từ vành cây trên máy."
       ],
       "images": [
-        { "src": "/img/projects/aeterna/school-canteen", "alt": "Học sinh đổ rác thực phẩm vào máy Aeterna tại căng tin trường" },
+        { "src": "/img/projects/aeterna/harvest", "alt": "Đầu bếp hái rau thơm từ vành cây của máy Aeterna" },
         { "src": "/img/projects/aeterna/university-canteen", "alt": "Sinh viên bỏ rác vào máy Aeterna tại căng tin trường đại học" },
         {
-          "src": "/img/projects/aeterna/harvest",
-          "alt": "Đầu bếp hái rau thơm từ vành cây của máy Aeterna",
-          "caption": "Vòng khép kín: rau thơm hái ngay từ vành cây trên máy."
+          "src": "/img/projects/aeterna/school-canteen",
+          "center": true,
+          "alt": "Học sinh đổ rác thực phẩm vào máy Aeterna tại căng tin trường"
         }
       ]
     }

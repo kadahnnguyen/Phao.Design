@@ -51,7 +51,6 @@
         "The rim is built like a water wheel and sits off-centre on the top, so the green stays visible from across the room."
       ],
       "images": [
-        { "src": "/img/projects/aeterna/studio", "alt": "Studio render of Aeterna on white with the planted rim tilted open" },
         { "src": "/img/projects/aeterna/countertop", "alt": "Aeterna on a stone worktop, the version sized for a small kitchen" },
         {
           "src": "/img/projects/aeterna/detail",
@@ -71,27 +70,26 @@
         { "src": "/img/projects/aeterna/loading", "alt": "A chef tipping a tray of food waste into the opening on top of Aeterna" },
         { "src": "/img/projects/aeterna/compost", "alt": "A chef lifting finished compost out of the drawer at the foot of Aeterna" },
         {
-          "src": "/img/projects/aeterna/grinder",
-          "alt": "Renders of the Aeterna grinder module: housing, filter screen and a cutaway",
-          "caption": "The grinder module: housing, filter screen and cutaway."
-        },
-        { "src": "/img/projects/aeterna/parts", "alt": "Technical drawings of the Aeterna planted rim and lid" },
-        { "src": "/img/projects/aeterna/drawings-body", "alt": "Orthographic technical drawings of the Aeterna body" }
+          "src": "/img/projects/aeterna/display1",
+          "wide": true,
+          "alt": "Exploded diagram of the Aeterna parts: grinder module, lid, vapour vent, plant cage and plant pot",
+          "caption": "The parts laid out, and the plant cage system: squeeze to release a pot."
+        }
       ]
     },
     {
       "heading": "Where it goes",
       "body": [
         "The machine was visualised in three settings: a restaurant kitchen, a university canteen and a secondary school canteen.",
-        "Putting it where people pass is part of the design. With the garden sitting on top of the machine, whoever scrapes a plate sees the result of it straight away."
+        "Putting it where people pass is part of the design. With the garden sitting on top of the machine, whoever scrapes a plate sees the result of it straight away. The loop closes where the chef cuts herbs straight from the rim."
       ],
       "images": [
-        { "src": "/img/projects/aeterna/school-canteen", "alt": "A student tipping food waste into Aeterna in a school canteen" },
+        { "src": "/img/projects/aeterna/harvest", "alt": "A chef cutting herbs from the planted rim of Aeterna" },
         { "src": "/img/projects/aeterna/university-canteen", "alt": "A student using Aeterna at the waste station in a university canteen" },
         {
-          "src": "/img/projects/aeterna/harvest",
-          "alt": "A chef cutting herbs from the planted rim of Aeterna",
-          "caption": "The loop closing: herbs cut straight from the rim of the machine."
+          "src": "/img/projects/aeterna/school-canteen",
+          "center": true,
+          "alt": "A student tipping food waste into Aeterna in a school canteen"
         }
       ]
     }

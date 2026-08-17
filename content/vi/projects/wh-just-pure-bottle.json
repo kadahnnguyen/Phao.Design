@@ -10,7 +10,6 @@
   "role": "Thiết kế sản phẩm, dựng 3D, lập danh mục vật liệu",
   "tools": "SolidWorks, KeyShot, phác thảo tay",
   "materials": "Thân ABS, lõi lọc nhôm, đế silicon, nắp PP, móc thép",
-  "_blocked": "PARTIALLY RECOVERED. The page is a flattened layout raster, but the render panel on it carries no text, so hero and card were cropped back out at native resolution (see CROPS in tools/extract-images.py). Sketches, the exploded view and the bill-of-materials table are still unusable and need original files.",
   "heroImage": "/img/projects/wh-just-pure-bottle/hero",
   "heroAlt": "Hai phiên bản bình lọc nước WH Just Pure Bottle trên nền xám",
   "cardImage": "/img/projects/wh-just-pure-bottle/card",
@@ -33,6 +32,20 @@
         "Lõi lọc rút ra được để rửa và thay",
         "Đế đun tháo rời, sạc lại được",
         "Móc treo và tay cầm nằm gọn trong khối bình"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/wh-just-pure-bottle/display1",
+          "wide": true,
+          "alt": "Bảng phác thảo tay của bình WH Just Pure Bottle: tính toán dung tích, mặt cắt lõi lọc, các phương án nắp và đế đun",
+          "caption": "Bảng phác thảo: dung tích, mặt cắt lõi lọc và các phương án nắp, đế đun."
+        },
+        {
+          "src": "/img/projects/wh-just-pure-bottle/display2",
+          "center": true,
+          "alt": "Cận cảnh nắp bình và móc treo ở hai phương án màu, thân bình có gân dọc",
+          "caption": "Nắp và móc treo, hai phương án màu."
+        }
       ]
     },
     {
@@ -40,15 +53,13 @@
       "body": [
         "Sản phẩm gồm tám chi tiết, chọn vật liệu theo đúng việc mà từng chi tiết phải làm: phần tiếp xúc nhiệt dùng nhôm, phần cầm nắm dùng nhựa ABS, phần cần kín nước dùng silicon."
       ],
-      "points": [
-        "Đế điện, silicon",
-        "Thân bình, ABS",
-        "Lõi lọc, nhôm",
-        "Gioăng, silicon",
-        "Móc, thép",
-        "Tay cầm, ABS",
-        "Miệng bình, ABS",
-        "Nắp bình, PP"
+      "images": [
+        {
+          "src": "/img/projects/wh-just-pure-bottle/display3",
+          "wide": true,
+          "alt": "Sơ đồ tách rời tám chi tiết của bình, kèm bảng danh mục vật liệu và số lượng",
+          "caption": "Sơ đồ tách rời và danh mục vật liệu của tám chi tiết."
+        }
       ]
     }
   ]

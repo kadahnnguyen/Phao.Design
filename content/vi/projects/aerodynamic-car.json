@@ -21,6 +21,14 @@
       "body": [
         "Bài tập lấy một mẫu sedan thể thao có sẵn làm điểm xuất phát, tìm những chỗ mà hình khối đang cản gió, rồi vẽ lại phương án khắc phục.",
         "Toàn bộ nghiên cứu được thực hiện bằng vẽ tay, tập trung vào việc đọc hình khối chứ không mô phỏng bằng máy."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/aerodynamic-car/display2.webp",
+          "wide": true,
+          "alt": "Bên trái là mẫu xe gốc Maserati Ghibli Trofeo, bên phải là bản vẽ chì phương án tạo dáng lại với các dải màu mô tả luồng khí",
+          "caption": "Điểm xuất phát là mẫu Maserati Ghibli Trofeo; bên phải là phương án vẽ lại, chỉnh hình khối cho những chỗ đang cản gió."
+        }
       ]
     },
     {
@@ -39,7 +47,18 @@
         "Hốc hút gió bên hông và khe thoát sau vòm bánh"
       ],
       "images": [
-        { "src": "/img/projects/aerodynamic-car/card", "alt": "Phương án tạo dáng lại, vẽ chì" }
+        {
+          "src": "/img/projects/aerodynamic-car/display1.webp",
+          "wide": true,
+          "alt": "So sánh nhìn ngang: bản tinh chỉnh vẽ nét ở phía trên, mẫu xe gốc ở phía dưới với các đường dựng hình chồng lên",
+          "caption": "Chồng đường dựng hình lên mẫu gốc, rồi vẽ lại nhìn ngang để so sánh từng đường nét thân xe."
+        },
+        {
+          "src": "/img/projects/aerodynamic-car/card",
+          "center": true,
+          "alt": "Phương án tạo dáng lại, vẽ chì",
+          "caption": "Phương án hoàn chỉnh: mui hạ thấp, hốc gió trước mở rộng, tay nắm cửa chìm và cánh gió đuôi."
+        }
       ]
     }
   ]

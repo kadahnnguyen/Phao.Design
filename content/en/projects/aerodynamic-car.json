@@ -21,6 +21,14 @@
       "body": [
         "The exercise takes an existing sports saloon as its starting point, finds the places where the form is fighting the air, and draws a proposal that answers them.",
         "The whole study was done by hand, concentrating on reading the form rather than simulating it."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/aerodynamic-car/display2.webp",
+          "wide": true,
+          "alt": "On the left the original Maserati Ghibli Trofeo, on the right the pencil rendering of the reworked form with coloured ribbons tracing the airflow",
+          "caption": "The starting point is a Maserati Ghibli Trofeo; on the right, the reworked proposal answering the places where the form fights the air."
+        }
       ]
     },
     {
@@ -39,7 +47,18 @@
         "Side intakes and vents behind the wheel arch"
       ],
       "images": [
-        { "src": "/img/projects/aerodynamic-car/card", "alt": "The reworked form, pencil rendering" }
+        {
+          "src": "/img/projects/aerodynamic-car/display1.webp",
+          "wide": true,
+          "alt": "Side-on comparison: the refined version drawn in outline above, the original model below with the construction lines overlaid",
+          "caption": "Construction lines laid over the original model, then redrawn side-on so each line of the body can be compared."
+        },
+        {
+          "src": "/img/projects/aerodynamic-car/card",
+          "center": true,
+          "alt": "The reworked form, pencil rendering",
+          "caption": "The finished proposal: lowered bonnet, opened-up front intakes, flush door handles and the ducktail spoiler."
+        }
       ]
     }
   ]

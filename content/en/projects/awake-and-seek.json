@@ -34,6 +34,28 @@
         "Five material options on a single form",
         "The diamond label stays constant across every version",
         "The brushed metal cap gives the eye somewhere to rest"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/awake-and-seek/display1",
+          "alt": "The bottle rendered in green glass, shown beside its two material swatches",
+          "caption": "Green glass: the facets hold the colour and the label sits pale against it."
+        },
+        {
+          "src": "/img/projects/awake-and-seek/display2",
+          "alt": "The bottle rendered in smoked amber glass, shown beside its two material swatches",
+          "caption": "Smoked amber: the darker body lets the cut edges read as light."
+        },
+        {
+          "src": "/img/projects/awake-and-seek/display3",
+          "alt": "The bottle rendered in banded glass, shown beside its two material swatches",
+          "caption": "Banded glass: the pattern runs across the faces and breaks at every cut."
+        },
+        {
+          "src": "/img/projects/awake-and-seek/display4",
+          "alt": "The bottle rendered in fully transparent crystal, shown beside its two material swatches",
+          "caption": "Clear crystal: nothing left but the form itself and the metal cap."
+        }
       ]
     }
   ]

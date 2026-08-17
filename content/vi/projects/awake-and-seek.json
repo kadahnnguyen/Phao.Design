@@ -34,6 +34,28 @@
         "Năm phương án chất liệu cho cùng một khối",
         "Nhãn hình thoi giữ nguyên trên mọi phiên bản",
         "Nắp kim loại chải xước làm điểm dừng cho mắt"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/awake-and-seek/display1",
+          "alt": "Chai kết xuất bằng thuỷ tinh xanh lá, bên cạnh là hai mẫu chất liệu",
+          "caption": "Thuỷ tinh xanh lá: các mặt cắt giữ màu, tấm nhãn nổi nhạt trên nền thân."
+        },
+        {
+          "src": "/img/projects/awake-and-seek/display2",
+          "alt": "Chai kết xuất bằng thuỷ tinh hổ phách ám khói, bên cạnh là hai mẫu chất liệu",
+          "caption": "Hổ phách ám khói: thân tối hơn nên các cạnh cắt hiện lên thành đường sáng."
+        },
+        {
+          "src": "/img/projects/awake-and-seek/display3",
+          "alt": "Chai kết xuất bằng thuỷ tinh vân gỗ, bên cạnh là hai mẫu chất liệu",
+          "caption": "Thuỷ tinh vân gỗ: vân chạy ngang các mặt và ngắt lại ở từng đường cắt."
+        },
+        {
+          "src": "/img/projects/awake-and-seek/display4",
+          "alt": "Chai kết xuất bằng pha lê trong suốt hoàn toàn, bên cạnh là hai mẫu chất liệu",
+          "caption": "Pha lê trong suốt: chỉ còn lại bản thân khối hình và chiếc nắp kim loại."
+        }
       ]
     }
   ]

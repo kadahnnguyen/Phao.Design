@@ -10,7 +10,6 @@
   "role": "Product design, 3D modelling, bill of materials",
   "tools": "SolidWorks, KeyShot, hand sketching",
   "materials": "ABS body, aluminium filter core, silicone base, PP lid, steel hook",
-  "_blocked": "PARTIALLY RECOVERED. The page is a flattened layout raster, but the render panel on it carries no text, so hero and card were cropped back out at native resolution (see CROPS in tools/extract-images.py). Sketches, the exploded view and the bill-of-materials table are still unusable and need original files.",
   "heroImage": "/img/projects/wh-just-pure-bottle/hero",
   "heroAlt": "Two versions of the WH Just Pure Bottle water filter on a grey ground",
   "cardImage": "/img/projects/wh-just-pure-bottle/card",
@@ -33,6 +32,20 @@
         "Filter core pulls out to be washed or replaced",
         "Heating base detaches and recharges",
         "Hook and handle sit within the bottle's own volume"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/wh-just-pure-bottle/display1",
+          "wide": true,
+          "alt": "Hand-drawn sketch sheet for the WH Just Pure Bottle: capacity calculations, sections through the filter core, and options for the lid and heating base",
+          "caption": "Sketch sheet: capacity, sections through the filter core, and lid and base options."
+        },
+        {
+          "src": "/img/projects/wh-just-pure-bottle/display2",
+          "center": true,
+          "alt": "Close-up of the lid and hook in two colour options, with the ribbed body below",
+          "caption": "Lid and hook, in two colour options."
+        }
       ]
     },
     {
@@ -40,15 +53,13 @@
       "body": [
         "Eight parts, with each material chosen for the job that part actually does: aluminium where heat passes through, ABS where it is held, silicone where it has to seal."
       ],
-      "points": [
-        "Electric base, silicone",
-        "Bottle body, ABS",
-        "Filter core, aluminium",
-        "Gasket, silicone",
-        "Hook, steel",
-        "Handle, ABS",
-        "Bottle mouth, ABS",
-        "Bottle lid, PP"
+      "images": [
+        {
+          "src": "/img/projects/wh-just-pure-bottle/display3",
+          "wide": true,
+          "alt": "Exploded view of the eight parts, with a table listing the material and quantity of each",
+          "caption": "Exploded view and the bill of materials for all eight parts."
+        }
       ]
     }
   ]

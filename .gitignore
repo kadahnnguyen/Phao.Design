@@ -19,3 +19,7 @@ client-resources/
 Thumbs.db
 *.log
 tools/
+
+# Personal reference
+CLIENT-BUILD-CONTEXT.md
+.claude/

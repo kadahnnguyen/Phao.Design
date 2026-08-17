@@ -1,18 +1,22 @@
 <section class="contact-short {{ band }}" data-section="contact-short" data-reveal>
-  <div class="shell measure">
-    <h2>{{ section.heading }}</h2>
-    <p>{{ section.body }}</p>
+  <div class="shell contact-short__layout">
+    <div class="contact-short__copy measure">
+      <h2>{{ section.heading }}</h2>
+      <p>{{ section.body }}</p>
+    </div>
 
-    <p class="contact-short__actions">
-      <a class="cta cta--primary cta--inline" href="{{ section.cta.url }}">{{ section.cta.label }}</a>
-    </p>
+    <div class="contact-short__aside">
+      <p class="contact-short__actions">
+        <a class="cta cta--primary cta--inline" href="{{ section.cta.url }}">{{ section.cta.label }}</a>
+      </p>
 
-    <ul class="quick-contact">
-      <li><a href="tel:+84{{ site.contact.phone }}">{{ strings.ui.callNow }}</a></li>
-      <li><a href="mailto:{{ site.contact.email }}">{{ strings.ui.emailMe }}</a></li>
-      {{#if site.contact.zalo}}
-      <li><a href="{{ site.contact.zalo }}">{{ strings.ui.chatZalo }}</a></li>
-      {{/if}}
-    </ul>
+      <ul class="quick-contact">
+        <li><a href="tel:+84{{ site.contact.phone }}">{{ strings.ui.callNow }}</a></li>
+        <li><a href="mailto:{{ site.contact.email }}">{{ strings.ui.emailMe }}</a></li>
+        {{#if site.contact.zalo}}
+        <li><a href="{{ site.contact.zalo }}">{{ strings.ui.chatZalo }}</a></li>
+        {{/if}}
+      </ul>
+    </div>
   </div>
 </section>

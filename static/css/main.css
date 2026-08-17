@@ -590,7 +590,25 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
 
 /* ---------- contact -------------------------------------------------- */
 
-.contact-short__actions { margin: 1.5rem 0; }
+/* Copy on the left, the button and the quick links on the right. Below the
+   breakpoint the two stack in reading order, copy first. */
+.contact-short__layout {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+@media (min-width: 48rem) {
+  .contact-short__layout {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+  .contact-short__aside { justify-self: end; text-align: right; }
+  .contact-short__aside .quick-contact { justify-content: flex-end; }
+}
+
+/* The grid gap already separates the aside from the copy, so the button only
+   needs the space below it, before the quick links. */
+.contact-short__actions { margin: 0 0 1.5rem; }
 
 .quick-contact {
   display: flex;

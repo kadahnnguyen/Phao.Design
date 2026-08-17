@@ -1,0 +1,41 @@
+{
+  "slug": "lien-he",
+  "template": "page",
+  "title": "Contact",
+  "titleFull": "Contact | Phào Design",
+  "description": "Send a project enquiry or a job offer to Nguyễn Khánh Đan.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Contact",
+      "lead": "Whether you are a client who needs something designed or a recruiter, leave me a few lines and I will reply within a day or two."
+    },
+    {
+      "type": "contact-form",
+      "visible": true,
+      "heading": "Send a request",
+      "body": "The more specific you are, the more specific my answer can be.",
+      "endpointPending": "The form is still being connected to the inbox. In the meantime, please call or email me directly.",
+      "fields": {
+        "role": {
+          "label": "You are",
+          "options": [
+            { "value": "khach-hang", "label": "A client" },
+            { "value": "nha-tuyen-dung", "label": "A recruiter" },
+            { "value": "khac", "label": "Someone else" }
+          ]
+        },
+        "name": "Your name",
+        "phone": "Phone number",
+        "email": "Email",
+        "request": "Your request or job offer",
+        "when": "When you would like to talk",
+        "other": "Anything else",
+        "optional": "(optional)"
+      },
+      "submit": "Send"
+    }
+  ]
+}

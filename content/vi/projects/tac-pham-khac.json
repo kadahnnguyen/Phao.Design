@@ -1,0 +1,40 @@
+{
+  "slug": "tac-pham-khac",
+  "featured": false,
+  "order": 10,
+  "title": "Tác phẩm khác",
+  "titleFull": "Tác phẩm khác: gốm, điêu khắc và vẽ tay | Phào Design",
+  "description": "Tượng gốm, bình gốm, tranh chì và các sản phẩm thủ công làm ngoài các dự án chính.",
+  "summary": "Tượng gốm, bình gốm, tranh chì và đồ thủ công làm bên ngoài các dự án chính, phần nhiều là làm bằng tay từ đầu tới cuối.",
+  "year": "2022 tới 2025",
+  "role": "Tạo hình, vẽ tay, hướng dẫn lớp học",
+  "materials": "Gốm, chì, màu nước, da",
+
+  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và mục 9.",
+  "heroImage": "",
+  "heroAlt": "Tượng gốm, bình gốm và tranh chì",
+  "cardImage": "",
+  "cardAlt": "Tác phẩm gốm và tranh vẽ tay",
+
+  "chapters": [
+    {
+      "heading": "Gốm và điêu khắc",
+      "body": [
+        "Tượng gốm được tạo hình bằng tay, trong đó có tượng chim cú và một số khối xoắn lấy ý từ hình sóng. Phần này làm trong thời gian thực tập tại Công ty Gốm Biên Hoà và tiếp tục sau đó.",
+        "Bình và chậu gốm dùng men chảy, mỗi mẻ ra một sắc độ khác nhau."
+      ]
+    },
+    {
+      "heading": "Vẽ tay",
+      "body": [
+        "Chân dung và tĩnh vật vẽ chì, tranh hoa sen vẽ màu. Vẽ tay là nền cho phần phác thảo ý tưởng trong các dự án thiết kế sản phẩm."
+      ]
+    },
+    {
+      "heading": "Đồ thủ công và lớp học",
+      "body": [
+        "Ngoài ra còn có phần làm đồ da, đo cắt khâu bằng tay, và các buổi dạy vẽ, dạy nặn cho trẻ nhỏ tại Art Class For Kids và Trường Mầm non Tao Hong 2."
+      ]
+    }
+  ]
+}

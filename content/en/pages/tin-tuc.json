@@ -1,0 +1,24 @@
+{
+  "slug": "tin-tuc",
+  "template": "page",
+  "title": "News",
+  "titleFull": "News and activity | Phào Design",
+  "description": "Writing, awards, exhibitions and activity from Phào Design.",
+  "_status": "PLACEHOLDER PAGE. Structure and post template are built, no posts yet. Awaiting the client's decision on content. See PLAN.md section 3.6 and D3.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "News and activity",
+      "lead": "Where exhibitions, competitions and the work around the work get recorded."
+    },
+    {
+      "type": "prose",
+      "visible": true,
+      "body": [
+        "This section is being prepared. The first post will be here soon."
+      ]
+    }
+  ]
+}

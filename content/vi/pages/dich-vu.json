@@ -1,0 +1,78 @@
+{
+  "slug": "dich-vu",
+  "template": "page",
+  "title": "Dịch vụ",
+  "titleFull": "Dịch vụ thiết kế sản phẩm | Phào Design",
+  "description": "Nhận thiết kế concept sản phẩm, tạo dáng công nghiệp, dựng mô hình 3D và làm mẫu prototype.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Dịch vụ",
+      "lead": "Nhận dự án thiết kế sản phẩm theo từng giai đoạn, từ ý tưởng ban đầu tới bộ hồ sơ đủ để đưa vào sản xuất."
+    },
+    {
+      "type": "services-list",
+      "visible": false,
+      "_blocked": "CHƯA CÓ NỘI DUNG THẬT. Chờ khách gửi danh sách dịch vụ và mức giá. Các mục dưới đây chỉ là khung tạm, dựng từ kỹ năng đã nêu trong CV và portfolio, chưa được khách duyệt. Xem PLAN.md mục 5 và mục 9.",
+      "heading": "Các gói dịch vụ",
+      "intro": "Khung dịch vụ tạm thời, chờ khách xác nhận nội dung và mức giá.",
+      "items": [
+        {
+          "name": "Thiết kế concept sản phẩm",
+          "body": "Nghiên cứu thị trường, phác thảo hướng tạo hình và chốt phương án.",
+          "includes": ["Khảo sát sản phẩm cùng nhóm", "Phác thảo ý tưởng", "Bản chọn phương án"],
+          "price": ""
+        },
+        {
+          "name": "Dựng mô hình 3D và kết xuất",
+          "body": "Dựng khối chính xác trên SolidWorks và kết xuất hình ảnh trên KeyShot.",
+          "includes": ["Mô hình 3D", "Bộ ảnh kết xuất", "Bản vẽ kỹ thuật cơ bản"],
+          "price": ""
+        },
+        {
+          "name": "Làm mẫu prototype",
+          "body": "Dựng mẫu thật để kiểm tra kích thước, thao tác và cảm giác sử dụng.",
+          "includes": ["In hoặc gia công mẫu", "Sơn hoàn thiện", "Ghi nhận điểm cần chỉnh"],
+          "price": ""
+        }
+      ],
+      "note": "Giá và phạm vi công việc sẽ được xác nhận trước khi bắt đầu."
+    },
+    {
+      "type": "faq",
+      "visible": true,
+      "heading": "Câu hỏi thường gặp",
+      "items": [
+        {
+          "q": "Mình nhận loại dự án nào?",
+          "a": [
+            "Thiết kế tạo dáng và concept cho đồ gia dụng, nội thất, đồ công nghệ, gốm sứ và các sản phẩm thủ công mỹ nghệ.",
+            "Mình cũng nhận phần dựng 3D và kết xuất hình ảnh cho ý tưởng đã có sẵn."
+          ]
+        },
+        {
+          "q": "Một dự án thường mất bao lâu?",
+          "a": [
+            "Tuỳ mức độ. Một phương án tạo dáng đơn giản có thể xong trong một tới hai tuần, còn dự án cần nghiên cứu người dùng và làm mẫu thì lâu hơn.",
+            "Sau khi nghe yêu cầu cụ thể, mình sẽ báo lại mốc thời gian rõ ràng."
+          ]
+        },
+        {
+          "q": "Mình có làm mẫu thật không?",
+          "a": [
+            "Có. Mình đã dựng mẫu tỉ lệ 1:1 cho đồ án tốt nghiệp, và làm mẫu, sơn hoàn thiện cho nhiều sản phẩm nhỏ hơn."
+          ]
+        },
+        {
+          "q": "Bàn giao gồm những gì?",
+          "a": [
+            "Thường gồm file mô hình 3D, bộ ảnh kết xuất và bản vẽ kỹ thuật ở mức đủ để trao đổi với xưởng sản xuất.",
+            "Danh mục cụ thể sẽ được thống nhất từ đầu dự án."
+          ]
+        }
+      ]
+    }
+  ]
+}

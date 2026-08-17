@@ -1,0 +1,17 @@
+<li class="card">
+  <a class="card__link" href="{{ this.url }}">
+    <div class="card__media">
+      {{#if this.cardImage}}
+      <img src="{{ this.cardImage }}" srcset="{{ this.cardImageSet }}"
+           sizes="(min-width: 60rem) 30rem, (min-width: 38rem) 50vw, 100vw"
+           alt="{{ this.cardAlt }}" width="800" height="600" loading="lazy">
+      {{else}}
+      <div class="placeholder" role="img" aria-label="{{ this.cardAlt }}">
+        <span>{{ strings.ui.imageComingSoon }}</span>
+      </div>
+      {{/if}}
+    </div>
+    <h3 class="card__title">{{ this.title }}</h3>
+    {{#if this.summary}}<p class="card__summary">{{ this.summary }}</p>{{/if}}
+  </a>
+</li>

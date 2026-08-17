@@ -1,0 +1,28 @@
+{
+  "slug": "du-an",
+  "template": "page",
+  "title": "Dự án",
+  "titleFull": "Dự án | Phào Design",
+  "description": "Các dự án thiết kế sản phẩm 3D và thiết kế công nghiệp của Nguyễn Khánh Đan, từ nghiên cứu người dùng tới mẫu thật.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Dự án",
+      "lead": "Mỗi dự án ở đây đều đi qua cùng một mạch: tìm ra điểm chưa ổn của sản phẩm đang có, kiểm chứng với người dùng, rồi dựng thành mẫu thật."
+    },
+    {
+      "type": "project-grid",
+      "visible": true,
+      "featuredOnly": true,
+      "heading": "Dự án nổi bật"
+    },
+    {
+      "type": "project-grid",
+      "visible": true,
+      "featuredOnly": false,
+      "heading": "Dự án khác"
+    }
+  ]
+}

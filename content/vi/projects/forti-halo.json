@@ -1,0 +1,115 @@
+{
+  "slug": "forti-halo",
+  "featured": true,
+  "order": 1,
+  "title": "Forti Halo",
+  "titleFull": "Forti Halo, hệ vách ngăn linh hoạt | Phào Design",
+  "description": "Hệ vách ngăn di động cho không gian làm việc, điều chỉnh được độ che theo nhu cầu từng người. Đồ án tốt nghiệp ngành Thiết kế Công nghiệp.",
+  "summary": "Hệ vách ngăn di động cho không gian làm việc, cho phép mỗi người tự điều chỉnh mức độ che chắn quanh chỗ ngồi của mình.",
+  "year": "2025",
+  "role": "Thiết kế sản phẩm, nghiên cứu, dựng mẫu 1:1",
+  "tools": "SolidWorks, KeyShot, Illustrator",
+  "materials": "Khung nhôm và thép không gỉ, nan tre hoặc gỗ hoặc nhựa, vải dệt, màn PVC mờ",
+  "dimensions": "Cột cao 2 m, nan dày 4 mm",
+  "heroImage": "/img/projects/forti-halo/hero",
+  "heroAlt": "Hệ vách ngăn Forti Halo dựng trong một văn phòng mở",
+  "cardImage": "/img/projects/forti-halo/card",
+  "cardAlt": "Hệ vách ngăn Forti Halo trong văn phòng",
+  "stats": [
+    {
+      "value": "38%",
+      "label": "người đi làm hài lòng với khả năng tập trung tại chỗ làm",
+      "source": "Gensler, 2016"
+    },
+    {
+      "value": "53%",
+      "label": "cho biết bị người khác làm gián đoạn khi đang cần tập trung",
+      "source": "Gensler, 2016"
+    }
+  ],
+  "chapters": [
+    {
+      "heading": "Vấn đề",
+      "body": [
+        "Vách ngăn văn phòng hiện nay phần lớn được lắp cố định một chỗ. Muốn đổi chỗ ngồi hay đổi cách bố trí phòng thì phải tháo ra lắp lại, nên gần như không ai đổi.",
+        "Kết quả là mỗi người phải chấp nhận đúng mức che chắn mà người khác đã quyết định thay cho mình."
+      ],
+      "points": [
+        "Vách ngăn cố định, khó di chuyển",
+        "Ít chức năng ngoài việc chắn tầm nhìn",
+        "Chiếm diện tích, bí, thiếu sáng"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/display.webp",
+          "alt": "Khảo sát các mẫu vách ngăn đang có trên thị trường"
+        }
+      ]
+    },
+    {
+      "heading": "Người dùng nói gì",
+      "body": [
+        "Khi phỏng vấn, hai điều được nhắc lại nhiều nhất đều không nằm ở chuyện đẹp hay xấu, mà ở chuyện không tự quyết được."
+      ],
+      "points": [
+        "Cảm giác bị nhốt khi không xoay được hướng che theo ý mình",
+        "Khó chịu khi phần cần che lại không được che, ví dụ vùng mặt, hoặc phần chân khi mặc váy ngắn"
+      ]
+    },
+    {
+      "heading": "Cấu tạo: bản điều chỉnh tay",
+      "body": [
+        "Màn che gồm nhiều nan mỏng, mỗi nan dày 4 mm, căng vải dệt giữa các nan. Nan có thể làm từ tre, gỗ hoặc nhựa tuỳ điều kiện sản xuất.",
+        "Người dùng xoay núm cơ khí để kéo dài hoặc thu ngắn phần màn, nên chọn được đúng vùng muốn che mà không cần đứng dậy."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/structure-manual",
+          "alt": "Cấu tạo khung nan và cơ cấu núm xoay của Forti Halo"
+        }
+      ]
+    },
+    {
+      "heading": "Cấu tạo: bản tích hợp",
+      "body": [
+        "Mỗi cột cao 2 m, bên trong có bốn thanh thép không gỉ chạy suốt để chịu lực căng của màn và chịu va đập.",
+        "Thanh giằng gập 90 độ nối các cột lại thành khung đứng vững. Bánh xe giúp đẩy cả hệ đi nhẹ nhàng, chân đế chỉnh được cao thấp để đứng vững trên nền không phẳng."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/structure-integrated",
+          "alt": "Chi tiết bên trong cột: thanh giằng, hệ thanh xuyên cột, bánh xe và chân chỉnh"
+        }
+      ]
+    },
+    {
+      "heading": "Ứng dụng",
+      "body": [
+        "Cùng một hệ khung, đổi loại màn là đổi công năng. Với màn PVC mờ, Forti Halo thành buồng làm việc riêng hoặc phòng họp nhóm ngay giữa văn phòng mở.",
+        "Ở sân vận động, hệ này trở thành quầy bán vé dựng nhanh, kèm bộ biểu tượng cho biết quầy đang mở, đang đóng hay dành riêng cho hội viên."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/workspace",
+          "alt": "Forti Halo dùng làm buồng làm việc riêng và phòng họp nhóm"
+        },
+        {
+          "src": "/img/projects/forti-halo/kiosk",
+          "alt": "Forti Halo dùng làm quầy bán vé tại sân vận động"
+        }
+      ]
+    },
+    {
+      "heading": "Mẫu thật",
+      "body": [
+        "Đồ án được dựng mẫu tỉ lệ 1:1 và trưng bày cùng bản vẽ kỹ thuật, phương án hoạ tiết và bộ biểu tượng nhận diện."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/prototype",
+          "alt": "Mẫu Forti Halo tỉ lệ 1:1 tại buổi trưng bày đồ án"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<section class="skills {{ band }}" data-section="skills" data-reveal>
+  <div class="shell">
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+    </header>
+
+    <div class="skills__columns">
+      <ul class="skills__list">
+        {{#each section.software}}
+        <li class="skill">
+          <span class="skill__name">{{ this.name }}</span>
+          <span class="skill__level" role="img" aria-label="{{ this.levelLabel }}">
+            <span class="skill__fill" style="--level: {{ this.level }}"></span>
+          </span>
+        </li>
+        {{/each}}
+      </ul>
+
+      {{#if section.abilities}}
+      <ul class="bullets skills__abilities">
+        {{#each section.abilities}}
+        <li>{{ this }}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+  </div>
+</section>

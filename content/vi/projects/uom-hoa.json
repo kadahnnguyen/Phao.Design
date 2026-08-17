@@ -1,0 +1,46 @@
+{
+  "slug": "uom-hoa",
+  "featured": false,
+  "order": 8,
+  "title": "Ươm Hoa",
+  "titleFull": "Ươm Hoa, chậu gốm tự tưới | Phào Design",
+  "description": "Chậu gốm hai phần, giữ nước ở ngăn dưới và dẫn lên bằng bấc, nên cây sống tốt mà không cần tưới hằng ngày.",
+  "summary": "Chậu gốm hai phần, giữ nước ở ngăn dưới và dẫn lên bằng bấc, để cây sống tốt mà chủ nhà không phải tưới mỗi ngày.",
+  "year": "2025",
+  "role": "Thiết kế và tạo hình gốm",
+  "materials": "Gốm, men chảy",
+
+  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và mục 9.",
+  "heroImage": "",
+  "heroAlt": "Chậu gốm Ươm Hoa men xanh tím",
+  "cardImage": "",
+  "cardAlt": "Chậu gốm Ươm Hoa",
+
+  "chapters": [
+    {
+      "heading": "Ý tưởng",
+      "body": [
+        "Cây để bàn thường chết vì hai lý do trái ngược nhau: quên tưới, hoặc tưới quá tay. Ươm Hoa bỏ hẳn thao tác tưới hằng ngày ra khỏi chuyện chăm cây.",
+        "Chậu chia làm hai phần, ngăn dưới chứa nước và ngăn trên chứa đất với cây. Bấc nối hai ngăn, cây hút lên đúng lượng nước nó cần."
+      ],
+      "points": [
+        "Khe thông nước nối hai ngăn",
+        "Thành miệng nở lệch về hai phía",
+        "Đổ thêm nước qua khe, không phải tưới lên mặt đất"
+      ]
+    },
+    {
+      "heading": "Tạo hình",
+      "body": [
+        "Phần thân tròn nở, phần miệng khoét sâu thành rãnh lớn và rãnh nhỏ, tạo bóng đổ thay đổi theo hướng nhìn.",
+        "Men được để chảy tự nhiên nên mỗi chiếc ra lò một khác, không chiếc nào giống chiếc nào."
+      ]
+    },
+    {
+      "heading": "Dùng vào việc khác",
+      "body": [
+        "Ngoài việc trồng cây, dáng chậu này còn dùng được làm bát nhang, gạt tàn và chỗ dập đầu thuốc lá."
+      ]
+    }
+  ]
+}

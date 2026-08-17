@@ -1,0 +1,73 @@
+{
+  "slug": "gravity",
+  "featured": true,
+  "order": 2,
+  "title": "Gravity",
+  "titleFull": "Gravity, xe máy ba bánh tự cân bằng | Phào Design",
+  "description": "Xe máy ba bánh tự cân bằng cho đường xấu và địa hình dốc, với tư thế ngồi quỳ giảm mỏi chân.",
+  "summary": "Xe máy ba bánh tự cân bằng, đi được đường dốc và lề cao, với tư thế ngồi quỳ giúp đỡ mỏi chân trên quãng đường dài.",
+  "year": "2024",
+  "role": "Thiết kế tạo dáng, nghiên cứu công thái học",
+  "tools": "SolidWorks, KeyShot, phác thảo tay",
+  "materials": "Vỏ nhựa composite, khung thép",
+  "heroImage": "/img/projects/gravity/hero",
+  "heroAlt": "Xe Gravity chở hai người leo dốc đá tại công trường",
+  "cardImage": "/img/projects/gravity/kerb",
+  "cardAlt": "Xe máy ba bánh tự cân bằng Gravity",
+  "chapters": [
+    {
+      "heading": "Vấn đề",
+      "body": [
+        "Xe hai bánh thông thường mất ổn định khi leo lề cao hoặc chạy trên nền đá lởm chởm, đúng những nơi mà người đi làm công trình hay đi đường núi phải qua mỗi ngày.",
+        "Người ngồi sau thường không có chỗ đặt chân đúng tầm, nên phải co chân suốt chuyến đi."
+      ]
+    },
+    {
+      "heading": "Hướng giải quyết",
+      "body": [
+        "Hai bánh trước đặt song song, có cơ cấu tự cân bằng, giúp xe giữ thăng bằng khi một bên bánh cao hơn bên còn lại.",
+        "Phần đầu xe được tạo dáng liền khối để che chắn cơ cấu này mà vẫn giữ được dáng gọn của một chiếc xe tay ga."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/gravity/sketches",
+          "alt": "Phác thảo tạo dáng và nghiên cứu tỉ lệ của xe Gravity"
+        }
+      ]
+    },
+    {
+      "heading": "Công thái học",
+      "body": [
+        "Tư thế ngồi được nghiên cứu trên dải người dùng từ phần trăm thứ 5 tới phần trăm thứ 95, để xe vừa với cả người nhỏ lẫn người cao lớn.",
+        "Ở tư thế quỳ, bắp chân và đùi tạo góc khoảng 60 độ và tì gọn lên gác chân dưới yên. Yên trước ngả được 15 độ để máu lưu thông tốt hơn khi đi đường dài. Khuỷu tay giữ khoảng 120 độ nên vai không bị gồng."
+      ],
+      "points": [
+        "Gác chân riêng cho người lớn và cho trẻ em ngồi sau",
+        "Yên trước ngả 15 độ, có chốt khoá vị trí",
+        "Tay lái đặt theo tầm với tự nhiên"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/gravity/ergonomics",
+          "alt": "Nghiên cứu tư thế ngồi quỳ và tư thế ngồi thường trên xe Gravity"
+        }
+      ]
+    },
+    {
+      "heading": "Trên đường thật",
+      "body": [
+        "Xe được dựng cảnh sử dụng trong phố và trên công trường, gồm cả tình huống leo lề, để kiểm tra lại tỉ lệ và tầm nhìn của người lái."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/gravity/kerb",
+          "alt": "Gravity leo lề đường trong thành phố"
+        },
+        {
+          "src": "/img/projects/gravity/street",
+          "alt": "Gravity chở hai người trên đường phố"
+        }
+      ]
+    }
+  ]
+}

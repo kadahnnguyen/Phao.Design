@@ -1,0 +1,34 @@
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <div class="site-footer__brand">
+      <p class="wordmark wordmark--footer">{{ site.brand }}</p>
+      <p class="muted">{{ site.contact.location }}</p>
+    </div>
+
+    <ul class="site-footer__contact">
+      <li><a href="tel:+84{{ site.contact.phone }}">{{ site.contact.phoneDisplay }}</a></li>
+      <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+      {{#if site.contact.zalo}}
+      <li><a href="{{ site.contact.zalo }}">Zalo</a></li>
+      {{/if}}
+    </ul>
+
+    {{#if site.social}}
+    <ul class="site-footer__social">
+      {{#each site.social}}
+      <li><a href="{{ this.url }}" rel="me">{{ this.label }}</a></li>
+      {{/each}}
+    </ul>
+    {{/if}}
+
+    <nav class="site-footer__nav" aria-label="{{ strings.ui.menu }}">
+      <ul>
+        {{#each nav}}
+        <li><a href="{{ this.url }}">{{ this.label }}</a></li>
+        {{/each}}
+      </ul>
+    </nav>
+
+    <p class="muted site-footer__legal">{{ strings.footer.rights }}</p>
+  </div>
+</footer>

@@ -1,0 +1,99 @@
+{
+  "slug": "aeterna",
+  "featured": true,
+  "order": 3,
+  "title": "Aeterna",
+  "titleFull": "Aeterna, on-site food waste composter | Phào Design",
+  "description": "A composting machine that sits in the kitchen itself, turning food waste into compost and into water for the garden growing on the machine.",
+  "summary": "A composting machine that sits in the kitchen itself, turning food waste into compost and into irrigation for the garden growing on its own rim.",
+  "year": "2025",
+  "role": "Product design, form, mechanism research",
+  "tools": "SolidWorks, KeyShot",
+  "materials": "Composite body, metal internals",
+
+  "heroImage": "/img/projects/aeterna/hero",
+  "heroAlt": "A chef tipping food waste into the Aeterna machine in a restaurant kitchen",
+  "cardImage": "/img/projects/aeterna/card",
+  "cardAlt": "The Aeterna composting machine in a university canteen",
+
+  "chapters": [
+    {
+      "heading": "The problem",
+      "body": [
+        "Restaurant kitchens and canteens produce food waste every day. It gets collected, then sits waiting for a lorry, and while it waits it smells, leaks and draws insects.",
+        "Most existing answers live in a separate area round the back, which means carrying the waste some distance, and nobody who throws something away ever sees where it goes."
+      ]
+    },
+    {
+      "heading": "The approach",
+      "body": [
+        "Aeterna deals with waste where the waste appears. It goes in through the opening on top, is ground down, and composts inside the body of the machine.",
+        "The waste water, once through a filter membrane, becomes the nutrient solution. It is pumped to an upper reservoir and feeds the garden set into the machine's rim. The rim turns slowly so every pot gets its share."
+      ],
+      "points": [
+        "Grinding, composting, filtration and growing in one body",
+        "Rotating rim waters each pot evenly",
+        "Separate lower drawer for finished compost"
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/kitchen", "alt": "Aeterna installed in a restaurant kitchen" },
+        {
+          "src": "/img/projects/aeterna/flow-section",
+          "alt": "Section through Aeterna showing the path of the waste and of the water",
+          "caption": "Section: waste drops to the composting chamber, water is filtered and lifted to the upper reservoir."
+        }
+      ]
+    },
+    {
+      "heading": "The form",
+      "body": [
+        "The body is one rounded volume, widest at the foot and drawn in at the shoulder, so that standing next to stainless steel it does not read as industrial equipment. A debossed ginkgo pattern runs across the shell, in the same register as the planted rim above it.",
+        "The rim is built like a water wheel and sits off-centre on the top, so the green stays visible from across the room."
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/studio", "alt": "Studio render of Aeterna on white with the planted rim tilted open" },
+        { "src": "/img/projects/aeterna/countertop", "alt": "Aeterna on a stone worktop, the version sized for a small kitchen" },
+        {
+          "src": "/img/projects/aeterna/detail",
+          "alt": "Close view of the vent grille and the Aeterna wordmark on the shell",
+          "caption": "The vent grille and the debossed pattern on the shell."
+        }
+      ]
+    },
+    {
+      "heading": "Using it",
+      "body": [
+        "A touch panel on the front shows the timer and the running mode. The lid opens to two positions, part way for a quick scrape and fully for cleaning.",
+        "Inside are the grinder blades, agitator, water reservoir, vapour vent and a pot system that lifts out so plants can be changed.",
+        "Finished compost comes out of a drawer at the foot of the machine, so the top never has to be opened for it."
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/loading", "alt": "A chef tipping a tray of food waste into the opening on top of Aeterna" },
+        { "src": "/img/projects/aeterna/compost", "alt": "A chef lifting finished compost out of the drawer at the foot of Aeterna" },
+        {
+          "src": "/img/projects/aeterna/grinder",
+          "alt": "Renders of the Aeterna grinder module: housing, filter screen and a cutaway",
+          "caption": "The grinder module: housing, filter screen and cutaway."
+        },
+        { "src": "/img/projects/aeterna/parts", "alt": "Technical drawings of the Aeterna planted rim and lid" },
+        { "src": "/img/projects/aeterna/drawings-body", "alt": "Orthographic technical drawings of the Aeterna body" }
+      ]
+    },
+    {
+      "heading": "Where it goes",
+      "body": [
+        "The machine was visualised in three settings: a restaurant kitchen, a university canteen and a secondary school canteen.",
+        "Putting it where people pass is part of the design. With the garden sitting on top of the machine, whoever scrapes a plate sees the result of it straight away."
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/school-canteen", "alt": "A student tipping food waste into Aeterna in a school canteen" },
+        { "src": "/img/projects/aeterna/university-canteen", "alt": "A student using Aeterna at the waste station in a university canteen" },
+        {
+          "src": "/img/projects/aeterna/harvest",
+          "alt": "A chef cutting herbs from the planted rim of Aeterna",
+          "caption": "The loop closing: herbs cut straight from the rim of the machine."
+        }
+      ]
+    }
+  ]
+}

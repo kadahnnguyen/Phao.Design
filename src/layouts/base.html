@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ strings.htmlLang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.titleFull }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ site.url }}{{ url }}">
+{{#each alternates}}
+<link rel="alternate" hreflang="{{ this.locale }}" href="{{ site.url }}{{ this.url }}">
+{{/each}}
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.brand }}">
+<meta property="og:title" content="{{ page.titleFull }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ site.url }}{{ url }}">
+<meta property="og:image" content="{{ site.url }}/img/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+
+<!-- Both locales need the vietnamese subset: the brand and the designer's name
+     carry diacritics on every page. Preloading latin and vietnamese together stops
+     a word rendering half in one font and half in another during the swap. -->
+<link rel="preload" href="/fonts/anton-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/anton-400-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/bevietnampro-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/bevietnampro-400-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="/css/main.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip-link" href="#main">{{ strings.ui.skipToContent }}</a>
+{{> header }}
+<main id="main">
+{{{ body }}}
+</main>
+{{> footer }}
+<script src="/js/main.js" defer></script>
+</body>
+</html>

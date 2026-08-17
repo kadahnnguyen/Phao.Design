@@ -1,0 +1,40 @@
+{
+  "slug": "awake-and-seek",
+  "featured": false,
+  "order": 5,
+  "title": "Awake and Seek",
+  "titleFull": "Awake and Seek, thiết kế chai nước hoa | Phào Design",
+  "description": "Bộ chai nước hoa với khối pha lê nhiều mặt, mỗi phiên bản một chất liệu và một sắc độ riêng.",
+  "summary": "Bộ chai nước hoa lấy hình khối pha lê nhiều mặt, mỗi phiên bản mang một chất liệu và một sắc độ riêng.",
+  "year": "2024",
+  "role": "Thiết kế tạo hình, dựng 3D, kết xuất chất liệu",
+  "tools": "SolidWorks, KeyShot",
+  "materials": "Thuỷ tinh khối, kim loại chải xước",
+
+  "heroImage": "/img/projects/awake-and-seek/hero",
+  "heroAlt": "Bộ chai nước hoa Awake and Seek đặt cạnh các khối đá và pha lê",
+  "cardImage": "/img/projects/awake-and-seek/hero",
+  "cardAlt": "Bộ chai nước hoa Awake and Seek",
+
+  "chapters": [
+    {
+      "heading": "Ý tưởng",
+      "body": [
+        "Tên gọi Awake and Seek nói về lúc một người vừa tỉnh giấc và bắt đầu đi tìm thứ gì đó. Hình khối của chai lấy từ tinh thể chưa mài, phần thân xoè ra nhiều mặt nghiêng, phần vai thu lại thành một mặt phẳng nhỏ mang biểu tượng.",
+        "Biểu tượng là hình nơ kết hợp cánh bướm, đặt trên tấm nhãn hình thoi ở chính giữa thân chai."
+      ]
+    },
+    {
+      "heading": "Chất liệu",
+      "body": [
+        "Cùng một khối, đổi chất liệu là đổi hẳn tính cách sản phẩm. Bộ này được kết xuất qua nhiều phương án: thuỷ tinh trong, thuỷ tinh ám khói, thuỷ tinh vân gỗ, thuỷ tinh xanh lá và bản pha lê trong suốt.",
+        "Nắp dùng kim loại chải xước, tạo một mặt phẳng lì nằm trên phần thân nhiều mặt cắt."
+      ],
+      "points": [
+        "Năm phương án chất liệu cho cùng một khối",
+        "Nhãn hình thoi giữ nguyên trên mọi phiên bản",
+        "Nắp kim loại chải xước làm điểm dừng cho mắt"
+      ]
+    }
+  ]
+}

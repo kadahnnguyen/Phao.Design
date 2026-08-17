@@ -1,0 +1,75 @@
+<section class="contact {{ band }}" data-section="contact-form" data-reveal>
+  <div class="shell contact__layout">
+
+    <div class="contact__aside">
+      <h2>{{ section.heading }}</h2>
+      {{#if section.body}}<p>{{ section.body }}</p>{{/if}}
+
+      <ul class="quick-contact quick-contact--stacked">
+        <li><a href="tel:+84{{ site.contact.phone }}">{{ site.contact.phoneDisplay }}</a></li>
+        <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+        {{#if site.contact.zalo}}<li><a href="{{ site.contact.zalo }}">{{ strings.ui.chatZalo }}</a></li>{{/if}}
+        {{#if site.contact.messenger}}<li><a href="{{ site.contact.messenger }}">Messenger</a></li>{{/if}}
+      </ul>
+      <p class="muted">{{ site.contact.location }}</p>
+    </div>
+
+    {{#unless site.endpoints.mail}}
+    <p class="notice" role="status">{{ section.endpointPending }}</p>
+    {{else}}
+    <form class="form" method="post" action="{{ site.endpoints.mail }}" data-contact-form novalidate>
+
+      <fieldset class="field">
+        <legend class="field__label">{{ section.fields.role.label }}</legend>
+        {{#each section.fields.role.options}}
+        <label class="choice">
+          <input type="radio" name="role" value="{{ this.value }}" required>
+          <span>{{ this.label }}</span>
+        </label>
+        {{/each}}
+      </fieldset>
+
+      <p class="field">
+        <label class="field__label" for="f-name">{{ section.fields.name }}</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120">
+      </p>
+
+      <p class="field">
+        <label class="field__label" for="f-phone">{{ section.fields.phone }}</label>
+        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="30">
+      </p>
+
+      <p class="field">
+        <label class="field__label" for="f-email">{{ section.fields.email }}</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160">
+      </p>
+
+      <p class="field">
+        <label class="field__label" for="f-request">{{ section.fields.request }}</label>
+        <textarea id="f-request" name="request" rows="5" required maxlength="4000"></textarea>
+      </p>
+
+      <p class="field">
+        <label class="field__label" for="f-when">{{ section.fields.when }} <span class="muted">{{ section.fields.optional }}</span></label>
+        <input id="f-when" name="when" type="text" maxlength="120">
+      </p>
+
+      <p class="field">
+        <label class="field__label" for="f-other">{{ section.fields.other }} <span class="muted">{{ section.fields.optional }}</span></label>
+        <textarea id="f-other" name="other" rows="3" maxlength="2000"></textarea>
+      </p>
+
+      <!-- Spam trap. Real people never see it, so anything filled in here is a bot. -->
+      <p class="trap" aria-hidden="true">
+        <label for="f-website">Website</label>
+        <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </p>
+      <input type="hidden" name="startedAt" value="">
+
+      <button class="cta cta--primary cta--inline" type="submit">{{ section.submit }}</button>
+
+      <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+    </form>
+    {{/unless}}
+  </div>
+</section>

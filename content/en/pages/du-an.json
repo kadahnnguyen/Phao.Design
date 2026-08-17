@@ -1,0 +1,28 @@
+{
+  "slug": "du-an",
+  "template": "page",
+  "title": "Projects",
+  "titleFull": "Projects | Phào Design",
+  "description": "3D product design and industrial design projects by Nguyễn Khánh Đan, from user research through to a physical prototype.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Projects",
+      "lead": "Every project here follows the same line: find where the existing product falls short, test that against real users, then build it as something you can hold."
+    },
+    {
+      "type": "project-grid",
+      "visible": true,
+      "featuredOnly": true,
+      "heading": "Selected work"
+    },
+    {
+      "type": "project-grid",
+      "visible": true,
+      "featuredOnly": false,
+      "heading": "Other projects"
+    }
+  ]
+}

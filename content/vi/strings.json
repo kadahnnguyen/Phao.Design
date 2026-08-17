@@ -1,0 +1,36 @@
+{
+  "localeName": "Tiếng Việt",
+  "htmlLang": "vi",
+  "nav": {
+    "projects": "Dự án",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "news": "Tin tức",
+    "contact": "Liên hệ"
+  },
+  "ui": {
+    "skipToContent": "Bỏ qua, tới nội dung chính",
+    "menu": "Menu",
+    "close": "Đóng",
+    "switchLanguage": "Ngôn ngữ",
+    "viewProject": "Xem dự án",
+    "allProjects": "Tất cả dự án",
+    "nextProject": "Dự án tiếp theo",
+    "prevProject": "Dự án trước",
+    "backToTop": "Lên đầu trang",
+    "imageComingSoon": "Hình ảnh đang được chuẩn bị",
+    "callNow": "Gọi ngay",
+    "emailMe": "Gửi email",
+    "chatZalo": "Nhắn Zalo",
+    "downloadCv": "Tải CV",
+    "year": "Năm",
+    "role": "Vai trò",
+    "tools": "Phần mềm",
+    "materials": "Vật liệu",
+    "dimensions": "Kích thước"
+  },
+  "footer": {
+    "rights": "Toàn bộ thiết kế và hình ảnh thuộc về Nguyễn Khánh Đan.",
+    "builtNote": "Website tĩnh, không thu thập dữ liệu ngoài biểu mẫu liên hệ."
+  }
+}

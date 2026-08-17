@@ -1,0 +1,36 @@
+{
+  "localeName": "English",
+  "htmlLang": "en",
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "ui": {
+    "skipToContent": "Skip to main content",
+    "menu": "Menu",
+    "close": "Close",
+    "switchLanguage": "Language",
+    "viewProject": "View project",
+    "allProjects": "All projects",
+    "nextProject": "Next project",
+    "prevProject": "Previous project",
+    "backToTop": "Back to top",
+    "imageComingSoon": "Image coming soon",
+    "callNow": "Call now",
+    "emailMe": "Send an email",
+    "chatZalo": "Chat on Zalo",
+    "downloadCv": "Download CV",
+    "year": "Year",
+    "role": "Role",
+    "tools": "Software",
+    "materials": "Materials",
+    "dimensions": "Dimensions"
+  },
+  "footer": {
+    "rights": "All designs and images belong to Nguyễn Khánh Đan.",
+    "builtNote": "Static site. Nothing is collected beyond the contact form."
+  }
+}

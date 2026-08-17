@@ -1,0 +1,73 @@
+{
+  "slug": "gravity",
+  "featured": true,
+  "order": 2,
+  "title": "Gravity",
+  "titleFull": "Gravity, a self-balancing three-wheeler | Phào Design",
+  "description": "A self-balancing three-wheeled motorcycle for rough ground and steep terrain, with a kneeling riding posture that reduces leg fatigue.",
+  "summary": "A self-balancing three-wheeled motorcycle that handles steep ground and high kerbs, with a kneeling posture that takes the strain off the legs on long rides.",
+  "year": "2024",
+  "role": "Form design, ergonomics research",
+  "tools": "SolidWorks, KeyShot, hand sketching",
+  "materials": "Composite body panels, steel frame",
+  "heroImage": "/img/projects/gravity/hero",
+  "heroAlt": "Gravity carrying two riders up a rocky slope at a quarry",
+  "cardImage": "/img/projects/gravity/kerb",
+  "cardAlt": "Gravity self-balancing three-wheeled motorcycle",
+  "chapters": [
+    {
+      "heading": "The problem",
+      "body": [
+        "A normal two-wheeler loses its footing climbing a high kerb or crossing broken rock, which is exactly the ground site workers and mountain riders cover every day.",
+        "The rear passenger usually has nowhere to rest their feet at the right height, so they ride with their legs tucked up the whole way."
+      ]
+    },
+    {
+      "heading": "The approach",
+      "body": [
+        "Two parallel front wheels on a self-balancing linkage keep the bike upright when one wheel sits higher than the other.",
+        "The front bodywork is shaped as one volume to cover that mechanism while keeping the compact proportions of a scooter."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/gravity/sketches",
+          "alt": "Form sketches and proportion studies for Gravity"
+        }
+      ]
+    },
+    {
+      "heading": "Ergonomics",
+      "body": [
+        "The riding position was studied across the 5th to 95th percentile, so the bike fits small and tall riders alike.",
+        "In the kneeling position the calf and thigh sit at roughly 60 degrees, resting on the footrest under the seat. The front seat tilts 15 degrees to help circulation on long rides, and the elbows stay near 120 degrees so the shoulders are not braced."
+      ],
+      "points": [
+        "Separate footrests for an adult and for a child riding behind",
+        "Front seat tilts 15 degrees with a locking pin",
+        "Handlebars set to a natural reach"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/gravity/ergonomics",
+          "alt": "Kneeling and standard riding postures studied on Gravity"
+        }
+      ]
+    },
+    {
+      "heading": "On real roads",
+      "body": [
+        "The bike was visualised in city traffic and on a work site, including climbing a kerb, to check its proportions and the rider's sightlines."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/gravity/kerb",
+          "alt": "Gravity climbing a kerb in the city"
+        },
+        {
+          "src": "/img/projects/gravity/street",
+          "alt": "Gravity carrying two riders through city traffic"
+        }
+      ]
+    }
+  ]
+}

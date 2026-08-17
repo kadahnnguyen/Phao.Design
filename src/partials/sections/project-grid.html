@@ -1,0 +1,22 @@
+<section class="project-grid {{ band }}" data-section="project-grid" data-reveal>
+  <div class="shell">
+    {{#if section.heading}}
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+      {{#if section.intro}}<p class="section-head__intro measure">{{ section.intro }}</p>{{/if}}
+    </header>
+    {{/if}}
+
+    <ul class="card-grid">
+      {{#if section.featuredOnly}}
+      {{#each featuredProjects}}
+      {{> project-card }}
+      {{/each}}
+      {{else}}
+      {{#each otherProjects}}
+      {{> project-card }}
+      {{/each}}
+      {{/if}}
+    </ul>
+  </div>
+</section>

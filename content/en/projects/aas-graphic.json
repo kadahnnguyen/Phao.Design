@@ -1,0 +1,40 @@
+{
+  "slug": "aas-graphic",
+  "featured": false,
+  "order": 9,
+  "title": "AAS identity",
+  "titleFull": "AAS identity | Phào Design",
+  "description": "Graphic work for the Awake and Seek brand: poster, packaging, business cards and print pieces.",
+  "summary": "The graphic work sitting alongside the Awake and Seek brand: poster, packaging, business cards and print pieces.",
+  "year": "2024",
+  "role": "Graphic design, mockups",
+  "tools": "Adobe Illustrator, Adobe Photoshop",
+
+  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF. Needs original files from the client. See PLAN.md 5.1 and section 9.",
+  "heroImage": "",
+  "heroAlt": "Poster and print pieces from the AAS identity",
+  "cardImage": "",
+  "cardAlt": "The AAS identity",
+
+  "chapters": [
+    {
+      "heading": "The work",
+      "body": [
+        "The graphics belong with the Awake and Seek perfume, sharing one type system and one way of handling image.",
+        "The main poster puts the word ACTIVE at its centre, with layers of type running around the frame, then seals the whole thing inside clear packaging like an object under wrap."
+      ],
+      "points": [
+        "Portrait poster and a pavement stand",
+        "Clear packaging with labels and a seal",
+        "Business cards, letterhead and a folded leaflet",
+        "A mockup set laid out on a desk"
+      ]
+    },
+    {
+      "heading": "Recognition",
+      "body": [
+        "The set was ranked first in its group on submission, marked TOP 1 on the piece itself."
+      ]
+    }
+  ]
+}

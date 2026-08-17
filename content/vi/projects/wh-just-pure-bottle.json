@@ -1,0 +1,55 @@
+{
+  "slug": "wh-just-pure-bottle",
+  "featured": false,
+  "order": 4,
+  "title": "WH Just Pure Bottle",
+  "titleFull": "WH Just Pure Bottle, bình lọc nước cá nhân | Phào Design",
+  "description": "Bình nước cá nhân có lõi lọc và đế đun, thiết kế cho người đi rừng và đi đường dài.",
+  "summary": "Bình nước cá nhân tích hợp lõi lọc và đế đun, làm cho người đi rừng và đi đường dài, nơi nguồn nước không phải lúc nào cũng sạch.",
+  "year": "2024",
+  "role": "Thiết kế sản phẩm, dựng 3D, lập danh mục vật liệu",
+  "tools": "SolidWorks, KeyShot, phác thảo tay",
+  "materials": "Thân ABS, lõi lọc nhôm, đế silicon, nắp PP, móc thép",
+  "_blocked": "PARTIALLY RECOVERED. The page is a flattened layout raster, but the render panel on it carries no text, so hero and card were cropped back out at native resolution (see CROPS in tools/extract-images.py). Sketches, the exploded view and the bill-of-materials table are still unusable and need original files.",
+  "heroImage": "/img/projects/wh-just-pure-bottle/hero",
+  "heroAlt": "Hai phiên bản bình lọc nước WH Just Pure Bottle trên nền xám",
+  "cardImage": "/img/projects/wh-just-pure-bottle/card",
+  "cardAlt": "Bình lọc nước WH Just Pure Bottle",
+  "chapters": [
+    {
+      "heading": "Vấn đề",
+      "body": [
+        "Người đi rừng, đi công trình hay đi đường dài thường phải chọn giữa mang đủ nước sạch cho cả chuyến, tức là mang rất nặng, hoặc lấy nước dọc đường và chấp nhận rủi ro.",
+        "Bình lọc trên thị trường phần lớn chỉ lọc, không xử lý được phần vi sinh, nên vẫn cần đun lại bằng thiết bị khác."
+      ]
+    },
+    {
+      "heading": "Hướng giải quyết",
+      "body": [
+        "Bình gộp ba việc vào một vật: chứa nước, lọc qua lõi đặt dọc thân bình, và đun bằng đế điện gắn dưới đáy.",
+        "Thân bình có gân dọc để cầm chắc khi tay ướt. Nắp có móc để treo vào ba lô, và tay cầm gập sát thân khi không dùng tới."
+      ],
+      "points": [
+        "Lõi lọc rút ra được để rửa và thay",
+        "Đế đun tháo rời, sạc lại được",
+        "Móc treo và tay cầm nằm gọn trong khối bình"
+      ]
+    },
+    {
+      "heading": "Cấu tạo",
+      "body": [
+        "Sản phẩm gồm tám chi tiết, chọn vật liệu theo đúng việc mà từng chi tiết phải làm: phần tiếp xúc nhiệt dùng nhôm, phần cầm nắm dùng nhựa ABS, phần cần kín nước dùng silicon."
+      ],
+      "points": [
+        "Đế điện, silicon",
+        "Thân bình, ABS",
+        "Lõi lọc, nhôm",
+        "Gioăng, silicon",
+        "Móc, thép",
+        "Tay cầm, ABS",
+        "Miệng bình, ABS",
+        "Nắp bình, PP"
+      ]
+    }
+  ]
+}

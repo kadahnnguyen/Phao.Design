@@ -1,0 +1,46 @@
+{
+  "slug": "aerodynamic-car",
+  "featured": false,
+  "order": 6,
+  "title": "Aerodynamic car study",
+  "titleFull": "Aerodynamic car study | Phào Design",
+  "description": "A form study reworking a sports saloon, adjusting fourteen details of the body towards better aerodynamics.",
+  "summary": "A form study reworking a sports saloon, adjusting fourteen details of the bodywork towards better aerodynamics.",
+  "year": "2023",
+  "role": "Form research, hand drawing",
+  "tools": "Pencil rendering",
+
+  "heroImage": "/img/projects/aerodynamic-car/hero",
+  "heroAlt": "Pencil rendering of the car with coloured ribbons tracing airflow across the body",
+  "cardImage": "/img/projects/aerodynamic-car/card",
+  "cardAlt": "Pencil rendering of the reworked car form",
+
+  "chapters": [
+    {
+      "heading": "The brief",
+      "body": [
+        "The exercise takes an existing sports saloon as its starting point, finds the places where the form is fighting the air, and draws a proposal that answers them.",
+        "The whole study was done by hand, concentrating on reading the form rather than simulating it."
+      ]
+    },
+    {
+      "heading": "Fourteen changes",
+      "body": [
+        "The coloured ribbons on the drawing trace where the air goes: over the roof, along the flanks, into the intakes and out past the tail."
+      ],
+      "points": [
+        "Air curtains and front bumper vents",
+        "Redrawn front bumper and radiator grille",
+        "Lowered bonnet with added cooling slots",
+        "Shallower windscreen angle and a domed roof line",
+        "Fastback tail with a deployable ducktail spoiler",
+        "Flush door handles",
+        "Multi-channel rear diffuser",
+        "Side intakes and vents behind the wheel arch"
+      ],
+      "images": [
+        { "src": "/img/projects/aerodynamic-car/card", "alt": "The reworked form, pencil rendering" }
+      ]
+    }
+  ]
+}

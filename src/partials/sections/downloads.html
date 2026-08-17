@@ -1,0 +1,19 @@
+<section class="downloads {{ band }}" data-section="downloads" data-reveal>
+  <div class="shell">
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+      {{#if section.intro}}<p class="section-head__intro measure">{{ section.intro }}</p>{{/if}}
+    </header>
+
+    <ul class="download-list">
+      {{#each section.files}}
+      <li class="download">
+        <a class="download__link" href="{{ this.href }}" download>
+          <span class="download__name">{{ this.name }}</span>
+          <span class="download__meta">{{ this.type }} · {{ this.size }}</span>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>

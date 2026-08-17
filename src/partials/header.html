@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="wordmark" href="{{ homeUrl }}">{{ site.brand }}</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__bar"></span>
+      <span class="visually-hidden">{{ strings.ui.menu }}</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="{{ site.brand }}">
+      <ul class="site-nav__list">
+        {{#each nav}}
+        <li><a href="{{ this.url }}">{{ this.label }}</a></li>
+        {{/each}}
+      </ul>
+
+      <ul class="lang-switch" aria-label="{{ strings.ui.switchLanguage }}">
+        {{#each alternates}}
+        <li>
+          <a href="{{ this.url }}" hreflang="{{ this.locale }}"{{#if this.current}} aria-current="true"{{/if}}>{{ this.locale }}</a>
+        </li>
+        {{/each}}
+      </ul>
+    </nav>
+  </div>
+</header>

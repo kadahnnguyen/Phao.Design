@@ -1,0 +1,180 @@
+{
+  "slug": "gioi-thieu",
+  "template": "page",
+  "title": "Giới thiệu",
+  "titleFull": "Giới thiệu | Phào Design",
+  "description": "Nguyễn Khánh Đan, Industrial Designer tốt nghiệp Đại học Văn Lang. Kinh nghiệm, phần mềm sử dụng, chứng chỉ và hồ sơ năng lực.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Mình là Đan",
+      "lead": "Industrial Designer, tin rằng nhu cầu nào của người dùng cũng đáng được tìm hiểu tới nơi."
+    },
+    {
+      "type": "prose",
+      "visible": true,
+      "body": [
+        "Mình tốt nghiệp ngành Thiết kế Công nghiệp tại Đại học Văn Lang. Cách làm việc của mình nghiêng về phân tích sản phẩm và nghiên cứu thành thật: nhìn kỹ thứ đang có, hỏi người dùng thật, rồi mới đề xuất hướng thay đổi.",
+        "Sau bốn năm học và làm, thứ mình giữ lại được nhiều nhất là tính kỷ luật và sự kiên trì, cùng khả năng nhìn ra giới hạn của sản phẩm hiện tại để cải tiến cho tốt hơn.",
+        "Mình xem mỗi dự án là một dịp để cân bằng giữa thẩm mỹ và công năng, sao cho sản phẩm vừa dùng được vừa có cái đẹp riêng. Ba từ mình thích: thử, học, sửa."
+      ],
+      "portrait": {
+        "src": "/img/about/portrait",
+        "alt": "Chân dung Nguyễn Khánh Đan"
+      }
+    },
+    {
+      "type": "timeline",
+      "visible": true,
+      "heading": "Kinh nghiệm",
+      "items": [
+        {
+          "when": "04/2026 tới 07/2026",
+          "role": "Industrial Designer",
+          "where": "MOVE Việt Nam, thuộc KINGSPORT, Đông Dương Group",
+          "tasks": [
+            "Nghiên cứu các mẫu xe trên thị trường và dựng bản vẽ thiết kế 2D cho xe điện",
+            "Thiết kế logo, decal màu và làm mẫu cho sản phẩm thật",
+            "Dựng hộp đóng gói ở cả dạng 2D và 3D"
+          ]
+        },
+        {
+          "when": "03/2025 tới 05/2025",
+          "role": "Thực tập sinh thiết kế",
+          "where": "Công ty Gốm Biên Hoà",
+          "tasks": [
+            "Xác định yêu cầu: phong cách, loại tượng và vị trí đặt",
+            "Nghiên cứu bối cảnh văn hoá, ý nghĩa biểu tượng và giá trị thẩm mỹ",
+            "Hoàn thiện thiết kế và chốt mẫu tạo hình"
+          ]
+        },
+        {
+          "when": "03/2023 tới 06/2023",
+          "role": "Giáo viên dạy vẽ",
+          "where": "Trường Mầm non Tao Hong 2",
+          "body": "Dạy vẽ cho trẻ từ 3 tới 6 tuổi."
+        },
+        {
+          "when": "08/2022 tới 12/2022",
+          "role": "Giáo viên dạy vẽ",
+          "where": "Art Class For Kids",
+          "body": "Dạy vẽ cho trẻ từ 5 tới 10 tuổi."
+        },
+        {
+          "when": "07/2022 tới 08/2022",
+          "role": "Nhân viên làm đồ thủ công",
+          "where": "Flexible & Simple Leather",
+          "tasks": [
+            "Đo và lấy dấu trên da",
+            "Cắt da, đục lỗ, khâu, làm sạch và phủ màu"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "skills",
+      "visible": true,
+      "heading": "Phần mềm và tay nghề",
+      "software": [
+        {
+          "name": "SolidWorks",
+          "level": "80%",
+          "levelLabel": "Bốn trên năm"
+        },
+        {
+          "name": "KeyShot",
+          "level": "60%",
+          "levelLabel": "Ba trên năm"
+        },
+        {
+          "name": "Sketchbook",
+          "level": "60%",
+          "levelLabel": "Ba trên năm"
+        },
+        {
+          "name": "Adobe Illustrator",
+          "level": "40%",
+          "levelLabel": "Hai trên năm"
+        },
+        {
+          "name": "Adobe Photoshop",
+          "level": "40%",
+          "levelLabel": "Hai trên năm"
+        }
+      ],
+      "abilities": [
+        "Đọc và xuất bản vẽ kỹ thuật",
+        "Nghiên cứu và phát triển sản phẩm",
+        "Phác thảo ý tưởng",
+        "Dựng mô hình 3D và concept sản phẩm",
+        "Kết xuất hình ảnh 3D",
+        "Làm mẫu prototype và sơn hoàn thiện",
+        "Thiết kế và tạo hình tượng gốm",
+        "Đo, cắt và khâu da"
+      ]
+    },
+    {
+      "type": "facts",
+      "visible": true,
+      "heading": "Chứng chỉ và hoạt động",
+      "items": [
+        {
+          "title": "Cử nhân Thiết kế Công nghiệp",
+          "detail": "Đại học Văn Lang"
+        },
+        {
+          "title": "SOLIDWORKS Design Professional",
+          "detail": "Chứng chỉ CSWP"
+        },
+        {
+          "title": "RMIT Accessibility Design Competition 2023",
+          "detail": "Nằm trong nhóm 25 đội vào vòng trong"
+        },
+        {
+          "title": "SEE+ Design Fair 2023",
+          "detail": "Trưng bày ghế Bent.ch, do C.space Design Complex tổ chức cùng Đại học Văn Lang"
+        }
+      ]
+    },
+    {
+      "type": "downloads",
+      "visible": true,
+      "heading": "Hồ sơ năng lực",
+      "intro": "Bản đầy đủ để xem ngoại tuyến. Portfolio được chia thành bốn phần cho nhẹ máy.",
+      "files": [
+        {
+          "name": "CV Nguyễn Khánh Đan",
+          "href": "/files/nguyen-khanh-dan-cv.pdf",
+          "type": "PDF",
+          "size": "162 KB"
+        },
+        {
+          "name": "Portfolio 2026, phần 1",
+          "href": "/files/phao-design-portfolio-2026-phan-1.pdf",
+          "type": "PDF",
+          "size": "3,5 MB"
+        },
+        {
+          "name": "Portfolio 2026, phần 2",
+          "href": "/files/phao-design-portfolio-2026-phan-2.pdf",
+          "type": "PDF",
+          "size": "4,7 MB"
+        },
+        {
+          "name": "Portfolio 2026, phần 3",
+          "href": "/files/phao-design-portfolio-2026-phan-3.pdf",
+          "type": "PDF",
+          "size": "4,7 MB"
+        },
+        {
+          "name": "Portfolio 2026, phần 4",
+          "href": "/files/phao-design-portfolio-2026-phan-4.pdf",
+          "type": "PDF",
+          "size": "1,9 MB"
+        }
+      ]
+    }
+  ]
+}

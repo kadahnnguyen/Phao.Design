@@ -1,0 +1,84 @@
+{
+  "slug": "index",
+  "template": "page",
+  "title": "Phào Design",
+  "titleFull": "Phào Design – Thiết kế sản phẩm 3D & Industrial Design",
+  "description": "Xem portfolio và quy trình thiết kế từ ý tưởng đến sản phẩm hoàn chỉnh.",
+  "_sections": "Thứ tự và trạng thái hiện/ẩn của các mục bên dưới do CMS quản lý. Hero, header và footer được giữ cố định.",
+  "sections": [
+    {
+      "type": "hero",
+      "visible": true,
+      "pinned": true,
+      "image": "/img/home/cover",
+      "alt": "Bìa portfolio của Nguyễn Khánh Đan 2026, Industrial Designer, ghép ảnh các hoạt động thiết kế, dạy vẽ, làm đồ da và tạo hình gốm",
+      "caption": "",
+      "_note": "Rendered from page 1 of the client's portfolio PDF. The wordmark is vector in the source so it stays sharp, but the words in the image are pixels: the alt text carries them and the real headings sit below."
+    },
+    {
+      "type": "positioning",
+      "visible": true,
+      "pinned": true,
+      "lead": "Phào Design là nơi trưng bày những thiết kế và sản phẩm sáng tạo độc đáo.",
+      "body": "Mình là Đan, Industrial Designer chuyên về thiết kế công nghiệp và 3D, hiện đang nhận một số dự án tự do bên cạnh công việc chính.",
+      "background": "/img/home/collage",
+      "_background": "Page 7 of the portfolio PDF, the market research collage, with every text block painted out (see PAGE_RENDERS in tools/extract-images.py). Decorative only: empty alt, aria-hidden, hidden under prefers-contrast."
+    },
+    {
+      "type": "highlights",
+      "visible": true,
+      "heading": "Dự án nổi bật",
+      "intro": "Năm dự án cho thấy rõ nhất cách mình làm việc, từ nghiên cứu người dùng tới mẫu thật."
+    },
+    {
+      "type": "strengths",
+      "visible": true,
+      "heading": "Thế mạnh khi thiết kế sản phẩm 3D",
+      "items": [
+        {
+          "title": "Nhìn ra điểm hạn chế của sản phẩm",
+          "body": "Nhận định được điểm hạn chế của sản phẩm đang có trên thị trường, rồi cải tiến để sản phẩm dùng tốt hơn."
+        },
+        {
+          "title": "Nắm bắt nhu cầu mới",
+          "body": "Nhận định nhu cầu mới của xã hội và chuyển nhu cầu đó thành hướng thiết kế cụ thể."
+        },
+        {
+          "title": "Vật liệu và phương án sản xuất",
+          "body": "Khai thác nguồn vật liệu và đề xuất phương án sản xuất phù hợp, kể cả trong điều kiện kinh phí hạn chế."
+        },
+        {
+          "title": "Làm mẫu prototype",
+          "body": "Dựng mẫu thật để kiểm tra kích thước, thao tác và cảm giác sử dụng trước khi đưa vào sản xuất."
+        }
+      ]
+    },
+    {
+      "type": "services-teaser",
+      "visible": false,
+      "_blocked": "Chờ khách gửi danh sách dịch vụ và mức giá. Xem PLAN.md mục 5 và mục 9.",
+      "heading": "Dịch vụ thiết kế",
+      "body": "Nhận thiết kế concept, tạo hình sản phẩm, dựng 3D và làm mẫu theo nhiều mức chi phí.",
+      "cta": {
+        "label": "Xem dịch vụ và báo giá",
+        "url": "/dich-vu/"
+      }
+    },
+    {
+      "type": "news-teaser",
+      "visible": false,
+      "_blocked": "Chờ nội dung bài viết. Xem PLAN.md mục 5.",
+      "heading": "Tin tức và hoạt động"
+    },
+    {
+      "type": "contact-short",
+      "visible": true,
+      "heading": "Bắt đầu một dự án",
+      "body": "Nói cho mình biết bạn cần gì, mình sẽ trả lời trong vòng một tới hai ngày.",
+      "cta": {
+        "label": "Gửi yêu cầu",
+        "url": "/lien-he/"
+      }
+    }
+  ]
+}

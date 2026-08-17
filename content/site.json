@@ -1,0 +1,40 @@
+{
+  "brand": "Phào Design",
+  "url": "https://phaodesign.example",
+  "locales": ["vi", "en"],
+  "defaultLocale": "vi",
+
+  "_endpoints": "Both Workers live on Khoa's Cloudflare account during the build and move to the client at handover. Never hard-code either URL in markup. See PLAN.md OPEN-2 and HANDOVER.md.",
+  "endpoints": {
+    "mail": "",
+    "oauth": ""
+  },
+
+  "_analytics": "Disconnected until the consent decision lands. See PLAN.md OPEN-3.",
+  "analytics": {
+    "ga4": "",
+    "gtm": "",
+    "enabled": false
+  },
+
+  "contact": {
+    "email": "kadahnnguyen@gmail.com",
+    "phone": "0766002264",
+    "phoneDisplay": "076 600 2264",
+    "_zalo": "Very likely live already, unwired pending Khoa's call. See PLAN.md OPEN-4.",
+    "zalo": "",
+    "messenger": "",
+    "location": "Quận 1, TP. Hồ Chí Minh"
+  },
+
+  "_social": "Blocked. No handle was supplied anywhere in the request or the content files.",
+  "social": [],
+
+  "nav": [
+    { "id": "projects", "slug": "du-an" },
+    { "id": "about", "slug": "gioi-thieu" },
+    { "id": "services", "slug": "dich-vu" },
+    { "id": "news", "slug": "tin-tuc" },
+    { "id": "contact", "slug": "lien-he" }
+  ]
+}

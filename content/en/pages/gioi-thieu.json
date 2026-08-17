@@ -1,0 +1,180 @@
+{
+  "slug": "gioi-thieu",
+  "template": "page",
+  "title": "About",
+  "titleFull": "About | Phào Design",
+  "description": "Nguyễn Khánh Đan, Industrial Designer, graduate of Van Lang University. Experience, software, certificates and portfolio downloads.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "I am Đan",
+      "lead": "An Industrial Designer who believes every user need is worth finding out about properly."
+    },
+    {
+      "type": "prose",
+      "visible": true,
+      "body": [
+        "I graduated in Industrial Design from Van Lang University. The way I work leans on product analysis and honest research: look hard at what already exists, ask real users, and only then propose a direction.",
+        "After four years of studying and working, what has stayed with me is discipline and persistence, along with an eye for the limits of a current product and how to push past them.",
+        "I treat each project as a chance to balance how something looks against how it works, so the result is useful and has a character of its own. Three words I like: test, learn, fix."
+      ],
+      "portrait": {
+        "src": "/img/about/portrait",
+        "alt": "Portrait of Nguyễn Khánh Đan"
+      }
+    },
+    {
+      "type": "timeline",
+      "visible": true,
+      "heading": "Experience",
+      "items": [
+        {
+          "when": "April to July 2026",
+          "role": "Industrial Designer",
+          "where": "MOVE Viet Nam, part of KINGSPORT, Dong Duong Group",
+          "tasks": [
+            "Researched market models and produced 2D design drawings for electric vehicles",
+            "Designed the logo and colour decals, and built a prototype of the real product",
+            "Produced packaging boxes in both 2D and 3D"
+          ]
+        },
+        {
+          "when": "March to May 2025",
+          "role": "Design intern",
+          "where": "Bien Hoa Ceramics",
+          "tasks": [
+            "Defined requirements: style, type of piece and where it would sit",
+            "Researched cultural context, symbolic meaning and aesthetic value",
+            "Finalised the design and confirmed the sculpted form"
+          ]
+        },
+        {
+          "when": "March to June 2023",
+          "role": "Drawing teacher",
+          "where": "Tao Hong 2 Kindergarten",
+          "body": "Taught drawing to children aged 3 to 6."
+        },
+        {
+          "when": "August to December 2022",
+          "role": "Drawing teacher",
+          "where": "Art Class For Kids",
+          "body": "Taught drawing to children aged 5 to 10."
+        },
+        {
+          "when": "July to August 2022",
+          "role": "Handmade goods assistant",
+          "where": "Flexible & Simple Leather",
+          "tasks": [
+            "Measured and marked leather",
+            "Cut, punched, stitched, cleaned and finished with paint"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "skills",
+      "visible": true,
+      "heading": "Software and craft",
+      "software": [
+        {
+          "name": "SolidWorks",
+          "level": "80%",
+          "levelLabel": "Four out of five"
+        },
+        {
+          "name": "KeyShot",
+          "level": "60%",
+          "levelLabel": "Three out of five"
+        },
+        {
+          "name": "Sketchbook",
+          "level": "60%",
+          "levelLabel": "Three out of five"
+        },
+        {
+          "name": "Adobe Illustrator",
+          "level": "40%",
+          "levelLabel": "Two out of five"
+        },
+        {
+          "name": "Adobe Photoshop",
+          "level": "40%",
+          "levelLabel": "Two out of five"
+        }
+      ],
+      "abilities": [
+        "Reading and producing technical drawings",
+        "Product research and development",
+        "Sketching ideas",
+        "3D modelling and product concepts",
+        "3D rendering",
+        "Prototyping and spray finishing",
+        "Designing and sculpting ceramic pieces",
+        "Measuring, cutting and stitching leather"
+      ]
+    },
+    {
+      "type": "facts",
+      "visible": true,
+      "heading": "Certificates and activity",
+      "items": [
+        {
+          "title": "Bachelor of Industrial Design",
+          "detail": "Van Lang University"
+        },
+        {
+          "title": "SOLIDWORKS Design Professional",
+          "detail": "CSWP certificate"
+        },
+        {
+          "title": "RMIT Accessibility Design Competition 2023",
+          "detail": "Among the top 25 teams"
+        },
+        {
+          "title": "SEE+ Design Fair 2023",
+          "detail": "Exhibited the Bent.ch chair, organised by C.space Design Complex with Van Lang University"
+        }
+      ]
+    },
+    {
+      "type": "downloads",
+      "visible": true,
+      "heading": "Portfolio and CV",
+      "intro": "The full documents for offline reading. The portfolio is split into four parts to keep each file manageable.",
+      "files": [
+        {
+          "name": "CV, Nguyễn Khánh Đan",
+          "href": "/files/nguyen-khanh-dan-cv.pdf",
+          "type": "PDF",
+          "size": "162 KB"
+        },
+        {
+          "name": "Portfolio 2026, part 1",
+          "href": "/files/phao-design-portfolio-2026-phan-1.pdf",
+          "type": "PDF",
+          "size": "3.5 MB"
+        },
+        {
+          "name": "Portfolio 2026, part 2",
+          "href": "/files/phao-design-portfolio-2026-phan-2.pdf",
+          "type": "PDF",
+          "size": "4.7 MB"
+        },
+        {
+          "name": "Portfolio 2026, part 3",
+          "href": "/files/phao-design-portfolio-2026-phan-3.pdf",
+          "type": "PDF",
+          "size": "4.7 MB"
+        },
+        {
+          "name": "Portfolio 2026, part 4",
+          "href": "/files/phao-design-portfolio-2026-phan-4.pdf",
+          "type": "PDF",
+          "size": "1.9 MB"
+        }
+      ]
+    }
+  ]
+}

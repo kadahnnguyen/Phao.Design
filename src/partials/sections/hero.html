@@ -1,0 +1,21 @@
+<section class="hero" data-section="hero">
+  <div class="shell">
+  <figure class="hero__figure">
+    {{#if section.image}}
+    <!-- The hero is held inside the shell, so above 74rem it stops growing at the
+         shell's content width (74rem less its gutters). Claiming 100vw here would
+         make the browser fetch a size larger than it will ever paint. -->
+    <img src="{{ section.image }}" srcset="{{ section.imageSet }}"
+         sizes="(min-width: 74rem) 1088px, calc(100vw - 2 * clamp(1.15rem, 4vw, 3rem))"
+         alt="{{ section.alt }}" width="1600" height="1000" fetchpriority="high">
+    {{else}}
+    <div class="placeholder placeholder--wide" role="img" aria-label="{{ section.alt }}">
+      <span>{{ strings.ui.imageComingSoon }}</span>
+    </div>
+    {{/if}}
+    {{#if section.caption}}
+    <figcaption class="hero__caption">{{ section.caption }}</figcaption>
+    {{/if}}
+  </figure>
+  </div>
+</section>

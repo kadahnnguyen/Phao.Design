@@ -1,0 +1,18 @@
+<section class="teaser {{ band }}" data-section="news-teaser" data-reveal>
+  <div class="shell">
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+    </header>
+
+    <ul class="card-grid card-grid--thirds">
+      {{#each posts}}
+      <li class="card">
+        <a class="card__link" href="{{ this.url }}">
+          <h3 class="card__title">{{ this.title }}</h3>
+          {{#if this.summary}}<p class="card__summary">{{ this.summary }}</p>{{/if}}
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>

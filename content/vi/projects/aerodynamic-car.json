@@ -1,0 +1,46 @@
+{
+  "slug": "aerodynamic-car",
+  "featured": false,
+  "order": 6,
+  "title": "Nghiên cứu khí động học ô tô",
+  "titleFull": "Nghiên cứu khí động học ô tô | Phào Design",
+  "description": "Bài nghiên cứu tạo dáng lại một mẫu sedan thể thao, chỉnh mười bốn chi tiết vỏ xe theo hướng khí động học.",
+  "summary": "Bài nghiên cứu tạo dáng lại một mẫu sedan thể thao, chỉnh mười bốn chi tiết trên vỏ xe theo hướng khí động học tốt hơn.",
+  "year": "2023",
+  "role": "Nghiên cứu tạo dáng, vẽ tay",
+  "tools": "Vẽ chì, dựng hình trên giấy",
+
+  "heroImage": "/img/projects/aerodynamic-car/hero",
+  "heroAlt": "Bản vẽ chì chiếc xe với các dải màu mô tả luồng khí chạy qua thân xe",
+  "cardImage": "/img/projects/aerodynamic-car/card",
+  "cardAlt": "Bản vẽ chì phương án tạo dáng lại chiếc xe",
+
+  "chapters": [
+    {
+      "heading": "Đề bài",
+      "body": [
+        "Bài tập lấy một mẫu sedan thể thao có sẵn làm điểm xuất phát, tìm những chỗ mà hình khối đang cản gió, rồi vẽ lại phương án khắc phục.",
+        "Toàn bộ nghiên cứu được thực hiện bằng vẽ tay, tập trung vào việc đọc hình khối chứ không mô phỏng bằng máy."
+      ]
+    },
+    {
+      "heading": "Mười bốn điểm chỉnh",
+      "body": [
+        "Các dải màu trên bản vẽ mô tả đường đi của luồng khí: qua nóc, dọc hông, chui vào các hốc gió và thoát ra phía đuôi."
+      ],
+      "points": [
+        "Màn chắn gió và khe thông gió cản trước",
+        "Cản trước và lưới tản nhiệt vẽ lại",
+        "Hạ thấp mui xe, thêm khe tản nhiệt",
+        "Kính lái nghiêng thoải hơn, nóc xe cong dạng vòm",
+        "Dáng đuôi fastback với cánh gió ducktail bung ra được",
+        "Tay nắm cửa chìm vào thân",
+        "Bộ khuếch tán gió nhiều rãnh ở đuôi",
+        "Hốc hút gió bên hông và khe thoát sau vòm bánh"
+      ],
+      "images": [
+        { "src": "/img/projects/aerodynamic-car/card", "alt": "Phương án tạo dáng lại, vẽ chì" }
+      ]
+    }
+  ]
+}

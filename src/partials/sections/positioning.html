@@ -1,0 +1,17 @@
+<section class="positioning {{ band }}{{#if section.background}} has-bg{{/if}}" data-section="positioning" data-reveal>
+  {{#if section.background}}
+  <!-- Decorative only. Empty alt and aria-hidden so it is skipped by screen readers:
+       it carries no information the copy does not already give. -->
+  <div class="section-bg" aria-hidden="true">
+    <img src="{{ section.background }}" srcset="{{ section.backgroundSet }}" sizes="100vw"
+         alt="" width="2894" height="1241" loading="lazy" decoding="async">
+  </div>
+  {{/if}}
+
+  <div class="shell">
+    <div class="positioning__copy measure">
+      <p class="positioning__lead">{{ section.lead }}</p>
+      <p class="positioning__body">{{ section.body }}</p>
+    </div>
+  </div>
+</section>

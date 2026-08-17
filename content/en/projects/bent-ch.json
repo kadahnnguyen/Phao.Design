@@ -1,0 +1,53 @@
+{
+  "slug": "bent-ch",
+  "featured": false,
+  "order": 7,
+  "title": "Bent.ch",
+  "titleFull": "Bent.ch, a curved bench | Phào Design",
+  "description": "A bench with a seat curved to 120 degrees, encouraging an upright posture and short rests. Exhibited at SEE+ Design Fair 2023.",
+  "summary": "A bench with a seat curved to 120 degrees, holding the sitter upright and encouraging a short rest rather than a long stay.",
+  "year": "2023",
+  "role": "Design and prototype fabrication",
+  "tools": "Woodworking, surface finishing",
+  "materials": "Plywood",
+  "dimensions": "1000 x 375 x 500 mm",
+
+  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF, and that raster also carries the student ID, class code and personal email, so it is quarantined. Needs original files. See PLAN.md 5.1 and OPEN-11.",
+  "heroImage": "",
+  "heroAlt": "The Bent.ch plywood bench with its curved seat",
+  "cardImage": "",
+  "cardAlt": "The Bent.ch bench",
+
+  "chapters": [
+    {
+      "heading": "The name",
+      "body": [
+        "Bent.ch joins Bent and Bench, saying plainly what has changed from an ordinary bench: the seat has been curved."
+      ]
+    },
+    {
+      "heading": "Why the seat curves",
+      "body": [
+        "The seat curves through roughly 120 degrees and is only 180 mm across. Sitting down, weight goes into the thighs rather than the backside, so the sitter holds their own back straight and can stretch their legs out.",
+        "The bench is deliberately not too comfortable. It is meant as a short rest, so that when one person is done there is room for the next, rather than somewhere to settle for the afternoon."
+      ],
+      "points": [
+        "Can be sat on along the bench or across it",
+        "Seven parts: one seat and two legs, quick to assemble",
+        "Slender enough to take up little floor"
+      ]
+    },
+    {
+      "heading": "Where it goes",
+      "body": [
+        "The bench was designed for a range of settings: schoolyards, parks, libraries and front porches. In a school or park it is somewhere to rest; in a library it becomes a reading chair."
+      ]
+    },
+    {
+      "heading": "Exhibited",
+      "body": [
+        "Bent.ch was built at full scale and shown at SEE+ Design Fair 2023, organised by C.space Design Complex with Van Lang University."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<section class="facts {{ band }}" data-section="facts" data-reveal>
+  <div class="shell">
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+    </header>
+
+    <ul class="facts__list">
+      {{#each section.items}}
+      <li class="fact">
+        <h3 class="fact__title">{{ this.title }}</h3>
+        {{#if this.detail}}<p class="fact__detail">{{ this.detail }}</p>{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>

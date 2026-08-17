@@ -1,0 +1,20 @@
+<section class="faq {{ band }}" data-section="faq" data-reveal>
+  <div class="shell">
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+    </header>
+
+    <div class="faq__list">
+      {{#each section.items}}
+      <details class="faq__item">
+        <summary class="faq__q">{{ this.q }}</summary>
+        <div class="faq__a">
+          {{#each this.a}}
+          <p>{{ this }}</p>
+          {{/each}}
+        </div>
+      </details>
+      {{/each}}
+    </div>
+  </div>
+</section>

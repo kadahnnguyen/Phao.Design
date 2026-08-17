@@ -1,0 +1,55 @@
+{
+  "slug": "wh-just-pure-bottle",
+  "featured": false,
+  "order": 4,
+  "title": "WH Just Pure Bottle",
+  "titleFull": "WH Just Pure Bottle, personal water filter | Phào Design",
+  "description": "A personal water bottle with a filter core and a heating base, made for hiking and long journeys.",
+  "summary": "A personal water bottle with a filter core and a heating base, made for hikers and long journeys where the water source is not always clean.",
+  "year": "2024",
+  "role": "Product design, 3D modelling, bill of materials",
+  "tools": "SolidWorks, KeyShot, hand sketching",
+  "materials": "ABS body, aluminium filter core, silicone base, PP lid, steel hook",
+  "_blocked": "PARTIALLY RECOVERED. The page is a flattened layout raster, but the render panel on it carries no text, so hero and card were cropped back out at native resolution (see CROPS in tools/extract-images.py). Sketches, the exploded view and the bill-of-materials table are still unusable and need original files.",
+  "heroImage": "/img/projects/wh-just-pure-bottle/hero",
+  "heroAlt": "Two versions of the WH Just Pure Bottle water filter on a grey ground",
+  "cardImage": "/img/projects/wh-just-pure-bottle/card",
+  "cardAlt": "The WH Just Pure Bottle water filter",
+  "chapters": [
+    {
+      "heading": "The problem",
+      "body": [
+        "Hikers, site workers and long-distance travellers usually choose between carrying enough clean water for the whole trip, which is heavy, or drawing water on the way and accepting the risk.",
+        "Most filter bottles on the market only filter. They do not deal with the biological side, so a separate device is still needed to boil."
+      ]
+    },
+    {
+      "heading": "The approach",
+      "body": [
+        "The bottle folds three jobs into one object: it holds water, filters it through a core running down the body, and heats it on an electric base under the bottom.",
+        "The body is ribbed so it stays put in a wet hand. The lid carries a hook for a rucksack, and the handle folds flat against the body when it is not in use."
+      ],
+      "points": [
+        "Filter core pulls out to be washed or replaced",
+        "Heating base detaches and recharges",
+        "Hook and handle sit within the bottle's own volume"
+      ]
+    },
+    {
+      "heading": "Construction",
+      "body": [
+        "Eight parts, with each material chosen for the job that part actually does: aluminium where heat passes through, ABS where it is held, silicone where it has to seal."
+      ],
+      "points": [
+        "Electric base, silicone",
+        "Bottle body, ABS",
+        "Filter core, aluminium",
+        "Gasket, silicone",
+        "Hook, steel",
+        "Handle, ABS",
+        "Bottle mouth, ABS",
+        "Bottle lid, PP"
+      ]
+    }
+  ]
+}

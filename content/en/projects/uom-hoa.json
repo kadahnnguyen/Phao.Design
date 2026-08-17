@@ -1,0 +1,46 @@
+{
+  "slug": "uom-hoa",
+  "featured": false,
+  "order": 8,
+  "title": "Ươm Hoa",
+  "titleFull": "Ươm Hoa, a self-watering ceramic pot | Phào Design",
+  "description": "A two-part ceramic pot that holds water below and draws it up by wick, so the plant thrives without daily watering.",
+  "summary": "A two-part ceramic pot that holds water below and draws it up by wick, so the plant does well without being watered every day.",
+  "year": "2025",
+  "role": "Design and ceramic forming",
+  "materials": "Ceramic, flowing glaze",
+
+  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF. Needs original files from the client. See PLAN.md 5.1 and section 9.",
+  "heroImage": "",
+  "heroAlt": "The Ươm Hoa ceramic pot in a blue-violet glaze",
+  "cardImage": "",
+  "cardAlt": "The Ươm Hoa ceramic pot",
+
+  "chapters": [
+    {
+      "heading": "The idea",
+      "body": [
+        "Desk plants tend to die for two opposite reasons: nobody waters them, or somebody waters them too much. Ươm Hoa removes the daily watering decision altogether.",
+        "The pot splits in two, water below and soil with the plant above. A wick joins the halves and the plant draws up exactly as much as it needs."
+      ],
+      "points": [
+        "A channel between the two chambers",
+        "The rim flares unevenly to each side",
+        "Topped up through the channel, not poured over the soil"
+      ]
+    },
+    {
+      "heading": "The form",
+      "body": [
+        "The body swells and rounds, while the mouth is cut away into a deep groove and a shallow one, so the shadows shift depending on where you stand.",
+        "The glaze is allowed to run, so no two pots come out of the kiln alike."
+      ]
+    },
+    {
+      "heading": "Other uses",
+      "body": [
+        "Beyond holding a plant, the same form works as an incense holder, an ashtray and somewhere to stub out a cigarette."
+      ]
+    }
+  ]
+}

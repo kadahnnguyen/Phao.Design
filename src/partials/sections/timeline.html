@@ -1,0 +1,25 @@
+<section class="timeline-section {{ band }}" data-section="timeline" data-reveal>
+  <div class="shell">
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+    </header>
+
+    <ol class="timeline">
+      {{#each section.items}}
+      <li class="timeline__item">
+        <p class="timeline__when">{{ this.when }}</p>
+        <h3 class="timeline__role">{{ this.role }}</h3>
+        <p class="timeline__where">{{ this.where }}</p>
+        {{#if this.body}}<p class="timeline__body">{{ this.body }}</p>{{/if}}
+        {{#if this.tasks}}
+        <ul class="bullets">
+          {{#each this.tasks}}
+          <li>{{ this }}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

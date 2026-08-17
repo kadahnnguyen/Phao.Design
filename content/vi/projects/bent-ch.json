@@ -1,0 +1,53 @@
+{
+  "slug": "bent-ch",
+  "featured": false,
+  "order": 7,
+  "title": "Bent.ch",
+  "titleFull": "Bent.ch, ghế băng mặt cong | Phào Design",
+  "description": "Ghế băng mặt ngồi cong 120 độ, khuyến khích ngồi thẳng và nghỉ ngắn. Trưng bày tại SEE+ Design Fair 2023.",
+  "summary": "Ghế băng có mặt ngồi cong 120 độ, giữ người ngồi ở tư thế thẳng và khuyến khích nghỉ ngắn thay vì ngồi lì.",
+  "year": "2023",
+  "role": "Thiết kế và thi công mẫu",
+  "tools": "Gia công gỗ, hoàn thiện bề mặt",
+  "materials": "Ván ép",
+  "dimensions": "1000 x 375 x 500 mm",
+
+  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng, và ảnh đó còn chứa MSSV, lớp và email cá nhân nên đã bị cách ly. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và OPEN-11.",
+  "heroImage": "",
+  "heroAlt": "Ghế băng Bent.ch bằng ván ép, mặt ngồi cong",
+  "cardImage": "",
+  "cardAlt": "Ghế băng Bent.ch",
+
+  "chapters": [
+    {
+      "heading": "Tên gọi",
+      "body": [
+        "Bent.ch ghép từ hai chữ Bent và Bench, nói thẳng ra thứ đã thay đổi so với một chiếc ghế băng thường: mặt ngồi được uốn cong."
+      ]
+    },
+    {
+      "heading": "Vì sao mặt ngồi cong",
+      "body": [
+        "Mặt ngồi cong khoảng 120 độ, bề ngang chỉ 180 mm. Ngồi lên, trọng lượng dồn vào đùi nhiều hơn là vào mông, nên người ngồi tự giữ lưng thẳng và duỗi chân thoải mái.",
+        "Ghế cố tình không quá êm. Mục đích là chỗ nghỉ ngắn, để người này ngồi xong thì người khác còn có chỗ, chứ không phải chỗ ngồi lì cả buổi."
+      ],
+      "points": [
+        "Ngồi được cả theo chiều dọc và chiều ngang ghế",
+        "Bảy chi tiết: một mặt ngồi và hai chân, tháo lắp nhanh",
+        "Dáng mảnh nên ít chiếm diện tích"
+      ]
+    },
+    {
+      "heading": "Đặt ở đâu",
+      "body": [
+        "Ghế được tính cho nhiều môi trường khác nhau: sân trường, công viên, thư viện hay hiên nhà. Đặt ở trường học và công viên thì là chỗ nghỉ chân, đặt trong thư viện thì thành ghế đọc sách."
+      ]
+    },
+    {
+      "heading": "Trưng bày",
+      "body": [
+        "Bent.ch được dựng thành mẫu thật và trưng bày tại SEE+ Design Fair 2023, do C.space Design Complex tổ chức cùng Đại học Văn Lang."
+      ]
+    }
+  ]
+}

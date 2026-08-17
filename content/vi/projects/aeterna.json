@@ -1,0 +1,99 @@
+{
+  "slug": "aeterna",
+  "featured": true,
+  "order": 3,
+  "title": "Aeterna",
+  "titleFull": "Aeterna, máy ủ rác thực phẩm tại chỗ | Phào Design",
+  "description": "Máy ủ rác thực phẩm đặt ngay trong bếp, biến rác hữu cơ thành phân và nước tưới cho vườn cây gắn liền trên thân máy.",
+  "summary": "Máy ủ rác thực phẩm đặt ngay trong bếp, biến rác hữu cơ thành phân bón và nước tưới cho chính vườn cây gắn trên thân máy.",
+  "year": "2025",
+  "role": "Thiết kế sản phẩm, tạo hình, nghiên cứu cơ cấu",
+  "tools": "SolidWorks, KeyShot",
+  "materials": "Vỏ composite, chi tiết kim loại",
+
+  "heroImage": "/img/projects/aeterna/hero",
+  "heroAlt": "Đầu bếp đổ rác thực phẩm vào máy Aeterna trong bếp nhà hàng",
+  "cardImage": "/img/projects/aeterna/card",
+  "cardAlt": "Máy ủ rác Aeterna đặt tại căng tin trường đại học",
+
+  "chapters": [
+    {
+      "heading": "Vấn đề",
+      "body": [
+        "Bếp nhà hàng và căng tin thải ra rác thực phẩm mỗi ngày. Rác được gom lại, để đó chờ xe tới lấy, và trong lúc chờ thì bốc mùi, chảy nước, thu hút côn trùng.",
+        "Phần lớn giải pháp hiện có đều đặt ở khu vực riêng phía sau, nghĩa là vẫn phải bê rác đi một quãng, và người dùng không thấy được rác của mình đi đâu."
+      ]
+    },
+    {
+      "heading": "Hướng giải quyết",
+      "body": [
+        "Aeterna xử lý rác ngay tại chỗ phát sinh. Rác thực phẩm được đổ vào miệng phía trên, nghiền nhỏ, rồi ủ thành phân ngay bên trong thân máy.",
+        "Phần nước thải sau khi qua màng lọc trở thành dung dịch dinh dưỡng, được bơm lên bồn phía trên để tưới cho vườn cây gắn trên vành máy. Vành quay chậm nên cây nào cũng nhận đủ nước."
+      ],
+      "points": [
+        "Nghiền, ủ, lọc nước và trồng cây trong cùng một thân máy",
+        "Vành cây quay để tưới đều từng chậu",
+        "Cửa lấy phân riêng ở phía dưới"
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/kitchen", "alt": "Máy Aeterna đặt trong bếp nhà hàng" },
+        {
+          "src": "/img/projects/aeterna/flow-section",
+          "alt": "Mặt cắt máy Aeterna cho thấy đường đi của rác và của nước",
+          "caption": "Mặt cắt: rác xuống buồng ủ, nước qua lọc rồi lên bồn trên."
+        }
+      ]
+    },
+    {
+      "heading": "Tạo hình",
+      "body": [
+        "Thân máy là một khối bo tròn, phình ở chân và thóp lại ở vai, để đứng cạnh bếp inox mà không giống thiết bị công nghiệp. Hoa văn lá bạch quả chìm chạy khắp vỏ, cùng tông với vành cây phía trên.",
+        "Vành cây được làm như một bánh xe nước, đặt lệch trên đỉnh máy để nhìn từ xa vẫn thấy rõ mảng xanh."
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/studio", "alt": "Ảnh dựng máy Aeterna trên nền trắng, vành cây mở nghiêng" },
+        { "src": "/img/projects/aeterna/countertop", "alt": "Máy Aeterna đặt trên mặt bàn đá, phiên bản dùng cho bếp nhỏ" },
+        {
+          "src": "/img/projects/aeterna/detail",
+          "alt": "Cận cảnh khe thoát hơi và logo Aeterna trên vỏ máy",
+          "caption": "Khe thoát hơi và hoa văn chìm trên vỏ."
+        }
+      ]
+    },
+    {
+      "heading": "Thao tác",
+      "body": [
+        "Bảng chạm phía trước hiển thị thời gian và chế độ đang chạy. Nắp mở ở hai mức, mở hé để đổ rác nhanh và mở hết khi cần vệ sinh.",
+        "Chi tiết bên trong gồm dao nghiền, cánh đảo, bồn chứa nước, khe thoát hơi và hệ chậu tháo rời được để thay cây.",
+        "Phân sau khi ủ xong được lấy ra bằng ngăn kéo dưới chân máy, không phải mở nắp trên."
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/loading", "alt": "Đầu bếp trút khay rác thực phẩm vào miệng máy Aeterna" },
+        { "src": "/img/projects/aeterna/compost", "alt": "Đầu bếp xúc phân đã ủ từ ngăn kéo dưới chân máy Aeterna" },
+        {
+          "src": "/img/projects/aeterna/grinder",
+          "alt": "Bản dựng cụm nghiền của Aeterna, gồm vỏ, lưới lọc và mặt cắt bên trong",
+          "caption": "Cụm nghiền: vỏ ngoài, lưới lọc và mặt cắt."
+        },
+        { "src": "/img/projects/aeterna/parts", "alt": "Bản vẽ kỹ thuật vành cây và nắp máy Aeterna" },
+        { "src": "/img/projects/aeterna/drawings-body", "alt": "Bản vẽ kỹ thuật thân máy Aeterna theo các hướng chiếu" }
+      ]
+    },
+    {
+      "heading": "Nơi sử dụng",
+      "body": [
+        "Máy được dựng cảnh trong ba bối cảnh khác nhau: bếp nhà hàng, căng tin trường đại học và căng tin trường phổ thông.",
+        "Đặt ở nơi đông người qua lại là một phần của thiết kế. Khi vườn cây nằm ngay trên máy, người bỏ rác nhìn thấy ngay kết quả của việc mình vừa làm."
+      ],
+      "images": [
+        { "src": "/img/projects/aeterna/school-canteen", "alt": "Học sinh đổ rác thực phẩm vào máy Aeterna tại căng tin trường" },
+        { "src": "/img/projects/aeterna/university-canteen", "alt": "Sinh viên bỏ rác vào máy Aeterna tại căng tin trường đại học" },
+        {
+          "src": "/img/projects/aeterna/harvest",
+          "alt": "Đầu bếp hái rau thơm từ vành cây của máy Aeterna",
+          "caption": "Vòng khép kín: rau thơm hái ngay từ vành cây trên máy."
+        }
+      ]
+    }
+  ]
+}

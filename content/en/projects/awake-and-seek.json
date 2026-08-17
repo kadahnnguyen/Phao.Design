@@ -1,0 +1,40 @@
+{
+  "slug": "awake-and-seek",
+  "featured": false,
+  "order": 5,
+  "title": "Awake and Seek",
+  "titleFull": "Awake and Seek, perfume bottle design | Phào Design",
+  "description": "A set of perfume bottles built on a many-faceted crystal form, each version in its own material and tone.",
+  "summary": "A set of perfume bottles built on a many-faceted crystal form, each version carrying its own material and tone.",
+  "year": "2024",
+  "role": "Form design, 3D modelling, material rendering",
+  "tools": "SolidWorks, KeyShot",
+  "materials": "Solid glass, brushed metal",
+
+  "heroImage": "/img/projects/awake-and-seek/hero",
+  "heroAlt": "The Awake and Seek perfume bottles arranged among rock and crystal forms",
+  "cardImage": "/img/projects/awake-and-seek/hero",
+  "cardAlt": "The Awake and Seek perfume bottle set",
+
+  "chapters": [
+    {
+      "heading": "The idea",
+      "body": [
+        "The name Awake and Seek describes the moment someone wakes and starts looking for something. The form comes from an uncut crystal: the body spreads into angled faces, and the shoulder pulls back to a small flat plane carrying the mark.",
+        "That mark is a bow crossed with a butterfly, set on a diamond-shaped label at the centre of the body."
+      ]
+    },
+    {
+      "heading": "Materials",
+      "body": [
+        "One form, different materials, and the character of the object changes entirely. The set was rendered across several options: clear glass, smoked glass, banded glass, green glass and a fully transparent crystal version.",
+        "The cap is brushed metal, giving one flat, quiet surface sitting above a body made of cuts."
+      ],
+      "points": [
+        "Five material options on a single form",
+        "The diamond label stays constant across every version",
+        "The brushed metal cap gives the eye somewhere to rest"
+      ]
+    }
+  ]
+}

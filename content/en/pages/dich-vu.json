@@ -1,0 +1,78 @@
+{
+  "slug": "dich-vu",
+  "template": "page",
+  "title": "Services",
+  "titleFull": "Product design services | Phào Design",
+  "description": "Product concept design, industrial form design, 3D modelling and prototyping.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Services",
+      "lead": "I take on product design work stage by stage, from a first idea through to a package complete enough to hand to a manufacturer."
+    },
+    {
+      "type": "services-list",
+      "visible": false,
+      "_blocked": "NOT REAL CONTENT. Waiting on the service list and prices from the client. The items below are scaffolding built from the skills stated in the CV and portfolio, and have not been approved. See PLAN.md sections 5 and 9.",
+      "heading": "What I offer",
+      "intro": "Provisional outline, pending the client's own service list and pricing.",
+      "items": [
+        {
+          "name": "Product concept design",
+          "body": "Market research, form exploration and a chosen direction.",
+          "includes": ["Review of comparable products", "Concept sketches", "Selected direction"],
+          "price": ""
+        },
+        {
+          "name": "3D modelling and rendering",
+          "body": "Accurate modelling in SolidWorks and rendering in KeyShot.",
+          "includes": ["3D model", "Render set", "Basic technical drawings"],
+          "price": ""
+        },
+        {
+          "name": "Prototyping",
+          "body": "A physical prototype to test dimensions, handling and feel.",
+          "includes": ["Printed or fabricated prototype", "Paint finishing", "Notes on what to adjust"],
+          "price": ""
+        }
+      ],
+      "note": "Scope and price are confirmed before any work begins."
+    },
+    {
+      "type": "faq",
+      "visible": true,
+      "heading": "Frequently asked",
+      "items": [
+        {
+          "q": "What kind of projects do you take?",
+          "a": [
+            "Form and concept design for household goods, furniture, technology products, ceramics and handcrafted pieces.",
+            "I also take on 3D modelling and rendering for ideas that already exist."
+          ]
+        },
+        {
+          "q": "How long does a project take?",
+          "a": [
+            "It depends on the depth. A straightforward form proposal can be done in one to two weeks, while a project needing user research and a prototype takes longer.",
+            "Once I understand the brief I will give you a clear schedule."
+          ]
+        },
+        {
+          "q": "Do you build physical prototypes?",
+          "a": [
+            "Yes. I built a full-scale prototype for my graduation project, and have prototyped and paint-finished a number of smaller products."
+          ]
+        },
+        {
+          "q": "What do I receive at the end?",
+          "a": [
+            "Usually the 3D model files, a render set and technical drawings detailed enough to discuss with a factory.",
+            "The exact list is agreed at the start of the project."
+          ]
+        }
+      ]
+    }
+  ]
+}

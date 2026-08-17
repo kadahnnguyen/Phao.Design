@@ -1,0 +1,41 @@
+{
+  "slug": "lien-he",
+  "template": "page",
+  "title": "Liên hệ",
+  "titleFull": "Liên hệ | Phào Design",
+  "description": "Gửi yêu cầu tư vấn dự án hoặc lời mời làm việc tới Nguyễn Khánh Đan.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Liên hệ",
+      "lead": "Dù bạn là khách hàng cần thiết kế hay nhà tuyển dụng, cứ để lại vài dòng, mình sẽ trả lời trong vòng một tới hai ngày."
+    },
+    {
+      "type": "contact-form",
+      "visible": true,
+      "heading": "Gửi yêu cầu",
+      "body": "Điền càng rõ thì mình càng trả lời được cụ thể.",
+      "endpointPending": "Biểu mẫu đang được kết nối tới hộp thư. Trong lúc chờ, bạn gọi hoặc gửi email trực tiếp giúp mình nhé.",
+      "fields": {
+        "role": {
+          "label": "Bạn là",
+          "options": [
+            { "value": "khach-hang", "label": "Khách hàng" },
+            { "value": "nha-tuyen-dung", "label": "Nhà tuyển dụng" },
+            { "value": "khac", "label": "Khác" }
+          ]
+        },
+        "name": "Tên của bạn",
+        "phone": "Số điện thoại",
+        "email": "Email",
+        "request": "Yêu cầu dịch vụ hoặc lời mời làm việc",
+        "when": "Thời gian bạn muốn trao đổi",
+        "other": "Thông tin khác",
+        "optional": "(không bắt buộc)"
+      },
+      "submit": "Gửi"
+    }
+  ]
+}

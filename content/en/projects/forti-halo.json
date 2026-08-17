@@ -1,0 +1,115 @@
+{
+  "slug": "forti-halo",
+  "featured": true,
+  "order": 1,
+  "title": "Forti Halo",
+  "titleFull": "Forti Halo, a flexible partition system | Phào Design",
+  "description": "A movable partition system for workspaces, letting each person set how much cover they want. Graduation project in Industrial Design.",
+  "summary": "A movable partition system for workspaces, letting each person adjust how much cover they have around their own seat.",
+  "year": "2025",
+  "role": "Product design, research, full-scale prototype",
+  "tools": "SolidWorks, KeyShot, Illustrator",
+  "materials": "Aluminium and stainless steel frame, bamboo, wood or plastic ribs, woven fabric, frosted PVC curtain",
+  "dimensions": "2 m columns, 4 mm ribs",
+  "heroImage": "/img/projects/forti-halo/hero",
+  "heroAlt": "The Forti Halo partition system set up in an open office",
+  "cardImage": "/img/projects/forti-halo/card",
+  "cardAlt": "Forti Halo partition system in an office",
+  "stats": [
+    {
+      "value": "38%",
+      "label": "of workers are satisfied with their ability to focus at work",
+      "source": "Gensler, 2016"
+    },
+    {
+      "value": "53%",
+      "label": "report being interrupted by others while trying to concentrate",
+      "source": "Gensler, 2016"
+    }
+  ],
+  "chapters": [
+    {
+      "heading": "The problem",
+      "body": [
+        "Most office partitions are fixed in one position. Changing a seat or rearranging a room means taking them apart and putting them back, so in practice nobody does it.",
+        "Everyone ends up with exactly the amount of cover somebody else decided for them."
+      ],
+      "points": [
+        "Fixed in place and hard to move",
+        "Little function beyond blocking a line of sight",
+        "Space-consuming, stuffy, short on light"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/display.webp",
+          "alt": "Survey of partition products currently on the market"
+        }
+      ]
+    },
+    {
+      "heading": "What users said",
+      "body": [
+        "In interviews the two complaints that came up most were not about how partitions look. Both were about not being able to decide for yourself."
+      ],
+      "points": [
+        "A sense of confinement when the direction of cover cannot be adjusted",
+        "Discomfort when the part you want covered is not, the face for example, or the legs when wearing a short skirt"
+      ]
+    },
+    {
+      "heading": "Structure: manual version",
+      "body": [
+        "The screen is built from thin ribs, each 4 mm thick, with woven fabric stretched between them. The ribs can be bamboo, wood or plastic depending on what is available to manufacture.",
+        "Turning a geared knob extends or retracts the screen, so you can cover the area you actually want without standing up."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/structure-manual",
+          "alt": "Rib frame construction and gear knob mechanism of Forti Halo"
+        }
+      ]
+    },
+    {
+      "heading": "Structure: integrated version",
+      "body": [
+        "Each column stands 2 m high with four stainless steel beams running through it, carrying the tension of the curtain and taking impact.",
+        "Bracing bars fold at 90 degrees to lock the columns into a stable frame. Wheels let the whole system be pushed with little effort, and adjustable feet keep it level on uneven floors."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/structure-integrated",
+          "alt": "Column internals: bracing bar, through-column beams, wheels and adjustable feet"
+        }
+      ]
+    },
+    {
+      "heading": "In use",
+      "body": [
+        "One frame, different curtains, different jobs. With a frosted PVC curtain, Forti Halo becomes a private workspace or a team meeting pod in the middle of an open office.",
+        "At a stadium it becomes a ticketing kiosk that goes up quickly, with a set of symbols showing whether a counter is open, closed or members only."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/workspace",
+          "alt": "Forti Halo used as a private workspace and a team meeting pod"
+        },
+        {
+          "src": "/img/projects/forti-halo/kiosk",
+          "alt": "Forti Halo used as a stadium ticketing kiosk"
+        }
+      ]
+    },
+    {
+      "heading": "The prototype",
+      "body": [
+        "The project was built at full scale and exhibited alongside its technical drawings, pattern options and identity symbols."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/forti-halo/prototype",
+          "alt": "Full-scale Forti Halo prototype at the graduation exhibition"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+<article class="project">
+
+  <div class="shell project__layout">
+
+    <div class="project__rail">
+      <nav class="project__back" aria-label="{{ strings.ui.allProjects }}">
+        <a class="link-more" href="{{ projectsUrl }}">{{ strings.ui.allProjects }}</a>
+      </nav>
+
+      <h1 class="project__title">{{ project.title }}</h1>
+      {{#if project.summary}}<p class="project__summary">{{ project.summary }}</p>{{/if}}
+
+      <dl class="meta">
+        {{#if project.year}}<div class="meta__row"><dt>{{ strings.ui.year }}</dt><dd>{{ project.year }}</dd></div>{{/if}}
+        {{#if project.role}}<div class="meta__row"><dt>{{ strings.ui.role }}</dt><dd>{{ project.role }}</dd></div>{{/if}}
+        {{#if project.tools}}<div class="meta__row"><dt>{{ strings.ui.tools }}</dt><dd>{{ project.tools }}</dd></div>{{/if}}
+        {{#if project.materials}}<div class="meta__row"><dt>{{ strings.ui.materials }}</dt><dd>{{ project.materials }}</dd></div>{{/if}}
+        {{#if project.dimensions}}<div class="meta__row"><dt>{{ strings.ui.dimensions }}</dt><dd>{{ project.dimensions }}</dd></div>{{/if}}
+      </dl>
+    </div>
+
+    <div class="project__body">
+      <header class="project__hero">
+        {{#if project.heroImage}}
+        <img src="{{ project.heroImage }}" srcset="{{ project.heroImageSet }}"
+             sizes="(min-width: 60rem) 40rem, 100vw"
+             alt="{{ project.heroAlt }}" width="1600" height="900" fetchpriority="high">
+        {{else}}
+        <div class="placeholder placeholder--wide" role="img" aria-label="{{ project.heroAlt }}">
+          <span>{{ strings.ui.imageComingSoon }}</span>
+        </div>
+        {{/if}}
+      </header>
+
+      {{#if project.stats}}
+      <ul class="stat-strip" data-reveal>
+        {{#each project.stats}}
+        <li class="stat">
+          <span class="stat__value">{{ this.value }}</span>
+          <span class="stat__label">{{ this.label }}</span>
+          {{#if this.source}}<span class="stat__source">{{ this.source }}</span>{{/if}}
+        </li>
+        {{/each}}
+      </ul>
+      {{/if}}
+
+      {{#each project.chapters}}
+      <section class="chapter" data-reveal>
+        <h2 class="chapter__heading">{{ this.heading }}</h2>
+        {{#each this.body}}
+        <p>{{ this }}</p>
+        {{/each}}
+
+        {{#if this.points}}
+        <ul class="bullets">
+          {{#each this.points}}
+          <li>{{ this }}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+
+        {{#if this.images}}
+        <div class="figure-grid">
+          {{#each this.images}}
+          <figure class="figure">
+            {{#if this.src}}
+            <img src="{{ this.src }}" srcset="{{ this.srcSet }}"
+                 sizes="(min-width: 45rem) 34rem, 100vw"
+                 alt="{{ this.alt }}" width="1200" height="900" loading="lazy">
+            {{else}}
+            <div class="placeholder" role="img" aria-label="{{ this.alt }}">
+              <span>{{ strings.ui.imageComingSoon }}</span>
+            </div>
+            {{/if}}
+            {{#if this.caption}}<figcaption>{{ this.caption }}</figcaption>{{/if}}
+          </figure>
+          {{/each}}
+        </div>
+        {{/if}}
+      </section>
+      {{/each}}
+
+      {{#if project.video}}
+      <div class="video" data-reveal>
+        <iframe src="{{ project.video }}" title="{{ project.title }}" loading="lazy"
+                allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+
+</article>

@@ -1,0 +1,40 @@
+{
+  "slug": "tac-pham-khac",
+  "featured": false,
+  "order": 10,
+  "title": "Other work",
+  "titleFull": "Other work: ceramics, sculpture and drawing | Phào Design",
+  "description": "Ceramic sculpture, vessels, pencil drawing and handmade pieces made alongside the main projects.",
+  "summary": "Ceramic sculpture, vessels, pencil drawing and handmade pieces made alongside the main projects, most of them made by hand from start to finish.",
+  "year": "2022 to 2025",
+  "role": "Forming, drawing, teaching",
+  "materials": "Ceramic, pencil, watercolour, leather",
+
+  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF. Needs original files from the client. See PLAN.md 5.1 and section 9.",
+  "heroImage": "",
+  "heroAlt": "Ceramic sculpture, vessels and pencil drawings",
+  "cardImage": "",
+  "cardAlt": "Ceramic work and hand drawing",
+
+  "chapters": [
+    {
+      "heading": "Ceramics and sculpture",
+      "body": [
+        "The ceramic pieces are formed by hand, among them an owl and several twisting forms taken from the shape of a wave. This work began during the internship at Bien Hoa Ceramics and carried on afterwards.",
+        "The vessels and pots use a running glaze, so each firing comes out a different shade."
+      ]
+    },
+    {
+      "heading": "Drawing",
+      "body": [
+        "Portraits and still life in pencil, lotus studies in colour. Drawing by hand is the ground the concept sketching in the product projects stands on."
+      ]
+    },
+    {
+      "heading": "Craft and teaching",
+      "body": [
+        "There is also leatherwork, measured, cut and stitched by hand, and drawing and modelling classes for young children at Art Class For Kids and Tao Hong 2 Kindergarten."
+      ]
+    }
+  ]
+}

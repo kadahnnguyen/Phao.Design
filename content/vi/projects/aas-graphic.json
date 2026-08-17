@@ -1,0 +1,40 @@
+{
+  "slug": "aas-graphic",
+  "featured": false,
+  "order": 9,
+  "title": "Bộ nhận diện AAS",
+  "titleFull": "Bộ nhận diện AAS | Phào Design",
+  "description": "Bộ đồ hoạ cho thương hiệu Awake and Seek: poster, bao bì, danh thiếp và ấn phẩm.",
+  "summary": "Bộ đồ hoạ đi kèm thương hiệu Awake and Seek, gồm poster, bao bì, danh thiếp và các ấn phẩm in.",
+  "year": "2024",
+  "role": "Thiết kế đồ hoạ, dựng mockup",
+  "tools": "Adobe Illustrator, Adobe Photoshop",
+
+  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và mục 9.",
+  "heroImage": "",
+  "heroAlt": "Poster và ấn phẩm của bộ nhận diện AAS",
+  "cardImage": "",
+  "cardAlt": "Bộ nhận diện AAS",
+
+  "chapters": [
+    {
+      "heading": "Nội dung",
+      "body": [
+        "Phần đồ hoạ đi cùng dòng nước hoa Awake and Seek, giữ chung một hệ chữ và một cách xử lý hình.",
+        "Poster chính lấy chữ ACTIVE làm trung tâm, xếp chồng nhiều lớp chữ chạy quanh khung, rồi đặt trong bao bì trong suốt như một món đồ được niêm phong."
+      ],
+      "points": [
+        "Poster khổ đứng và bảng chân đứng",
+        "Bao bì trong, dán nhãn và tem niêm",
+        "Danh thiếp, giấy tiêu đề và tập gấp",
+        "Bộ mockup trình bày trên bàn làm việc"
+      ]
+    },
+    {
+      "heading": "Ghi nhận",
+      "body": [
+        "Bộ bài này được xếp hạng cao nhất trong nhóm khi nộp, ghi chú TOP 1 trên chính ấn phẩm."
+      ]
+    }
+  ]
+}

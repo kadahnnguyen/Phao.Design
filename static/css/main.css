@@ -1,0 +1,1001 @@
+/*
+ * Phao Design.
+ *
+ * Palette: warm neutral ground, yellow as accent only. The renders are meant to be
+ * the loudest thing on any page, so yellow never becomes a field colour.
+ *
+ * Section backgrounds come from .band-a / .band-b, which the build assigns from a
+ * section's rendered position rather than its identity. That is what lets the CMS
+ * reorder sections without two identical backgrounds ever ending up adjacent.
+ */
+
+/* ---------- fonts ---------------------------------------------------
+ * Anton for display, Be Vietnam Pro for text. Both open licence, both
+ * self-hosted, both with full Vietnamese coverage.
+ *
+ * Every family below ships all three subsets: latin, latin-ext AND vietnamese.
+ * Hosting only some of them is the classic Vietnamese bug. A heading like
+ * "THẾ MẠNH KHI THIẾT KẾ SẢN PHẨM 3D" draws its plain letters from one subset
+ * and Ế Ạ Ế Ả Ẩ from another, so a missing subset makes the browser substitute
+ * per glyph and the word ends up built from two different typefaces.
+ * ------------------------------------------------------------------ */
+
+/* Anton, display */
+@font-face {
+  font-family: 'Display';
+  src: url('/fonts/anton-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Display';
+  src: url('/fonts/anton-400-latin-ext.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Display';
+  src: url('/fonts/anton-400-vietnamese.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+/* Be Vietnam Pro, text. Drawn for Vietnamese, so the diacritics are designed
+   rather than bolted on. */
+@font-face {
+  font-family: 'Body';
+  src: url('/fonts/bevietnampro-400-latin.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Body';
+  src: url('/fonts/bevietnampro-400-latin-ext.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Body';
+  src: url('/fonts/bevietnampro-400-vietnamese.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Body';
+  src: url('/fonts/bevietnampro-600-latin.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Body';
+  src: url('/fonts/bevietnampro-600-latin-ext.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Body';
+  src: url('/fonts/bevietnampro-600-vietnamese.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+/* ---------- tokens -------------------------------------------------- */
+
+:root {
+  --bg: #faf9f6;
+  --bg-alt: #f1efe8;
+  --surface: #ffffff;
+  --ink: #16150f;
+  --ink-soft: #5c5a50;
+  --line: #e2dfd5;
+  --accent: #f2cb05;
+  --accent-deep: #c9a704;
+  --on-accent: #17140a;
+
+  /* Fallbacks are chosen for Vietnamese coverage, not for shape. Arial Narrow,
+     Impact and Haettenschweiler are the obvious condensed stand-ins and all three
+     lack Vietnamese, so during the font swap they would substitute per glyph and
+     tear a word in half. A non-condensed fallback that can spell the word is the
+     better failure. */
+  --font-display: 'Display', 'Segoe UI', Roboto, system-ui, -apple-system, Tahoma, sans-serif;
+  --font-body: 'Body', 'Segoe UI', Roboto, system-ui, -apple-system, Tahoma, sans-serif;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.09rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.55rem, 1.35rem + 1vw, 2.2rem);
+  --step-3: clamp(2rem, 1.6rem + 2vw, 3.4rem);
+  --step-4: clamp(2.6rem, 1.8rem + 4vw, 5.5rem);
+
+  /* Measured, not guessed. In Anton at 100px, Latin caps rise 87px above the
+     baseline, but Vietnamese caps reach 117px (tone mark over a circumflex, as in
+     Ế Ữ Ẫ) and drop 19px below it (dot-under, as in Ạ Ậ). Total ink is 136px, so a
+     display line-height under 1.36 makes a wrapped heading collide with itself.
+     English never shows this, Vietnamese shows it on the first heading that wraps. */
+  --lh-display: 1.36;
+
+  --shell: 74rem;
+  --gutter: clamp(1.15rem, 4vw, 3rem);
+  --block: clamp(3.5rem, 8vw, 7rem);
+  --radius: 2px;
+}
+
+/* ---------- reset --------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  /* Anton ships one weight only. Without this, a browser asked for bold will
+     smear a synthetic one, and faked bold is what breaks diacritic shapes first. */
+  font-synthesis: none;
+  /* Nothing is allowed to push the page sideways. */
+  overflow-x: hidden;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: var(--lh-display);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h1 { font-size: var(--step-4); }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-1); }
+
+p { margin: 0 0 1rem; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-color: var(--accent-deep); }
+
+:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 3px;
+}
+
+/* ---------- helpers ------------------------------------------------- */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.measure { max-width: 46ch; }
+.muted { color: var(--ink-soft); font-size: var(--step--1); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 0.65rem 1rem;
+  transition: top 0.15s;
+}
+.skip-link:focus { top: 0.5rem; }
+
+.band-a { background: var(--bg); }
+.band-b { background: var(--bg-alt); }
+
+main > section { padding-block: var(--block); }
+main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
+
+.section-head { margin-bottom: clamp(1.75rem, 4vw, 3rem); }
+.section-head__intro { margin-top: 1rem; color: var(--ink-soft); }
+.section-foot { margin-top: clamp(1.5rem, 4vw, 2.5rem); }
+
+.link-more {
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+.link-more:hover { border-color: var(--accent-deep); }
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  background:
+    repeating-linear-gradient(45deg, var(--bg-alt) 0 12px, var(--surface) 12px 24px);
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  text-align: center;
+  padding: 1rem;
+}
+.placeholder--wide { aspect-ratio: 16 / 10; }
+
+/* ---------- header -------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.75rem;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.wordmark--footer { margin: 0; }
+
+.nav-toggle {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+.nav-toggle__bar,
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
+  content: '';
+  display: block;
+  width: 1.15rem;
+  height: 2px;
+  background: var(--ink);
+  transition: transform 0.2s;
+}
+.nav-toggle__bar::before { transform: translateY(-6px); }
+.nav-toggle__bar::after { transform: translateY(4px); }
+.nav-toggle[aria-expanded='true'] .nav-toggle__bar { background: transparent; }
+.nav-toggle[aria-expanded='true'] .nav-toggle__bar::before { transform: rotate(45deg); }
+.nav-toggle[aria-expanded='true'] .nav-toggle__bar::after { transform: translateY(-2px) rotate(-45deg); }
+
+.site-nav {
+  display: none;
+  position: absolute;
+  inset: 100% 0 auto;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem var(--gutter) 1.5rem;
+}
+.site-nav.is-open { display: block; }
+
+.site-nav__list a {
+  display: block;
+  padding: 0.7rem 0;
+  font-size: var(--step-1);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.lang-switch a {
+  display: block;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  font-size: var(--step--1);
+  text-decoration: none;
+}
+.lang-switch a[aria-current='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+@media (min-width: 48rem) {
+  .nav-toggle { display: none; }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: static;
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+  .site-nav__list { display: flex; gap: 1.35rem; }
+  .site-nav__list a { padding: 0; font-size: var(--step-0); font-family: var(--font-body); }
+  .lang-switch { margin: 0; padding: 0; border: 0; }
+}
+
+/* ---------- hero ---------------------------------------------------- */
+
+/* Deliberately contained rather than full bleed.
+   The available render is 1312px wide, so a full-bleed band stretched it past its own
+   resolution and it went soft. Held inside the shell it is never painted wider than
+   the source, and the framing reads as an editorial plate instead of a stretched
+   banner. Revisit if the client sends higher-resolution originals. */
+.hero__figure {
+  position: relative;
+  margin: 0;
+  isolation: isolate;
+}
+
+.hero__figure img,
+.hero__figure .placeholder {
+  width: 100%;
+  /* The cover is an A4 landscape page. Matching its exact ratio means object-fit has
+     nothing to crop, which matters here because the composition runs to all four
+     edges and any crop would clip either the collage or the wordmark. */
+  aspect-ratio: 842 / 595;
+  object-fit: cover;
+  background: var(--bg-alt);
+}
+
+/* A short label, not a headline. It names one project rather than carrying the
+   page, so it stays out of the display face and out of the render's way. */
+.hero__caption {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: clamp(0.75rem, 2vw, 1.5rem);
+  max-width: 42ch;
+  font-size: var(--step--1);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--surface);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 55%), 0 1px 16px rgb(0 0 0 / 40%);
+}
+
+/* The aspect stays 16/10 at every width. Widening it on desktop cropped roughly a
+   fifth of the frame away and cut the composition badly. */
+
+/* ---------- positioning --------------------------------------------- */
+
+/* Decorative section background.
+   Sits behind the copy at low opacity. `isolation: isolate` keeps the negative
+   z-index inside the section rather than punching through to the page background. */
+.has-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.section-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* On a phone the copy runs the full width, so there is nowhere to hide the image.
+     It stays faint enough that body text still clears 4.5:1 against it. */
+  opacity: 0.18;
+}
+
+@media (min-width: 55rem) {
+  /* The copy sits left, ending around 45% across, so all the free space is on the right.
+     The image is held down under the text and comes up to full strength past it. */
+  .section-bg img {
+    opacity: 0.75;
+    -webkit-mask-image: linear-gradient(to right,
+      rgb(0 0 0 / 6%) 0%, rgb(0 0 0 / 6%) 45%, rgb(0 0 0 / 100%) 62%, rgb(0 0 0 / 100%) 100%);
+    mask-image: linear-gradient(to right,
+      rgb(0 0 0 / 6%) 0%, rgb(0 0 0 / 6%) 45%, rgb(0 0 0 / 100%) 62%, rgb(0 0 0 / 100%) 100%);
+  }
+}
+
+@media (prefers-contrast: more) {
+  .section-bg { display: none; }
+}
+
+.positioning__lead {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  text-transform: uppercase;
+  line-height: var(--lh-display);
+  margin-bottom: 1.25rem;
+}
+.positioning__copy { max-width: 34ch; }
+.positioning__body { font-size: var(--step-1); color: var(--ink-soft); max-width: 46ch; }
+
+/* ---------- dual CTA ------------------------------------------------- */
+
+.dual-cta__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .dual-cta__grid { grid-template-columns: 1fr 1fr; }
+}
+
+.cta {
+  display: block;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+.cta:hover { transform: translateY(-3px); }
+
+.cta--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.cta--primary:hover { background: var(--accent-deep); }
+.cta--secondary { background: transparent; }
+.cta--secondary:hover { background: var(--surface); }
+
+.cta__label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  text-transform: uppercase;
+}
+.cta__note {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: var(--step--1);
+  opacity: 0.75;
+}
+
+.cta--inline { display: inline-block; }
+
+/* ---------- cards ---------------------------------------------------- */
+
+.card-grid {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (min-width: 38rem) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 60rem) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card__link { text-decoration: none; display: block; }
+
+.card__media { overflow: hidden; margin-bottom: 0.9rem; background: var(--bg-alt); }
+.card__media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+.card__link:hover .card__media img { transform: scale(1.04); }
+
+.card__title { margin-bottom: 0.35rem; }
+.card__summary { color: var(--ink-soft); font-size: var(--step--1); }
+
+/* ---------- strengths ------------------------------------------------ */
+
+.strengths__list {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  counter-reset: strength;
+}
+
+@media (min-width: 38rem) {
+  .strengths__list { grid-template-columns: repeat(2, 1fr); }
+}
+
+.strength {
+  counter-increment: strength;
+  padding-top: 1rem;
+  border-top: 2px solid var(--accent);
+}
+.strength::before {
+  content: counter(strength, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--accent-deep);
+  margin-bottom: 0.35rem;
+}
+.strength__title { margin-bottom: 0.5rem; }
+.strength__body { color: var(--ink-soft); }
+
+/* ---------- contact -------------------------------------------------- */
+
+.contact-short__actions { margin: 1.5rem 0; }
+
+.quick-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  font-size: var(--step--1);
+}
+
+/* ---------- project page ---------------------------------------------
+ * The sticky rail is the Kickstarter reference read as layout only: a fixed
+ * summary beside a long scrolling narrative. No crowdfunding machinery.
+ * Title and hero image start level, in a two-column row; the rail then
+ * floats in view while the body scrolls past it (desktop only — on a
+ * narrow screen there's no spare height for a pinned column).
+ * ------------------------------------------------------------------- */
+
+/* Sits at the top of the body column, on the right of the title at desktop
+   widths. Capped so it reads as a supporting image, not a banner. */
+.project__hero img,
+.project__hero .placeholder {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: var(--block);
+}
+
+.project__layout {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  padding-block: var(--block);
+}
+
+@media (min-width: 60rem) {
+  .project__layout { grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); }
+  .project__rail {
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
+    /* Scrolls on its own once a long meta list would otherwise run past the
+       bottom of the screen. The scrollbar itself stays hidden; main.js
+       toggles .has-more-below only while there is genuinely more to see,
+       and that's what drives the fade below — so nothing reads as cropped
+       when a shorter rail never needed to scroll in the first place. */
+    max-height: calc(100vh - 5.5rem - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .project__rail::-webkit-scrollbar { display: none; }
+
+  .project__rail.has-more-below {
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 2.5rem), transparent 100%);
+    mask-image: linear-gradient(to bottom, black calc(100% - 2.5rem), transparent 100%);
+  }
+}
+
+.project__title { margin-bottom: 1rem; }
+.project__summary { font-size: var(--step-1); color: var(--ink-soft); margin-bottom: 1.5rem; }
+
+.meta { margin: 0; display: grid; gap: 0.75rem; }
+.meta__row { display: grid; gap: 0.15rem; }
+.meta dt {
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+.meta dd { margin: 0; font-size: var(--step--1); }
+
+.stat-strip {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+}
+
+@media (min-width: 38rem) {
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+.stat__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1.1;
+}
+.stat__label { display: block; font-size: var(--step--1); margin-top: 0.35rem; }
+.stat__source { display: block; font-size: var(--step--1); color: var(--ink-soft); margin-top: 0.25rem; }
+
+.chapter { margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+.chapter:last-child { margin-bottom: 0; }
+.chapter__heading { margin-bottom: 1rem; }
+.chapter p { max-width: 62ch; }
+
+.bullets {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+  max-width: 62ch;
+}
+.bullets li { padding-left: 1.4rem; position: relative; }
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.6rem;
+  height: 2px;
+  background: var(--accent-deep);
+}
+
+.figure-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+@media (min-width: 45rem) {
+  .figure-grid { grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+}
+
+.figure { margin: 0; }
+.figure img { width: 100%; object-fit: cover; }
+.figure figcaption {
+  margin-top: 0.5rem;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--bg-alt);
+}
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.project__back { margin-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+
+/* ---------- page intro ------------------------------------------------ */
+
+.page-intro { padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem); }
+.page-intro__title { margin-bottom: 1rem; }
+.page-intro__lead { font-size: var(--step-1); color: var(--ink-soft); }
+
+/* ---------- prose ----------------------------------------------------- */
+
+.prose__body { max-width: 62ch; }
+.prose__portrait { margin: clamp(1.5rem, 4vw, 2.5rem) 0 0; max-width: 22rem; }
+
+@media (min-width: 55rem) {
+  .prose .shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+  }
+  .prose .section-head { grid-column: 1 / -1; }
+  .prose__portrait { margin-top: 0; }
+}
+
+/* ---------- timeline --------------------------------------------------- */
+
+.timeline { display: grid; gap: clamp(1.75rem, 4vw, 2.75rem); }
+
+.timeline__item {
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--line);
+  position: relative;
+}
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 0.6rem;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.timeline__when {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+.timeline__role { margin-bottom: 0.15rem; }
+.timeline__where { font-weight: 600; margin-bottom: 0.5rem; }
+.timeline__body { max-width: 60ch; }
+
+/* ---------- skills ----------------------------------------------------- */
+
+.skills__columns { display: grid; gap: clamp(2rem, 5vw, 3rem); }
+
+@media (min-width: 48rem) {
+  .skills__columns { grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); }
+}
+
+.skills__list { display: grid; gap: 0.9rem; }
+.skill { display: grid; gap: 0.35rem; }
+.skill__name { font-weight: 600; font-size: var(--step--1); }
+.skill__level {
+  display: block;
+  height: 6px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.skill__fill {
+  display: block;
+  height: 100%;
+  width: var(--level, 50%);
+  background: var(--accent);
+}
+
+/* ---------- facts ------------------------------------------------------ */
+
+.facts__list { display: grid; gap: 1.25rem; }
+
+@media (min-width: 40rem) {
+  .facts__list { grid-template-columns: repeat(2, 1fr); }
+}
+
+.fact { padding-top: 0.9rem; border-top: 2px solid var(--accent); }
+.fact__title { font-size: var(--step-0); font-family: var(--font-body); font-weight: 600; text-transform: none; line-height: 1.4; }
+.fact__detail { color: var(--ink-soft); font-size: var(--step--1); margin-top: 0.25rem; }
+
+/* ---------- downloads --------------------------------------------------- */
+
+.download-list { display: grid; gap: 0.65rem; max-width: 44rem; }
+
+.download__link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+.download__link:hover { border-color: var(--accent); }
+.download__name { font-weight: 600; }
+.download__meta { color: var(--ink-soft); font-size: var(--step--1); }
+
+/* ---------- FAQ --------------------------------------------------------- */
+
+.faq__list { display: grid; gap: 0.5rem; max-width: 52rem; }
+
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__q {
+  cursor: pointer;
+  padding: 1rem 0;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::after { content: '+'; color: var(--accent-deep); font-size: var(--step-1); line-height: 1; }
+.faq__item[open] .faq__q::after { content: '\2013'; }
+.faq__a { padding-bottom: 1rem; max-width: 62ch; }
+
+/* ---------- services ---------------------------------------------------- */
+
+.service-list { display: grid; gap: clamp(1.5rem, 4vw, 2.5rem); }
+
+@media (min-width: 50rem) {
+  .service-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+.service { padding-top: 1rem; border-top: 2px solid var(--accent); }
+.service__name { margin-bottom: 0.5rem; }
+.service__body { color: var(--ink-soft); }
+.service__price { font-weight: 600; margin-top: 0.75rem; }
+.service-note { margin-top: 2rem; }
+
+/* ---------- contact form ------------------------------------------------- */
+
+.contact__layout { display: grid; gap: clamp(2rem, 5vw, 3.5rem); }
+
+@media (min-width: 55rem) {
+  .contact__layout { grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); }
+}
+
+.contact__aside h2 { margin-bottom: 1rem; }
+.quick-contact--stacked { flex-direction: column; gap: 0.5rem; margin: 1.25rem 0; }
+
+.form { display: grid; gap: 1.25rem; max-width: 40rem; }
+
+.field { margin: 0; display: grid; gap: 0.4rem; border: 0; padding: 0; }
+.field__label { font-size: var(--step--1); font-weight: 600; }
+
+.field input,
+.field textarea {
+  font: inherit;
+  font-size: var(--step-0);
+  color: inherit;
+  padding: 0.7rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  width: 100%;
+}
+.field input:focus-visible,
+.field textarea:focus-visible { border-color: var(--accent-deep); }
+.field textarea { resize: vertical; }
+
+.choice { display: flex; align-items: center; gap: 0.5rem; padding: 0.25rem 0; }
+.choice input { width: auto; }
+
+/* The trap must be reachable by a bot and invisible to a person, so it cannot use
+   display:none, which many bots now skip. */
+.trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form__status:empty { display: none; }
+.form__status {
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  font-size: var(--step--1);
+}
+
+.notice {
+  padding: 1rem 1.15rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  max-width: 40rem;
+}
+
+.card-grid--thirds { grid-template-columns: 1fr; }
+@media (min-width: 55rem) {
+  .card-grid--thirds { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- footer --------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  background: var(--bg-alt);
+}
+
+.site-footer__inner { display: grid; gap: 1.5rem; }
+
+.site-footer__contact,
+.site-footer__social,
+.site-footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  font-size: var(--step--1);
+}
+
+.site-footer__legal { margin-top: 0.5rem; }
+
+@media (min-width: 48rem) {
+  .site-footer__inner {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+  .site-footer__legal { grid-column: 1 / -1; }
+}
+
+/* ---------- motion ---------------------------------------------------
+ * Three effects total, per the brief: reveal on entry, card scale on hover,
+ * hero cross-fade. Nothing else.
+ * ------------------------------------------------------------------- */
+
+/* Only ever hidden when JS is present to reveal it again. Without JS the page
+   renders complete, which is also how it looks to a crawler. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "tin-tuc",
+  "template": "page",
+  "title": "Tin tức",
+  "titleFull": "Tin tức và hoạt động | Phào Design",
+  "description": "Bài viết, giải thưởng, triển lãm và hoạt động của Phào Design.",
+  "_status": "TRANG TẠM. Khung và mẫu bài đã dựng, chưa có bài nào. Chờ khách quyết định nội dung. Xem PLAN.md mục 3.6 và D3.",
+  "sections": [
+    {
+      "type": "page-intro",
+      "visible": true,
+      "pinned": true,
+      "heading": "Tin tức và hoạt động",
+      "lead": "Nơi ghi lại triển lãm, cuộc thi và các hoạt động bên lề công việc thiết kế."
+    },
+    {
+      "type": "prose",
+      "visible": true,
+      "body": [
+        "Mục này đang được chuẩn bị. Bài viết đầu tiên sẽ sớm được đăng."
+      ]
+    }
+  ]
+}

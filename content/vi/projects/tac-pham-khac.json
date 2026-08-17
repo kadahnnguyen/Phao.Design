@@ -10,10 +10,9 @@
   "role": "Tạo hình, vẽ tay, hướng dẫn lớp học",
   "materials": "Gốm, chì, màu nước, da",
 
-  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và mục 9.",
-  "heroImage": "",
-  "heroAlt": "Tượng gốm, bình gốm và tranh chì",
-  "cardImage": "",
+  "heroImage": "/img/projects/tac-pham-khac/hero",
+  "heroAlt": "Tranh chì tĩnh vật: chai, quả và cối đá trên nền vải rủ",
+  "cardImage": "/img/projects/tac-pham-khac/card",
   "cardAlt": "Tác phẩm gốm và tranh vẽ tay",
 
   "chapters": [
@@ -22,18 +21,60 @@
       "body": [
         "Tượng gốm được tạo hình bằng tay, trong đó có tượng chim cú và một số khối xoắn lấy ý từ hình sóng. Phần này làm trong thời gian thực tập tại Công ty Gốm Biên Hoà và tiếp tục sau đó.",
         "Bình và chậu gốm dùng men chảy, mỗi mẻ ra một sắc độ khác nhau."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/tac-pham-khac/display1",
+          "alt": "Tượng chim cú bằng đất, còn mộc, đặt trong xưởng gốm",
+          "caption": "Tượng chim cú, nặn tay và còn ở dạng mộc."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display2",
+          "alt": "Khối gốm xoắn lấy ý từ hình sóng",
+          "caption": "Khối xoắn dựng từ hình sóng."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display3",
+          "alt": "Bình gốm tráng men đang cắm hoa",
+          "caption": "Bình đã nung và tráng men, dùng để cắm hoa."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display7",
+          "alt": "Hai người đang chuốt gốm trên bàn xoay trong xưởng",
+          "caption": "Chuốt trên bàn xoay, phần lớn công đoạn đều làm bằng tay."
+        }
       ]
     },
     {
       "heading": "Vẽ tay",
       "body": [
         "Chân dung và tĩnh vật vẽ chì, tranh hoa sen vẽ màu. Vẽ tay là nền cho phần phác thảo ý tưởng trong các dự án thiết kế sản phẩm."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/tac-pham-khac/display5",
+          "alt": "Tranh chân dung vẽ chì đang dở, tay cầm bút còn trên mặt giấy",
+          "caption": "Một bức chân dung đang vẽ dở."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display4",
+          "alt": "Tranh hoa sen vẽ màu",
+          "caption": "Hoa sen, phần này vẽ màu chứ không vẽ chì."
+        }
       ]
     },
     {
       "heading": "Đồ thủ công và lớp học",
       "body": [
         "Ngoài ra còn có phần làm đồ da, đo cắt khâu bằng tay, và các buổi dạy vẽ, dạy nặn cho trẻ nhỏ tại Art Class For Kids và Trường Mầm non Tao Hong 2."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/tac-pham-khac/display6",
+          "alt": "Các món đồ da nhỏ cùng khoá kim loại, bày trên nền sáng",
+          "caption": "Đồ da, đo cắt và khâu bằng tay.",
+          "center": true
+        }
       ]
     }
   ]

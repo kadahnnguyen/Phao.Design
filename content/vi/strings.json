@@ -32,5 +32,11 @@
   "footer": {
     "rights": "Toàn bộ thiết kế và hình ảnh thuộc về Nguyễn Khánh Đan.",
     "builtNote": "Website tĩnh, không thu thập dữ liệu ngoài biểu mẫu liên hệ."
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "body": "Trang bạn tìm không tồn tại hoặc đã được chuyển sang địa chỉ khác.",
+    "home": "Về trang chủ",
+    "projects": "Xem dự án"
   }
 }

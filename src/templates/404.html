@@ -1,0 +1,17 @@
+<section class="notfound band-a">
+  <div class="shell notfound__inner">
+    <p class="notfound__code" aria-hidden="true">404</p>
+    <h1>{{ strings.notFound.title }}</h1>
+    <p class="notfound__body">{{ strings.notFound.body }}</p>
+
+    <!-- Cloudflare serves one 404 for the whole site, so this page answers a request
+         under /en/ as readily as one under /. It is built in the default locale with
+         the other locale carried underneath, rather than guessing from the path. -->
+    <p class="notfound__alt" lang="{{ alt.htmlLang }}">{{ alt.notFound.title }}. {{ alt.notFound.body }}</p>
+
+    <p class="notfound__actions">
+      <a class="cta cta--primary cta--inline" href="{{ homeUrl }}">{{ strings.notFound.home }}</a>
+      <a class="cta cta--inline" href="{{ projectsUrl }}">{{ strings.notFound.projects }}</a>
+    </p>
+  </div>
+</section>

@@ -12,10 +12,9 @@
   "materials": "Plywood",
   "dimensions": "1000 x 375 x 500 mm",
 
-  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF, and that raster also carries the student ID, class code and personal email, so it is quarantined. Needs original files. See PLAN.md 5.1 and OPEN-11.",
-  "heroImage": "",
-  "heroAlt": "The Bent.ch plywood bench with its curved seat",
-  "cardImage": "",
+  "heroImage": "/img/projects/bent-ch/hero",
+  "heroAlt": "The Bent.ch bench on the yellow floor of the exhibition",
+  "cardImage": "/img/projects/bent-ch/card",
   "cardAlt": "The Bent.ch bench",
 
   "chapters": [
@@ -35,6 +34,36 @@
         "Can be sat on along the bench or across it",
         "Seven parts: one seat and two legs, quick to assemble",
         "Slender enough to take up little floor"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/bent-ch/display3",
+          "alt": "Someone sitting on the Bent.ch bench with their legs stretched out in front",
+          "caption": "The narrow curved seat pushes weight into the thighs, so the legs stretch out rather than fold up."
+        },
+        {
+          "src": "/img/projects/bent-ch/display6",
+          "alt": "The Bent.ch bench standing in an exhibition space",
+          "caption": "One seat and two legs, so the bench barely interrupts a view across a room."
+        }
+      ]
+    },
+    {
+      "heading": "Building it",
+      "body": [
+        "The bench is cut from plywood and assembled from seven parts. The curved edge took the most work: sanded and finished by hand until nothing catches under the fingers."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/bent-ch/display4",
+          "alt": "Cut plywood parts stacked on the workshop floor",
+          "caption": "The parts as cut, before assembly and finishing."
+        },
+        {
+          "src": "/img/projects/bent-ch/display5",
+          "alt": "Sanding the seat with a hand sander in the workshop",
+          "caption": "The curved edge was sanded and finished by hand."
+        }
       ]
     },
     {
@@ -47,6 +76,18 @@
       "heading": "Exhibited",
       "body": [
         "Bent.ch was built at full scale and shown at SEE+ Design Fair 2023, organised by C.space Design Complex with Van Lang University."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/bent-ch/display1",
+          "alt": "The Bent.ch bench on its stand at SEE+ Design Fair 2023",
+          "caption": "The stand at SEE+ Design Fair 2023."
+        },
+        {
+          "src": "/img/projects/bent-ch/display2",
+          "alt": "A visitor sitting and reading on the Bent.ch bench at the fair",
+          "caption": "Exactly the use it was designed for: sit down, read, move on."
+        }
       ]
     }
   ]

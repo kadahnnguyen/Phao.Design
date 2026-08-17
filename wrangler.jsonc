@@ -1,0 +1,31 @@
+{
+  // Static assets only. There is no Worker script here and no "main": the site is 32
+  // prebuilt HTML pages, so Cloudflare serves them directly and no request touches a
+  // runtime. The two Workers the project needs — the mail endpoint and the OAuth
+  // broker for /admin — are separate deployments with their own configs, called from
+  // the browser by the URLs in content/site.json. Neither belongs in this file, and
+  // neither URL may be hard-coded in markup. See PLAN.md OPEN-2.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "phao-design",
+  "compatibility_date": "2026-08-17",
+
+  // Cloudflare runs this itself on every push, so dist/ stays gitignored and the
+  // deployed site is always built from the committed source rather than from whatever
+  // happened to be on someone's disk.
+  "build": {
+    "command": "node build.mjs"
+  },
+
+  "assets": {
+    "directory": "./dist",
+
+    // Pages are written as <path>/index.html, so a request for /du-an has to resolve
+    // to /du-an/index.html. "auto-trailing-slash" does that in both directions.
+    "html_handling": "auto-trailing-slash",
+
+    // Anything unmatched gets dist/404.html with a real 404 status, rather than
+    // Cloudflare's own error page. Not "single-page-application", which would answer
+    // every wrong URL with the homepage and a 200.
+    "not_found_handling": "404-page"
+  }
+}

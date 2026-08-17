@@ -10,10 +10,9 @@
   "role": "Graphic design, mockups",
   "tools": "Adobe Illustrator, Adobe Photoshop",
 
-  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF. Needs original files from the client. See PLAN.md 5.1 and section 9.",
-  "heroImage": "",
-  "heroAlt": "Poster and print pieces from the AAS identity",
-  "cardImage": "",
+  "heroImage": "/img/projects/aas-graphic/hero",
+  "heroAlt": "The AAS print pieces laid out on a desk with a laptop and phone",
+  "cardImage": "/img/projects/aas-graphic/hero",
   "cardAlt": "The AAS identity",
 
   "chapters": [
@@ -28,6 +27,28 @@
         "Clear packaging with labels and a seal",
         "Business cards, letterhead and a folded leaflet",
         "A mockup set laid out on a desk"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/aas-graphic/display1",
+          "alt": "The AAS poster sealed inside a clear plastic bag",
+          "caption": "The poster sealed in clear plastic, read through the creases."
+        },
+        {
+          "src": "/img/projects/aas-graphic/display2",
+          "alt": "The same sealed poster photographed at an angle on grey",
+          "caption": "The TOP 1 flash sits across the corner and carries through every piece."
+        },
+        {
+          "src": "/img/projects/aas-graphic/display3",
+          "alt": "The AAS leaflet opened out, the inside page carrying a small graphic",
+          "caption": "The inside pages are left mostly empty, against a cover dense with type."
+        },
+        {
+          "src": "/img/projects/aas-graphic/display4",
+          "alt": "Two copies of the AAS leaflet, one face down and one face up",
+          "caption": "Front and back of the same piece."
+        }
       ]
     },
     {

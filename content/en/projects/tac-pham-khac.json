@@ -10,10 +10,9 @@
   "role": "Forming, drawing, teaching",
   "materials": "Ceramic, pencil, watercolour, leather",
 
-  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF. Needs original files from the client. See PLAN.md 5.1 and section 9.",
-  "heroImage": "",
-  "heroAlt": "Ceramic sculpture, vessels and pencil drawings",
-  "cardImage": "",
+  "heroImage": "/img/projects/tac-pham-khac/hero",
+  "heroAlt": "A pencil still life of bottles, fruit and a mortar on draped cloth",
+  "cardImage": "/img/projects/tac-pham-khac/card",
   "cardAlt": "Ceramic work and hand drawing",
 
   "chapters": [
@@ -22,18 +21,60 @@
       "body": [
         "The ceramic pieces are formed by hand, among them an owl and several twisting forms taken from the shape of a wave. This work began during the internship at Bien Hoa Ceramics and carried on afterwards.",
         "The vessels and pots use a running glaze, so each firing comes out a different shade."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/tac-pham-khac/display1",
+          "alt": "An owl modelled in clay, standing unfired in the workshop",
+          "caption": "The owl, modelled by hand and still unfired."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display2",
+          "alt": "A twisting clay form taken from the shape of a wave",
+          "caption": "A twisting form worked up from the shape of a wave."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display3",
+          "alt": "A glazed ceramic vessel holding a flowering arrangement",
+          "caption": "Fired and glazed, in use as a vase."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display7",
+          "alt": "Two people throwing a pot on the wheel in the workshop",
+          "caption": "Throwing on the wheel; most of the work here is done by hand."
+        }
       ]
     },
     {
       "heading": "Drawing",
       "body": [
         "Portraits and still life in pencil, lotus studies in colour. Drawing by hand is the ground the concept sketching in the product projects stands on."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/tac-pham-khac/display5",
+          "alt": "A pencil portrait part-finished, with the hand and pencil still on the sheet",
+          "caption": "A portrait in progress."
+        },
+        {
+          "src": "/img/projects/tac-pham-khac/display4",
+          "alt": "Lotus flowers and leaves painted in colour",
+          "caption": "Lotus studies, painted rather than drawn."
+        }
       ]
     },
     {
       "heading": "Craft and teaching",
       "body": [
         "There is also leatherwork, measured, cut and stitched by hand, and drawing and modelling classes for young children at Art Class For Kids and Tao Hong 2 Kindergarten."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/tac-pham-khac/display6",
+          "alt": "Small leather pieces with metal fittings, laid out on a light ground",
+          "caption": "Leather pieces, measured, cut and stitched by hand.",
+          "center": true
+        }
       ]
     }
   ]

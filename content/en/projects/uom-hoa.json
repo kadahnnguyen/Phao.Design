@@ -10,10 +10,9 @@
   "role": "Design and ceramic forming",
   "materials": "Ceramic, flowing glaze",
 
-  "_blocked": "NO IMAGERY. This page is a flattened layout raster in the PDF. Needs original files from the client. See PLAN.md 5.1 and section 9.",
-  "heroImage": "",
-  "heroAlt": "The Ươm Hoa ceramic pot in a blue-violet glaze",
-  "cardImage": "",
+  "heroImage": "/img/projects/uom-hoa/hero",
+  "heroAlt": "The two parts of the Ươm Hoa pot side by side on white cloth",
+  "cardImage": "/img/projects/uom-hoa/hero",
   "cardAlt": "The Ươm Hoa ceramic pot",
 
   "chapters": [
@@ -27,6 +26,18 @@
         "A channel between the two chambers",
         "The rim flares unevenly to each side",
         "Topped up through the channel, not poured over the soil"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/uom-hoa/sketch",
+          "alt": "Section drawing of the Ươm Hoa pot, marking the deep cut-away in the rim",
+          "caption": "In section: the deep cut-away in the rim, with the water chamber under the body."
+        },
+        {
+          "src": "/img/projects/uom-hoa/display3",
+          "alt": "The Ươm Hoa pot as unglazed greenware in the ceramics workshop",
+          "caption": "Greenware before glazing, with the two halves formed separately."
+        }
       ]
     },
     {
@@ -34,6 +45,18 @@
       "body": [
         "The body swells and rounds, while the mouth is cut away into a deep groove and a shallow one, so the shadows shift depending on where you stand.",
         "The glaze is allowed to run, so no two pots come out of the kiln alike."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/uom-hoa/display1",
+          "alt": "The finished Ươm Hoa pot with the upper half seated in the body",
+          "caption": "Assembled: the rounded body carries the cut-away mouth above it."
+        },
+        {
+          "src": "/img/projects/uom-hoa/display2",
+          "alt": "Looking down into the Ươm Hoa pot",
+          "caption": "From above, the glaze runs from mouth to body, never the same way twice."
+        }
       ]
     },
     {

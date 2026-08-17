@@ -8,16 +8,25 @@
       {{#each section.items}}
       <li class="timeline__item">
         <p class="timeline__when">{{ this.when }}</p>
-        <h3 class="timeline__role">{{ this.role }}</h3>
-        <p class="timeline__where">{{ this.where }}</p>
-        {{#if this.body}}<p class="timeline__body">{{ this.body }}</p>{{/if}}
-        {{#if this.tasks}}
-        <ul class="bullets">
-          {{#each this.tasks}}
-          <li>{{ this }}</li>
-          {{/each}}
-        </ul>
-        {{/if}}
+        <!-- The role and employer stay on show; the duties sit behind a click so a long
+             history reads as a scannable list first. Native <details>, same as the FAQ,
+             so it still opens with no JS and answers to the keyboard for free. -->
+        <details class="timeline__entry">
+          <summary class="timeline__summary">
+            <h3 class="timeline__role">{{ this.role }}</h3>
+            <span class="timeline__where">{{ this.where }}</span>
+          </summary>
+          <div class="timeline__panel">
+            {{#if this.body}}<p class="timeline__body">{{ this.body }}</p>{{/if}}
+            {{#if this.tasks}}
+            <ul class="bullets">
+              {{#each this.tasks}}
+              <li>{{ this }}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+          </div>
+        </details>
       </li>
       {{/each}}
     </ol>

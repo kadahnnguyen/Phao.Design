@@ -12,10 +12,9 @@
   "materials": "Ván ép",
   "dimensions": "1000 x 375 x 500 mm",
 
-  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng, và ảnh đó còn chứa MSSV, lớp và email cá nhân nên đã bị cách ly. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và OPEN-11.",
-  "heroImage": "",
-  "heroAlt": "Ghế băng Bent.ch bằng ván ép, mặt ngồi cong",
-  "cardImage": "",
+  "heroImage": "/img/projects/bent-ch/hero",
+  "heroAlt": "Ghế băng Bent.ch đặt trên nền vàng của khu trưng bày",
+  "cardImage": "/img/projects/bent-ch/card",
   "cardAlt": "Ghế băng Bent.ch",
 
   "chapters": [
@@ -35,6 +34,36 @@
         "Ngồi được cả theo chiều dọc và chiều ngang ghế",
         "Bảy chi tiết: một mặt ngồi và hai chân, tháo lắp nhanh",
         "Dáng mảnh nên ít chiếm diện tích"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/bent-ch/display3",
+          "alt": "Người ngồi trên ghế Bent.ch, hai chân duỗi thẳng ra phía trước",
+          "caption": "Mặt ngồi hẹp và cong đẩy trọng lượng vào đùi, chân duỗi ra thay vì gập lại."
+        },
+        {
+          "src": "/img/projects/bent-ch/display6",
+          "alt": "Ghế Bent.ch đặt giữa không gian trưng bày",
+          "caption": "Chỉ có một mặt ngồi và hai chân, nên ghế gần như không chắn tầm nhìn."
+        }
+      ]
+    },
+    {
+      "heading": "Thi công",
+      "body": [
+        "Ghế được cắt từ ván ép rồi ghép lại thành bảy chi tiết. Phần mép cong là chỗ tốn công nhất: chà nhám và hoàn thiện bằng tay cho tới khi sờ không còn gợn."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/bent-ch/display4",
+          "alt": "Các chi tiết ván ép đã cắt, xếp chồng lên nhau",
+          "caption": "Các chi tiết sau khi cắt, trước khi ghép và hoàn thiện."
+        },
+        {
+          "src": "/img/projects/bent-ch/display5",
+          "alt": "Chà nhám mặt ngồi bằng máy cầm tay trong xưởng",
+          "caption": "Mép cong được chà và hoàn thiện bằng tay."
+        }
       ]
     },
     {
@@ -47,6 +76,18 @@
       "heading": "Trưng bày",
       "body": [
         "Bent.ch được dựng thành mẫu thật và trưng bày tại SEE+ Design Fair 2023, do C.space Design Complex tổ chức cùng Đại học Văn Lang."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/bent-ch/display1",
+          "alt": "Ghế Bent.ch trong gian trưng bày tại SEE+ Design Fair 2023",
+          "caption": "Gian trưng bày tại SEE+ Design Fair 2023."
+        },
+        {
+          "src": "/img/projects/bent-ch/display2",
+          "alt": "Khách tham quan ngồi đọc trên ghế Bent.ch tại triển lãm",
+          "caption": "Đúng công năng đã tính từ đầu: người xem ngồi xuống đọc rồi đứng dậy đi tiếp."
+        }
       ]
     }
   ]

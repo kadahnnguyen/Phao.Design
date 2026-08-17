@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.titleFull }}</title>
 <meta name="description" content="{{ page.description }}">
+<!-- Everything below needs an absolute address, and site.url is empty until the site
+     has one. Emitting these against a placeholder host is worse than not emitting
+     them: a canonical pointing somewhere that does not exist is a live instruction to
+     search engines, where an absent one is merely silence. So the preview declares
+     noindex instead, and setting site.url turns the real tags on. See PLAN.md OPEN-1. -->
+{{#if site.url}}
 <link rel="canonical" href="{{ site.url }}{{ url }}">
 {{#each alternates}}
 <link rel="alternate" hreflang="{{ this.locale }}" href="{{ site.url }}{{ this.url }}">
@@ -20,6 +26,9 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+{{else}}
+<meta name="robots" content="noindex, nofollow">
+{{/if}}
 
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 

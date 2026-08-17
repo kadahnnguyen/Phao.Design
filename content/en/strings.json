@@ -32,5 +32,11 @@
   "footer": {
     "rights": "All designs and images belong to Nguyễn Khánh Đan.",
     "builtNote": "Static site. Nothing is collected beyond the contact form."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you are looking for does not exist, or has moved to another address.",
+    "home": "Back to home",
+    "projects": "View projects"
   }
 }

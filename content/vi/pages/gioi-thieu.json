@@ -142,7 +142,7 @@
       "type": "downloads",
       "visible": true,
       "heading": "Hồ sơ năng lực",
-      "intro": "Bản đầy đủ để xem ngoại tuyến. Portfolio được chia thành bốn phần cho nhẹ máy.",
+      "intro": "Bản đầy đủ để xem ngoại tuyến.",
       "files": [
         {
           "name": "CV Nguyễn Khánh Đan",
@@ -151,28 +151,10 @@
           "size": "162 KB"
         },
         {
-          "name": "Portfolio 2026, phần 1",
-          "href": "/files/phao-design-portfolio-2026-phan-1.pdf",
+          "name": "Portfolio 2026",
+          "href": "/files/portfolio2026.pdf",
           "type": "PDF",
-          "size": "3,5 MB"
-        },
-        {
-          "name": "Portfolio 2026, phần 2",
-          "href": "/files/phao-design-portfolio-2026-phan-2.pdf",
-          "type": "PDF",
-          "size": "4,7 MB"
-        },
-        {
-          "name": "Portfolio 2026, phần 3",
-          "href": "/files/phao-design-portfolio-2026-phan-3.pdf",
-          "type": "PDF",
-          "size": "4,7 MB"
-        },
-        {
-          "name": "Portfolio 2026, phần 4",
-          "href": "/files/phao-design-portfolio-2026-phan-4.pdf",
-          "type": "PDF",
-          "size": "1,9 MB"
+          "size": "14,8 MB"
         }
       ]
     }

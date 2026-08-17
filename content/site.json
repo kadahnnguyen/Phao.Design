@@ -1,6 +1,8 @@
 {
   "brand": "Phào Design",
-  "url": "https://phaodesign.example",
+
+  "_url": "Empty until the site has a real address. While it is empty the build emits no canonical, hreflang, og or sitemap, and ships robots.txt Disallow plus an X-Robots-Tag noindex header, which is what a workers.dev preview should be. Fill it in with the live origin, no trailing slash, and all of that switches on. See PLAN.md OPEN-1.",
+  "url": "",
   "locales": ["vi", "en"],
   "defaultLocale": "vi",
 

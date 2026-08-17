@@ -348,6 +348,9 @@ async function build() {
   if (existsSync(DIRS.static)) await cp(DIRS.static, DIRS.dist, { recursive: true });
 
   const written = [];
+  // Kept so the 404 can be built once, after the loop, from the default locale's
+  // context. Cloudflare serves one 404 for every unmatched path, locale included.
+  const contexts = {};
 
   for (const locale of site.locales) {
     const strings = await loadJson(path.join(DIRS.content, locale, 'strings.json'));
@@ -382,6 +385,7 @@ async function build() {
       projectsUrl: pageUrl(site, locale, 'du-an'),
       contactUrl: pageUrl(site, locale, 'lien-he'),
     };
+    contexts[locale] = base;
 
     const targets = [
       ...pages.map((page) => ({ page, template: page.template ?? 'page', slug: page.slug })),
@@ -422,11 +426,23 @@ async function build() {
     }
   }
 
-  await writeSitemap(site, written);
-  await writeFile(
-    path.join(DIRS.dist, 'robots.txt'),
-    `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`,
-  );
+  await write404(site, contexts, layout, partials);
+
+  // An empty site.url means the site has no public address yet, which is the state for
+  // as long as OPEN-1 is open. Everything needing an absolute URL is skipped rather
+  // than written against a placeholder host, and the preview is shut to crawlers twice
+  // over: robots.txt asks, X-Robots-Tag tells, and only the second survives a link
+  // someone shares. Filling in site.url turns the whole lot on.
+  if (site.url) {
+    await writeSitemap(site, written);
+    await writeFile(
+      path.join(DIRS.dist, 'robots.txt'),
+      `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`,
+    );
+  } else {
+    await writeFile(path.join(DIRS.dist, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+    await writeFile(path.join(DIRS.dist, '_headers'), '/*\n  X-Robots-Tag: noindex, nofollow\n');
+  }
 
   if (unresolvedImages.size) {
     console.warn(
@@ -436,8 +452,37 @@ async function build() {
     );
   }
 
-  console.log(`built ${written.length} pages in ${Date.now() - started}ms`);
+  console.log(
+    `built ${written.length} pages${site.url ? '' : ' + 404, unindexed preview'} in ${
+      Date.now() - started
+    }ms`,
+  );
   return written;
+}
+
+// One 404 for the whole site, because Cloudflare answers every unmatched path with the
+// same file and cannot pick a locale. Built in the default locale with the other locale
+// carried underneath as `alt`, and kept out of `written` so it never reaches the
+// sitemap or the page count.
+async function write404(site, contexts, layout, partials) {
+  const base = contexts[site.defaultLocale];
+  if (!base) throw new Error(`no context for default locale: ${site.defaultLocale}`);
+  const other = site.locales.find((l) => l !== site.defaultLocale) ?? site.defaultLocale;
+
+  const ctx = {
+    ...base,
+    page: {
+      titleFull: `${base.strings.notFound.title} | ${site.brand}`,
+      description: base.strings.notFound.body,
+    },
+    alt: contexts[other].strings,
+    url: '/404.html',
+    alternates: [],
+  };
+
+  const template = await readFile(path.join(DIRS.src, 'templates', '404.html'), 'utf8');
+  const body = render(template, ctx, partials);
+  await writeFile(path.join(DIRS.dist, '404.html'), render(layout, { ...ctx, body }, partials));
 }
 
 async function writeSitemap(site, written) {

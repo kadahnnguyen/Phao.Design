@@ -10,10 +10,9 @@
   "role": "Thiết kế đồ hoạ, dựng mockup",
   "tools": "Adobe Illustrator, Adobe Photoshop",
 
-  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và mục 9.",
-  "heroImage": "",
-  "heroAlt": "Poster và ấn phẩm của bộ nhận diện AAS",
-  "cardImage": "",
+  "heroImage": "/img/projects/aas-graphic/hero",
+  "heroAlt": "Bộ ấn phẩm AAS bày trên bàn làm việc cùng máy tính và điện thoại",
+  "cardImage": "/img/projects/aas-graphic/hero",
   "cardAlt": "Bộ nhận diện AAS",
 
   "chapters": [
@@ -28,6 +27,28 @@
         "Bao bì trong, dán nhãn và tem niêm",
         "Danh thiếp, giấy tiêu đề và tập gấp",
         "Bộ mockup trình bày trên bàn làm việc"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/aas-graphic/display1",
+          "alt": "Poster AAS niêm trong túi nhựa trong suốt",
+          "caption": "Poster được niêm trong túi trong, nhìn qua lớp nhựa nhăn."
+        },
+        {
+          "src": "/img/projects/aas-graphic/display2",
+          "alt": "Cùng gói poster đó chụp nghiêng trên nền xám",
+          "caption": "Nhãn TOP 1 nằm chéo ở góc, giữ nguyên trên mọi ấn phẩm."
+        },
+        {
+          "src": "/img/projects/aas-graphic/display3",
+          "alt": "Tập ấn phẩm AAS mở ra, trang trong in hình đồ hoạ nhỏ",
+          "caption": "Trang trong để trống nhiều, đối lại với mặt bìa dày đặc chữ."
+        },
+        {
+          "src": "/img/projects/aas-graphic/display4",
+          "alt": "Hai cuốn ấn phẩm AAS, một úp mặt bìa và một ngửa mặt sau",
+          "caption": "Mặt trước và mặt sau của cùng một cuốn."
+        }
       ]
     },
     {

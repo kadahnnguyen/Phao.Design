@@ -5,7 +5,8 @@
       "name": "phao-design",
       "runtimeExecutable": "node",
       "runtimeArgs": ["build.mjs", "--serve"],
-      "port": 4318
+      "port": 4318,
+      "autoPort": true
     }
   ]
 }

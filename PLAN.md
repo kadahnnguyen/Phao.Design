@@ -91,10 +91,12 @@ Index of 10 projects, filterable by the portfolio's own split.
 - **Highlights (5):** Forti Halo, Gravity, Aeterna, WH Just Pure Bottle, Awake and Seek Perfume
 - **Other projects (5):** Aerodynamic Car Design, Bent.ch Chair, Ươm Hoa, AAS Graphic Portfolio, Soft Skills & Jobs
 
-All ten project pages are written in both locales as of 2026-08-17. Five carry real
-imagery (Forti Halo, Gravity, Aeterna, Awake and Seek, Aerodynamic Car). Five are
-text-only and marked `_blocked` in their own content file, because their PDF pages were
-flattened spreads: WH Just Pure Bottle, Bent.ch, Ươm Hoa, AAS identity, Other work.
+All ten project pages are written in both locales as of 2026-08-17, and all ten now
+carry real imagery. Five came out of the PDFs cleanly (Forti Halo, Gravity, Aeterna,
+Awake and Seek, Aerodynamic Car). The other five had flattened spreads and were
+recovered by cropping their tiles back out: WH Just Pure Bottle in 5.1, and Bent.ch,
+Ươm Hoa, AAS identity and Other work in 5.2. Those five are low resolution and stay on
+CLIENT item 1, but nothing is marked `_blocked` any more.
 
 Note on the tenth: the portfolio's own index calls page 31 "Other projects &
 activities", a catch-all of ceramics, sculpture, drawing and teaching. It is published
@@ -228,10 +230,10 @@ placed as flattened spreads:
 | Aerodynamic Car Design | yes, 4 available |
 | Awake and Seek Perfume | 1 only, rest flattened |
 | WH Just Pure Bottle | rescued by crop, see below |
-| Bent.ch Chair | **none** |
-| Ươm Hoa | **none** |
-| AAS Graphic Portfolio | **none** |
-| Soft Skills & Jobs | **none** |
+| Bent.ch Chair | rescued by crop, see 5.2 |
+| Ươm Hoa | rescued by crop, see 5.2 |
+| AAS Graphic Portfolio | rescued by crop, see 5.2 |
+| Soft Skills & Jobs | rescued by crop, see 5.2 |
 
 **Sub-threshold renders.** `MIN_WIDTH` and friends exist to throw away logos and
 decorative fragments, and lowering them lets hundreds of those back in across four
@@ -246,11 +248,37 @@ the product. Where it does, that region is cropped back out at native resolution
 resolution. This recovered the WH Just Pure Bottle hero and card from the render panel
 on its page. Every box must be checked by eye first and must contain no layout text and
 no personal data: the Bent.ch page is why that rule exists, since its raster carries a
-student ID, class code and personal email. Bent.ch, Ươm Hoa, AAS and Other work have no
-text-free region worth cropping, so they remain image-less.
+student ID, class code and personal email.
 
 This sharpens CLIENT item 1. The ask is no longer "send the original files", it is
 **"send the source images for these five projects"**, which is a far easier request.
+
+### 5.2 Part 4 tile crops, done 2026-08-17
+
+The four part-4 pages are single flat rasters, but each is a *mosaic* of separate
+photographs with gutters between them, so the tiles can be cropped back out
+individually even though the page as a whole cannot be extracted. `tools/extract-part4.py`
+does that: it re-renders each page at 2894/1389 zoom, which is 1:1 with the embedded
+raster and recomposites its soft mask, then cuts one box per tile. Tile edges were found
+by connected-component analysis of the non-background mask, then checked by eye; every
+box is inset 6px so a neighbour cannot bleed in. This is what took Bent.ch, Ươm Hoa, AAS
+and Other work off the image-less list: 26 files, all four pages now have a hero, a card
+and their chapter figures.
+
+**What was deliberately left out, on the same rule as above.** The Bent.ch contact
+block, obviously. Also the two AAS pavement-stand mockups and the AAS business-card
+spread, because the artwork itself prints `nguynkhanhdan1208@gmail.com` and it is
+readable at native resolution. And the right-hand third of the Soft Skills page, which
+is class photographs of identifiable children, the same concern as OPEN-9. The AAS hero
+is therefore the desk mockup rather than the poster stand, which is the stronger image
+of the two but not one that can ship.
+
+**The resolution here is much worse than 5.1's, and it is not fixable.** A tile is only
+as large as it sits inside the page raster, so these run 165 to 909px, and Bent.ch is
+the worst of them: a 246px hero painted at 640px, plainly soft. Ươm Hoa is the only one
+that is comfortable. These four stay on CLIENT item 1 for that reason. What changed is
+that the pages now show the actual work at poor resolution instead of showing a
+placeholder, which is the better of the two while the originals are outstanding.
 
 **Second ceiling, and it is the binding one.** The embedded renders top out at 1312px
 (Forti Halo) and 1451px (Gravity), and they are already heavily compressed inside the
@@ -269,7 +297,7 @@ PDF, with pdfimages reporting ratios under 3%. Consequences and what was done:
 processing fixes that. It needs higher-resolution originals, which is CLIENT item 1.
 Until then the hero stays contained rather than full bleed.
 
-Live now: 37 curated sources, one file each at the source's own native width, 3.7MB
+Live now: 71 curated sources, one file each at the source's own native width, 5.4MB
 total. Content names an image by base path only
 (`/img/projects/gravity/hero`) and the build generates `srcset` from whichever variants
 exist on disk, so a content file can never point at a file that is not there.
@@ -324,7 +352,22 @@ via a Cloudflare Worker holding the API key. Fields exactly as specified above.
 
 ## 7. Technical decisions
 
-- Static site, GitHub Pages, HTTPS, phone first, verified at 320px.
+- Static site, HTTPS, phone first, verified at 320px.
+- **Hosting: Cloudflare Workers static assets, decided by Khoa on 2026-08-17,
+  replacing GitHub Pages.** The project already needed a Cloudflare account for the two
+  Workers below, so putting the site there too means one account moves at handover
+  instead of two. `wrangler.jsonc` declares assets only, with no `main` and no Worker
+  script: Cloudflare builds the repo with `node build.mjs` on push and serves `dist/`
+  directly, so no request touches a runtime and `dist/` stays gitignored.
+- **Preview posture, while OPEN-1 leaves the site without a domain.** `site.url` is
+  empty, and the build treats that as "no public address yet": no canonical, no
+  hreflang, no `og:` tags, no `sitemap.xml`, `robots.txt` set to `Disallow: /`, and a
+  `_headers` file sending `X-Robots-Tag: noindex, nofollow`. Two locks because
+  `robots.txt` only asks and the header tells, and only the header survives someone
+  sharing a link. Filling in `site.url` switches all of it on at once.
+- `404.html`, one for the whole site, since Cloudflare answers every unmatched path
+  with the same file and cannot pick a locale. Built in the default locale with the
+  other carried underneath, and kept out of the sitemap.
 - Two Cloudflare Workers: OAuth broker for the CMS, mail endpoint for the form.
   Both written account-agnostic, every secret and account ID listed in `HANDOVER.md`
   as a swap value. Nothing hard-codes Khoa's account, domain or tracking IDs.
@@ -415,49 +458,53 @@ with itself. That is looser than a condensed display face normally wants. Tighte
 to roughly 1.15 looks better and will occasionally collide on wrapped headings carrying
 both a tone mark and a dot-under. Currently correct rather than tight, via `--lh-display`.
 
-**OPEN-12. The homepage hero contains photographs of identifiable children.** Khoa chose
-the portfolio cover as the hero on 2026-08-17. Its collage includes a classroom
-photograph from Đan's teaching work showing roughly six children's faces clearly, plus a
-second frame with a child's hands. F1 covered Đan's own data, not third parties, so this
-is new.
+**OPEN-12. Children in the homepage hero: SETTLED 2026-08-17.** Khoa chose the portfolio
+cover as the hero. Its collage includes a classroom photograph from Đan's teaching work
+plus a second frame with a child's hands. Claude raised it because F1 covered Đan's own
+data and not third parties, and because a public page built to rank in search is not the
+same as a private PDF sent to one recruiter.
 
-On a private PDF sent to one recruiter this is unremarkable. On a public page built to
-rank in search it is different: those children are identifiable, they are minors, and
-neither they nor their parents agreed to appear on a commercial website. Under Vietnam's
-Decree 13 on personal data, images of identifiable people are personal data, and consent
-for a minor normally comes from a parent.
+**Khoa decided on 2026-08-17 that the faces are not identifiable at the size they are
+published, and closed it.** The hero ships as-is. Reversible if it ever comes up: the
+classroom photograph is one cell of a six-cell collage, so replacing or blurring that
+cell leaves the composition intact.
 
-Options:
-1. Ask Đan whether the school or the parents gave permission for public use. If they did,
-   nothing more is needed.
-2. Use the cover with that frame replaced or blurred. It is one cell of a six-cell
-   collage, so the composition survives.
-3. Use a different hero image.
+**OPEN-11. The downloadable PDFs republished the data F1 excluded: SETTLED 2026-08-17.**
+F1 says date of birth and student ID stay off the site. D4 offers the portfolio PDFs and
+the CV as downloads. Both could not hold, because the files carried the data F1 excluded:
+`nguyen-khanh-dan-cv.pdf` had D.O.B 12/08/2003 as live text, and the Bent.ch page had
+MSSV 2172104020023 and lớp K27TKCN02 baked into its raster. The extracted *images* of
+that page were quarantined for exactly this reason, while the *source PDFs* were copied
+into `static/files/` and linked, publishing the same data by another route.
 
-Not blocking a preview, since nothing is live. Must be settled before go-live.
+**Khoa decided on 2026-08-17 to omit both.** `tools/redact-pdfs.py` now builds the two
+published files from the untouched originals in `client-resources/`:
 
-**OPEN-11. The downloadable PDFs republish the data F1 excluded.** F1 says date of
-birth and student ID stay off the site. D4 says all four portfolio PDFs plus the CV are
-offered as downloads. Those two cannot both hold, because the files themselves carry:
+| File | Was | Now |
+|---|---|---|
+| `nguyen-khanh-dan-cv.pdf` | D.O.B 12/08/2003, live text | removed, phone re-laid at the left margin so the contact block still reads as two aligned lines |
+| `portfolio2026.pdf` p28 | MSSV and lớp, baked into the raster | painted out at pixel level, page rebuilt as a flat JPEG |
 
-| File | Carries |
-|---|---|
-| `nguyen-khanh-dan-cv.pdf` | D.O.B 12/08/2003 |
-| `...phan-4.pdf`, page 1 | MSSV 2172104020023, lớp K27TKCN02, `nguynkhanhdan1208@gmail.com` |
+Verified after the build: neither string survives as extractable text in `dist/files/`,
+and the redaction on p28 is invisible against the block's own background.
 
-I quarantined the extracted *images* of that page for exactly this reason, then copied
-the *source PDFs* into `static/files/` and linked them. Same data, published anyway.
-Nothing is live, so nothing is exposed yet, but this has to be settled before go-live.
+The four `phan-*.pdf` files were deleted from `static/files/`. Nothing linked them, only
+`portfolio2026.pdf` and the CV are referenced from `/gioi-thieu`, and they were
+byte-identical to the copies already sitting in the gitignored `client-resources/`. That
+also resolves the secondary complaint below: `dist/` drops from 36MB to 21MB.
 
-Options, in the order I would pick them:
-1. Ask Đan for a public version of the CV and of portfolio part 4 with the student
-   block removed. Designers usually keep one. Cleanest, and it is their call to make.
-2. Hide the downloads section via the D1 toggle until that arrives. One switch.
-3. Ship as-is, accepting that DOB and student ID are public and indexed.
+Two things this deliberately did **not** touch, each a separate call:
 
-Secondary: `static/files/` holds 15MB of PDFs that get committed and pushed. That is
-intentional under D4, but it is most of the repo, and it duplicates what now sits in the
-gitignored `client-resources/`.
+- `nguynkhanhdan1208@gmail.com` still appears on p28 and inside the AAS artwork. That is
+  the dead second address of CLIENT item 9, not the ID data, and confirming it is dead
+  is the cheaper fix.
+- The CV prints a public Google Drive portfolio link. Same class of thing, never asked
+  about.
+
+**Still outstanding: git history.** The originals were committed in `27439bc` and pushed
+to `origin`. The repo is private today, so nothing is exposed, but the history travels
+with the repo, and section 11 hands the repo to Đan. Either rewrite the history before
+that transfer or accept that the old blobs remain reachable to whoever holds the repo.
 
 **OPEN-8. B6 positioning, treated as accepted by silence.** Dual CTA built as Đan
 specified, their freelance wording kept, employer names not presented as endorsements,
@@ -469,10 +516,14 @@ student-seeking keywords confined to `/gioi-thieu`. Reversible on request.
 
 Khoa collects these. Claude never contacts the client.
 
-1. **Source images for five specific projects**, narrowed by the extraction in 5.1:
-   WH Just Pure Bottle, Bent.ch Chair, Ươm Hoa, AAS Graphic Portfolio, and Soft Skills
-   & Jobs. Those pages were placed in the PDF as flattened spreads, so nothing clean can
-   be recovered from them. The other five projects are covered. Higher-resolution
+1. **Source images for five specific projects**, narrowed by the extraction in 5.1 and
+   the tile crops in 5.2: WH Just Pure Bottle, Bent.ch Chair, Ươm Hoa, AAS Graphic
+   Portfolio, and Soft Skills & Jobs. Those pages were placed in the PDF as flattened
+   spreads. All five now ship real imagery cropped back out of those spreads, so this
+   is no longer blocking a preview, but the crops run 165 to 909px against 1088px
+   painted, and Bent.ch in particular is visibly soft. Also worth asking for: the AAS
+   poster-stand mockup with the contact line removed, since that is the best image on
+   its page and is the reason the desk mockup is the hero instead. Higher-resolution
    originals of anything else are welcome but no longer blocking.
 2. **Zalo, Messenger and social handles.** Analytics conversion and the social links
    section both depend on them.

@@ -10,10 +10,9 @@
   "role": "Thiết kế và tạo hình gốm",
   "materials": "Gốm, men chảy",
 
-  "_blocked": "CHƯA CÓ HÌNH ẢNH. Trang này trong PDF là ảnh dàn trang phẳng. Cần khách gửi file gốc. Xem PLAN.md mục 5.1 và mục 9.",
-  "heroImage": "",
-  "heroAlt": "Chậu gốm Ươm Hoa men xanh tím",
-  "cardImage": "",
+  "heroImage": "/img/projects/uom-hoa/hero",
+  "heroAlt": "Hai phần của chậu Ươm Hoa đặt cạnh nhau trên nền vải trắng",
+  "cardImage": "/img/projects/uom-hoa/hero",
   "cardAlt": "Chậu gốm Ươm Hoa",
 
   "chapters": [
@@ -27,6 +26,18 @@
         "Khe thông nước nối hai ngăn",
         "Thành miệng nở lệch về hai phía",
         "Đổ thêm nước qua khe, không phải tưới lên mặt đất"
+      ],
+      "images": [
+        {
+          "src": "/img/projects/uom-hoa/sketch",
+          "alt": "Bản vẽ mặt cắt chậu Ươm Hoa, đánh dấu rãnh khoét lớn ở thành miệng",
+          "caption": "Mặt cắt: rãnh khoét lớn ở thành miệng, ngăn nước nằm dưới bầu chậu."
+        },
+        {
+          "src": "/img/projects/uom-hoa/display3",
+          "alt": "Chậu Ươm Hoa ở dạng mộc, chưa tráng men, đặt trong xưởng gốm",
+          "caption": "Phôi mộc trước khi tráng men, hai phần được tạo hình rời."
+        }
       ]
     },
     {
@@ -34,6 +45,18 @@
       "body": [
         "Phần thân tròn nở, phần miệng khoét sâu thành rãnh lớn và rãnh nhỏ, tạo bóng đổ thay đổi theo hướng nhìn.",
         "Men được để chảy tự nhiên nên mỗi chiếc ra lò một khác, không chiếc nào giống chiếc nào."
+      ],
+      "images": [
+        {
+          "src": "/img/projects/uom-hoa/display1",
+          "alt": "Chậu Ươm Hoa hoàn thiện, phần miệng lắp vào thân",
+          "caption": "Hai phần lắp lại: thân tròn nở đỡ lấy phần miệng khoét rãnh."
+        },
+        {
+          "src": "/img/projects/uom-hoa/display2",
+          "alt": "Nhìn từ trên xuống lòng chậu Ươm Hoa",
+          "caption": "Nhìn từ trên xuống, các vệt men chảy chạy từ miệng xuống thân, mỗi chiếc một khác."
+        }
       ]
     },
     {

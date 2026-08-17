@@ -18,7 +18,7 @@
       "body": [
         "I graduated in Industrial Design from Van Lang University. The way I work leans on product analysis and honest research: look hard at what already exists, ask real users, and only then propose a direction.",
         "After four years of studying and working, what has stayed with me is discipline and persistence, along with an eye for the limits of a current product and how to push past them.",
-        "I treat each project as a chance to balance how something looks against how it works, so the result is useful and has a character of its own. Three words I like: test, learn, fix."
+        "I treat each project as a chance to balance how something looks against how it works, so the result is useful and has a character of its own. Three words I like: try, learn, fix."
       ],
       "portrait": {
         "src": "/img/about/portrait",
@@ -142,7 +142,7 @@
       "type": "downloads",
       "visible": true,
       "heading": "Portfolio and CV",
-      "intro": "The full documents for offline reading. The portfolio is split into four parts to keep each file manageable.",
+      "intro": "The full documents for offline reading.",
       "files": [
         {
           "name": "CV, Nguyễn Khánh Đan",
@@ -151,28 +151,10 @@
           "size": "162 KB"
         },
         {
-          "name": "Portfolio 2026, part 1",
-          "href": "/files/phao-design-portfolio-2026-phan-1.pdf",
+          "name": "Portfolio 2026",
+          "href": "/files/portfolio2026.pdf",
           "type": "PDF",
-          "size": "3.5 MB"
-        },
-        {
-          "name": "Portfolio 2026, part 2",
-          "href": "/files/phao-design-portfolio-2026-phan-2.pdf",
-          "type": "PDF",
-          "size": "4.7 MB"
-        },
-        {
-          "name": "Portfolio 2026, part 3",
-          "href": "/files/phao-design-portfolio-2026-phan-3.pdf",
-          "type": "PDF",
-          "size": "4.7 MB"
-        },
-        {
-          "name": "Portfolio 2026, part 4",
-          "href": "/files/phao-design-portfolio-2026-phan-4.pdf",
-          "type": "PDF",
-          "size": "1.9 MB"
+          "size": "14.8 MB"
         }
       ]
     }

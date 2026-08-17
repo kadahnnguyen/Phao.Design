@@ -758,17 +758,91 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
 /* ---------- prose ----------------------------------------------------- */
 
 .prose__body { max-width: 62ch; }
-.prose__portrait { margin: clamp(1.5rem, 4vw, 2.5rem) 0 0; max-width: 22rem; }
 
-@media (min-width: 55rem) {
-  .prose .shell {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
-    gap: clamp(2rem, 5vw, 3.5rem);
-    align-items: start;
+/* `isolation` and the clearfix are both for the portrait: the first keeps its negative
+   z-index on desktop inside the section, the second stops the float on narrow screens
+   escaping into the band below when the copy runs shorter than the picture. */
+.prose.has-portrait { position: relative; isolation: isolate; }
+.prose.has-portrait .prose__body::after { content: ''; display: block; clear: both; }
+
+/* Narrow screens: a plain photo in the top left that the copy runs around. No fade and
+   no transparency here. Under the band treatment the picture has room to sit clear of
+   the text, but at this width it would be behind it, and a wash faint enough to read
+   through leaves nothing of her. */
+.prose__portrait {
+  float: left;
+  width: 42%;
+  max-width: 10.5rem;
+  margin: 0.3rem 1.1rem 0.75rem 0;
+}
+
+.prose__portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  /* The source is a 2:1 landscape with the subject inside x 272-913, so a square cut
+     from the middle of the frame would sit off to her left. 60% re-centres the crop on
+     her, trimming about as much hair on one side as jacket on the other. */
+  object-position: 60% center;
+}
+
+@media (min-width: 64rem) {
+  /* Wide enough now for the two to sit side by side, so the picture leaves the flow and
+     is laid into the band the way the home page background is. The copy has to stop
+     short of it: the shell is centred while the picture is pinned to the shell's right
+     edge, so the gap between them is narrowest here at 64rem. */
+  .prose.has-portrait .prose__body { max-width: 44ch; }
+
+  /* Inset from the right by the same margin the copy is inset from the left, so the band
+     reads as balanced. Vertically it is centred the same way: top and bottom both 0 with
+     a definite height lets margin-block: auto split the leftover space evenly.
+
+     The ratio is what keeps her clear of her own frame. object-fit: cover only leaves
+     cream beyond her right shoulder once the box is wider than about 1.53:1; below that
+     her jacket is sliced off against a hard vertical edge. */
+  .prose__portrait {
+    position: absolute;
+    float: none;
+    z-index: -1;
+    pointer-events: none;
+    right: calc(max((100% - var(--shell)) / 2, 0px) + var(--gutter));
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: auto;
+    max-width: none;
+    height: clamp(17rem, 25vw, 26rem);
+    aspect-ratio: 31 / 20;
+    /* Softens the two horizontal edges, kept short on purpose. The field the cut-out
+       sits on is rgb(240 239 233) against a --bg-alt of rgb(241 239 232), so the edges
+       themselves are already invisible; these ramps only have to cover where she runs
+       off the source (y 16-537 of 538), which is her hair at the top and her torso at
+       the bottom. Any longer and it reads as blur over the subject rather than a join. */
+    -webkit-mask-image: linear-gradient(to bottom,
+      rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 100%) 7%, rgb(0 0 0 / 100%) 93%, rgb(0 0 0 / 0%) 100%);
+    mask-image: linear-gradient(to bottom,
+      rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 100%) 7%, rgb(0 0 0 / 100%) 93%, rgb(0 0 0 / 0%) 100%);
   }
-  .prose .section-head { grid-column: 1 / -1; }
-  .prose__portrait { margin-top: 0; }
+
+  .prose__portrait img {
+    height: 100%;
+    aspect-ratio: auto;
+    object-position: center;
+    opacity: 0.92;
+    /* Second mask, under the one on the figure: masks on nested elements multiply, which
+       fades the left and top edges together without needing mask-composite. On the widest
+       screens the copy reaches a little way into this ramp, but only over the cream
+       margin beside her, so it stays faint there. */
+    -webkit-mask-image: linear-gradient(to right,
+      rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 100%) 40%, rgb(0 0 0 / 100%) 100%);
+    mask-image: linear-gradient(to right,
+      rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 100%) 40%, rgb(0 0 0 / 100%) 100%);
+  }
+
+  /* Enough room for the portrait to stand at close to full height. Short copy would
+     otherwise squeeze the band down and crop her to a letterbox strip. */
+  .prose.has-portrait { min-height: 34rem; display: flex; align-items: center; }
 }
 
 /* ---------- timeline --------------------------------------------------- */
@@ -797,8 +871,31 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
   letter-spacing: 0.06em;
   margin-bottom: 0.25rem;
 }
+/* Role + employer are the summary; the +/- sits in a second column that spans both
+   rows, so it stays centred against the pair however long either line wraps. */
+.timeline__summary {
+  cursor: pointer;
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1rem;
+  align-items: baseline;
+}
+.timeline__summary::-webkit-details-marker { display: none; }
+.timeline__summary::after {
+  content: '+';
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--accent-deep);
+  font-size: var(--step-1);
+  line-height: 1;
+}
+.timeline__entry[open] .timeline__summary::after { content: '\2013'; }
+
 .timeline__role { margin-bottom: 0.15rem; }
-.timeline__where { font-weight: 600; margin-bottom: 0.5rem; }
+.timeline__where { display: block; font-weight: 600; }
+.timeline__panel { padding-top: 0.75rem; }
 .timeline__body { max-width: 60ch; }
 
 /* ---------- skills ----------------------------------------------------- */
@@ -949,6 +1046,25 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
   background: var(--surface);
   max-width: 40rem;
 }
+
+/* ---------- 404 ------------------------------------------------------- */
+
+/* One page answers every wrong address in either locale, so it stays short: the code,
+   the line, the same line in the other language, and two ways back. `min-height` keeps
+   it from sitting squashed against the header on a tall screen, with the header and
+   footer subtracted rather than guessed at. */
+.notfound { display: flex; align-items: center; min-height: 60vh; padding-block: clamp(3rem, 10vw, 7rem); }
+.notfound__inner { max-width: 44rem; }
+.notfound__code {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.notfound__body { font-size: var(--step-1); color: var(--ink-soft); margin-top: 1rem; }
+.notfound__alt { font-size: var(--step--1); color: var(--ink-soft); margin-top: 0.85rem; }
+.notfound__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 
 .card-grid--thirds { grid-template-columns: 1fr; }
 @media (min-width: 55rem) {

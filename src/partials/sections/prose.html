@@ -1,4 +1,4 @@
-<section class="prose {{ band }}" data-section="prose" data-reveal>
+<section class="prose {{ band }}{{#if section.portrait.src}} has-portrait{{/if}}" data-section="prose" data-reveal>
   <div class="shell">
     {{#if section.heading}}
     <header class="section-head">
@@ -7,23 +7,23 @@
     {{/if}}
 
     <div class="prose__body">
+      {{#if section.portrait.src}}
+      <!-- First in the copy, not a sibling of the shell, because on a phone it is a
+           plain floated photo in the top left that the text runs around. Only from
+           64rem up is it lifted out of the flow and laid into the band the way the home
+           page background is. It stays a real content image either way, so it keeps its
+           alt text rather than being marked decorative. -->
+      <figure class="prose__portrait">
+        <img src="{{ section.portrait.src }}" srcset="{{ section.portrait.srcSet }}"
+             sizes="(min-width: 64rem) 41rem, 11rem"
+             alt="{{ section.portrait.alt }}" width="1078" height="538"
+             loading="lazy" decoding="async">
+      </figure>
+      {{/if}}
+
       {{#each section.body}}
       <p>{{ this }}</p>
       {{/each}}
     </div>
-
-    {{#if section.portrait}}
-    <figure class="prose__portrait">
-      {{#if section.portrait.src}}
-      <img src="{{ section.portrait.src }}" srcset="{{ section.portrait.srcSet }}"
-           sizes="(min-width: 55rem) 20rem, 100vw"
-           alt="{{ section.portrait.alt }}" width="1078" height="538" loading="lazy">
-      {{else}}
-      <div class="placeholder" role="img" aria-label="{{ section.portrait.alt }}">
-        <span>{{ strings.ui.imageComingSoon }}</span>
-      </div>
-      {{/if}}
-    </figure>
-    {{/if}}
   </div>
 </section>

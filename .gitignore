@@ -14,6 +14,12 @@ tools/extracted/
 # does not work here, git reads it as a literal path segment and ignores nothing.
 client-resources/
 
+# Wrangler's local state. `wrangler-account.json` caches the Cloudflare account id and
+# name of whoever last deployed, which during the build is Khoa. Section 7 says nothing
+# in this repo hard-codes his account, and this repo transfers to Đan, so it stays out.
+.wrangler/
+node_modules/
+
 # Local noise
 .DS_Store
 Thumbs.db

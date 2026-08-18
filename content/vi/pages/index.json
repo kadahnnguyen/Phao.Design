@@ -10,6 +10,22 @@
       "type": "hero",
       "visible": true,
       "pinned": true,
+      "greeting": "Xin chào, mình là Đan",
+      "_headlineLines": "Mỗi phần tử là một dòng của tiêu đề. Xuống dòng theo ý người viết, không theo bề ngang màn hình. Mỗi dòng nhận một màu riêng.",
+      "headlineLines": [
+        "Thiết kế sản phẩm 3D",
+        "từ ý tưởng đầu tiên",
+        "tới mẫu thật cầm được"
+      ],
+      "lead": "Mình là Industrial Designer tại TP. Hồ Chí Minh. Mình nhìn kỹ thứ đang có, hỏi người dùng thật, rồi mới đề xuất hướng thay đổi, và dựng mẫu để kiểm chứng.",
+      "cta": {
+        "label": "Nói chuyện với mình",
+        "url": "/lien-he/"
+      },
+      "ctaSecondary": {
+        "label": "Xem toàn bộ dự án",
+        "url": "/du-an/"
+      },
       "image": "/img/home/cover",
       "alt": "Bìa portfolio của Nguyễn Khánh Đan 2026, Industrial Designer, ghép ảnh các hoạt động thiết kế, dạy vẽ, làm đồ da và tạo hình gốm",
       "caption": "",
@@ -25,10 +41,33 @@
       "_background": "Page 7 of the portfolio PDF, the market research collage, with every text block painted out (see PAGE_RENDERS in tools/extract-images.py). Decorative only: empty alt, aria-hidden, hidden under prefers-contrast."
     },
     {
-      "type": "highlights",
+      "type": "work-list",
       "visible": true,
-      "heading": "Dự án nổi bật",
-      "intro": "Năm dự án cho thấy rõ nhất cách mình làm việc, từ nghiên cứu người dùng tới mẫu thật."
+      "heading": "Một phần công việc",
+      "intro": "Ba dự án mình muốn bạn xem kỹ, còn lại xếp bên dưới. Bấm vào bất kỳ ảnh nào để đọc toàn bộ quá trình, từ nghiên cứu tới mẫu thật.",
+      "_moreHeading": "Tiêu đề cho nhóm ảnh phía dưới. Đừng bỏ trống: mỗi dự án nổi bật ghi tên ở phía dưới ảnh của nó, nên nếu không có tiêu đề này thì tên dự án cuối cùng sẽ nằm ngay trên nhóm ảnh và trông như tên của cả nhóm.",
+      "moreHeading": "Các dự án khác",
+      "_note": "Mục này tự lấy dự án trong content/vi/projects/, sắp theo khoá order. Không có danh sách nào phải chép tay ở đây. Dự án có featured: true được trình bày thành một dòng đầy đủ, hai ảnh lấy từ cardImage và altImage của chính nó; các dự án còn lại chỉ hiện ảnh chính. Muốn đổi dự án nào được xem kỹ thì sửa khoá featured trong file của dự án đó."
+    },
+    {
+      "type": "capabilities",
+      "visible": true,
+      "heading": "Mình lo được cho bạn…",
+      "lead": "Từ nghiên cứu ban đầu, qua bản vẽ kỹ thuật, tới cái mẫu đặt được lên bàn.",
+      "items": [
+        "Thiết kế sản phẩm",
+        "Nghiên cứu người dùng",
+        "Phác thảo ý tưởng",
+        "Dựng mô hình 3D",
+        "SolidWorks",
+        "KeyShot",
+        "Kết xuất hình ảnh",
+        "Bản vẽ kỹ thuật",
+        "Làm mẫu prototype",
+        "Chọn vật liệu",
+        "Tạo hình gốm",
+        "Thiết kế đồ hoạ"
+      ]
     },
     {
       "type": "strengths",
@@ -54,6 +93,25 @@
       ]
     },
     {
+      "type": "bio",
+      "visible": true,
+      "heading": "Đằng sau bản vẽ",
+      "lead": "Gặp người ngồi sau mấy bản vẽ này, một chút về thế giới của mình.",
+      "body": [
+        "Mình tốt nghiệp ngành Thiết kế Công nghiệp tại Đại học Văn Lang. Cách làm việc của mình nghiêng về phân tích sản phẩm và nghiên cứu thành thật.",
+        "Ngoài bàn máy, mình nặn gốm, vẽ tay, khâu da và có vài năm đi dạy vẽ cho trẻ con. Thứ nào cũng dạy mình một cách nhìn hình khối khác nhau.",
+        "Mình xem mỗi dự án là một dịp để cân bằng giữa thẩm mỹ và công năng. Ba từ mình thích: thử, học, sửa."
+      ],
+      "portrait": {
+        "src": "/img/about/portrait",
+        "alt": "Chân dung Nguyễn Khánh Đan"
+      },
+      "cta": {
+        "label": "Đọc phần giới thiệu đầy đủ",
+        "url": "/gioi-thieu/"
+      }
+    },
+    {
       "type": "services-teaser",
       "visible": false,
       "_blocked": "Chờ khách gửi danh sách dịch vụ và mức giá. Xem PLAN.md mục 5 và mục 9.",
@@ -73,7 +131,7 @@
     {
       "type": "contact-short",
       "visible": true,
-      "heading": "Bắt đầu một dự án",
+      "heading": "Thấy hợp gu chứ?",
       "body": "Nói cho mình biết bạn cần gì, mình sẽ trả lời trong vòng một tới hai ngày.",
       "cta": {
         "label": "Gửi yêu cầu",

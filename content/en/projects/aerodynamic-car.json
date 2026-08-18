@@ -14,6 +14,9 @@
   "heroAlt": "Pencil rendering of the car with coloured ribbons tracing airflow across the body",
   "cardImage": "/img/projects/aerodynamic-car/card",
   "cardAlt": "Pencil rendering of the reworked car form",
+  "tag": "automotive, research",
+  "altImage": "/img/projects/aerodynamic-car/hero",
+  "altImageAlt": "Pencil drawing of the car with coloured ribbons tracing the airflow over the body",
 
   "chapters": [
     {

@@ -1,0 +1,96 @@
+<!-- The home page work list, in two tiers.
+
+     Featured projects get a full row: a loose two-image cluster, then the name,
+     tag and one-line summary, with rows alternating side. Everything else is a
+     plain thumbnail of its main image. Both tiers link through to the project.
+
+     The split needs no logic here — build.mjs already puts `featuredProjects` and
+     `otherProjects` in the context, so the template stays flat and the engine
+     never needs an expression. Which projects are featured is decided by the
+     `featured` key in each project's own JSON.
+
+     Every image is the project's own cardImage or altImage. Nothing was added to
+     static/img/ for this section. -->
+<section class="work {{ band }}" data-section="work-list" data-reveal>
+  <div class="shell">
+    <header class="section-head">
+      <h2>{{ section.heading }}</h2>
+      {{#if section.intro}}<p class="section-head__intro measure">{{ section.intro }}</p>{{/if}}
+    </header>
+
+    <ol class="work__list">
+      {{#each featuredProjects}}
+      <li class="work-item">
+        <a class="work-item__link" href="{{ this.url }}">
+          <div class="work-item__stage">
+            <figure class="work-item__shot work-item__shot--wide">
+              {{#if this.cardImage}}
+              <img src="{{ this.cardImage }}" srcset="{{ this.cardImageSet }}"
+                   sizes="(min-width: 60rem) 34rem, 62vw"
+                   alt="{{ this.cardAlt }}" width="800" height="600" loading="lazy" decoding="async">
+              {{else}}
+              <div class="placeholder" role="img" aria-label="{{ this.cardAlt }}">
+                <span>{{ strings.ui.imageComingSoon }}</span>
+              </div>
+              {{/if}}
+            </figure>
+
+            {{#if this.altImage}}
+            <!-- Second view of the same project. Decorative in the strict sense: the
+                 row already has an alt on the wide shot and a text summary, so this
+                 one is aria-hidden rather than repeating the project twice to a
+                 screen reader. The title attribute keeps it useful on hover. -->
+            <figure class="work-item__shot work-item__shot--square" aria-hidden="true">
+              <img src="{{ this.altImage }}" srcset="{{ this.altImageSet }}"
+                   sizes="(min-width: 60rem) 20rem, 36vw"
+                   alt="" title="{{ this.altImageAlt }}" width="600" height="600" loading="lazy" decoding="async">
+            </figure>
+            {{/if}}
+          </div>
+
+          <div class="work-item__meta">
+            <h3 class="work-item__title">{{ this.title }}</h3>
+            {{#if this.tag}}<span class="work-item__tag">{{ this.tag }}</span>{{/if}}
+            <span class="work-item__go">{{ strings.ui.viewProject }}</span>
+          </div>
+
+          {{#if this.summary}}<p class="work-item__summary">{{ this.summary }}</p>{{/if}}
+        </a>
+      </li>
+      {{/each}}
+    </ol>
+
+    <!-- The remaining projects, image only. The alt text is what names each link,
+         so these tiles are not the unlabelled squares they look like.
+
+         The heading is not decoration. Each featured row carries its title and
+         summary *below* its images, so without a label here the last row's caption
+         sits directly above this grid and reads as the grid's own heading — the
+         last project appears to be the name of the whole group. -->
+    {{#if section.moreHeading}}
+    <h3 class="work__more-heading">{{ section.moreHeading }}</h3>
+    {{/if}}
+
+    <ul class="work__more">
+      {{#each otherProjects}}
+      <li class="work-thumb">
+        <a class="work-thumb__link" href="{{ this.url }}">
+          {{#if this.cardImage}}
+          <img src="{{ this.cardImage }}" srcset="{{ this.cardImageSet }}"
+               sizes="(min-width: 60rem) 16rem, (min-width: 38rem) 30vw, 44vw"
+               alt="{{ this.cardAlt }}" width="800" height="600" loading="lazy" decoding="async">
+          {{else}}
+          <div class="placeholder" role="img" aria-label="{{ this.cardAlt }}">
+            <span>{{ strings.ui.imageComingSoon }}</span>
+          </div>
+          {{/if}}
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+
+    <p class="section-foot">
+      <a class="link-more" href="{{ projectsUrl }}">{{ strings.ui.allProjects }}</a>
+    </p>
+  </div>
+</section>

@@ -114,6 +114,16 @@
 
 /* ---------- tokens -------------------------------------------------- */
 
+/*
+ * The shipped palette, restored: warm neutral ground, yellow as accent only.
+ * The renders are meant to be the loudest thing on any page, so yellow never
+ * becomes a field colour.
+ *
+ * The home page sections added later (work rows, chips, thumbnails) read
+ * --accent and --accent-deep directly. There is no per-item colour rotation:
+ * one accent is the whole point of this palette.
+ */
+
 :root {
   --bg: #faf9f6;
   --bg-alt: #f1efe8;
@@ -151,6 +161,10 @@
   --gutter: clamp(1.15rem, 4vw, 3rem);
   --block: clamp(3.5rem, 8vw, 7rem);
   --radius: 2px;
+
+  /* Width of the ring that separates the two overlapping shots in a work row.
+     A token because the shot and its two band variants all read it. */
+  --overlap-ring: 0.5rem;
 }
 
 /* ---------- reset --------------------------------------------------- */
@@ -398,6 +412,66 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
 
 /* ---------- hero ---------------------------------------------------- */
 
+/* The hero leads with type now, not with the render. It used to be the cover
+   image alone, which left the home page with no real <h1> and nothing for a
+   crawler or a screen reader to open on. */
+
+/* Overrides the shared `main > section.hero` rule in helpers, which zeroed the
+   bottom padding when the figure ran flush into the next band. The figure now
+   carries an offset colour plate, and a zero bottom would clip it. */
+main > section.hero {
+  padding-block: clamp(1.5rem, 4vw, 3rem) var(--block);
+}
+
+.hero__intro {
+  max-width: 60rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.hero__greeting {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hero__title { margin-bottom: 1.5rem; }
+
+/* One <span> per authored line. Block display is what makes the array break
+   where the copy says it breaks rather than where the viewport happens to wrap.
+   Ink, not accent: this yellow sits around 1.6:1 on this ground and fails even
+   the 3:1 large-text floor. */
+.hero__line { display: block; }
+
+.hero__lead {
+  max-width: 52ch;
+  margin-bottom: 2rem;
+  font-size: var(--step-1);
+  color: var(--ink-soft);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+  margin: 0;
+}
+
+.hero__alt-link {
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+.hero__alt-link:hover { border-color: var(--ink); }
+
 /* Deliberately contained rather than full bleed.
    The available render is 1312px wide, so a full-bleed band stretched it past its own
    resolution and it went soft. Held inside the shell it is never painted wider than
@@ -435,10 +509,11 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
   text-shadow: 0 1px 3px rgb(0 0 0 / 55%), 0 1px 16px rgb(0 0 0 / 40%);
 }
 
-/* The aspect stays 16/10 at every width. Widening it on desktop cropped roughly a
-   fifth of the frame away and cut the composition badly. */
-
 /* ---------- positioning --------------------------------------------- */
+
+/* The turn from the hero into the work: one centred statement over the research
+   collage. Centred rather than left-set, because the copy is now a single line
+   of display type rather than a two-paragraph block with space beside it. */
 
 /* Decorative section background.
    Sits behind the copy at low opacity. `isolation: isolate` keeps the negative
@@ -466,14 +541,15 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
 }
 
 @media (min-width: 55rem) {
-  /* The copy sits left, ending around 45% across, so all the free space is on the right.
-     The image is held down under the text and comes up to full strength past it. */
+  /* The copy now sits centred, so the old left-to-right mask, which cleared a
+     column on the left, would have washed out exactly the wrong half. A radial
+     hole under the copy does the same job for a centred block. */
   .section-bg img {
-    opacity: 0.75;
-    -webkit-mask-image: linear-gradient(to right,
-      rgb(0 0 0 / 6%) 0%, rgb(0 0 0 / 6%) 45%, rgb(0 0 0 / 100%) 62%, rgb(0 0 0 / 100%) 100%);
-    mask-image: linear-gradient(to right,
-      rgb(0 0 0 / 6%) 0%, rgb(0 0 0 / 6%) 45%, rgb(0 0 0 / 100%) 62%, rgb(0 0 0 / 100%) 100%);
+    opacity: 0.6;
+    -webkit-mask-image: radial-gradient(ellipse 44% 62% at 50% 50%,
+      rgb(0 0 0 / 8%) 0%, rgb(0 0 0 / 100%) 80%);
+    mask-image: radial-gradient(ellipse 44% 62% at 50% 50%,
+      rgb(0 0 0 / 8%) 0%, rgb(0 0 0 / 100%) 80%);
   }
 }
 
@@ -481,15 +557,30 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
   .section-bg { display: none; }
 }
 
+.positioning__copy {
+  max-width: 56ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* Held to roughly two lines of display type. A ch measure on the parent alone
+   would let this run to a single very long line on a wide screen. */
 .positioning__lead {
+  max-width: 24ch;
+  margin-inline: auto;
   font-family: var(--font-display);
-  font-size: var(--step-2);
+  font-size: var(--step-3);
   text-transform: uppercase;
   line-height: var(--lh-display);
   margin-bottom: 1.25rem;
 }
-.positioning__copy { max-width: 34ch; }
-.positioning__body { font-size: var(--step-1); color: var(--ink-soft); max-width: 46ch; }
+
+.positioning__body {
+  max-width: 52ch;
+  margin-inline: auto;
+  font-size: var(--step-1);
+  color: var(--ink-soft);
+}
 
 /* ---------- dual CTA ------------------------------------------------- */
 
@@ -560,6 +651,278 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
 .card__title { margin-bottom: 0.35rem; }
 .card__summary { color: var(--ink-soft); font-size: var(--step--1); }
 
+/* ---------- work list ------------------------------------------------
+ * The home page project list. Not the card grid — that still runs on /du-an/.
+ * Each row is a two-image cluster with the name, tag and summary beneath it,
+ * and rows alternate side. Both images come from the project's own JSON
+ * (cardImage and altImage); nothing was added to static/img/ for this.
+ *
+ * Geometry is all percentages of the stage width, so the whole cluster scales
+ * with the column and only the numbers change at the mobile breakpoint.
+ * ------------------------------------------------------------------- */
+
+.work__list {
+  display: grid;
+  gap: clamp(3rem, 8vw, 6rem);
+  counter-reset: work;
+}
+
+.work-item { counter-increment: work; }
+
+.work-item__link {
+  display: block;
+  text-decoration: none;
+}
+
+/* Absolutely positioned children contribute no height, so the stage has to
+   declare its own. 790 x 300 is the proportion of the reference cluster: the
+   wide shot spans a little over half the width, the square overlaps its right
+   edge and hangs below it. */
+.work-item__stage {
+  position: relative;
+  aspect-ratio: 790 / 300;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.work-item__shot {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+
+.work-item__shot img,
+.work-item__shot .placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-item__shot--wide {
+  left: 9%;
+  top: 0;
+  width: 51%;
+  aspect-ratio: 401 / 262;
+}
+
+.work-item__shot--square {
+  left: 51%;
+  top: 19%;
+  width: 30.5%;
+  aspect-ratio: 1 / 1;
+}
+
+/* The square shot overlaps the wide one, so it needs an edge or the two renders
+   run together. A ring of the band's own background separates them without adding
+   a border, a shadow, or a colour this palette does not have. The band has to be
+   named explicitly: the ring is painted by the shot, which cannot read the
+   background of whichever band it happens to sit in. */
+.work.band-a .work-item__shot--square { outline: var(--overlap-ring) solid var(--bg); }
+.work.band-b .work-item__shot--square { outline: var(--overlap-ring) solid var(--bg-alt); }
+
+/* Alternating side. Swapping left for right is enough — the images are not
+   mirrored, only their positions are, so nothing ends up reading backwards. */
+.work-item:nth-child(even) .work-item__shot--wide { left: auto; right: 9%; }
+.work-item:nth-child(even) .work-item__shot--square { left: auto; right: 51%; }
+
+/* The one hover effect the brief allows on a project image: the same scale the
+   cards on /du-an/ use. */
+.work-item__shot img { transition: transform 700ms ease; }
+.work-item__link:hover .work-item__shot img { transform: scale(1.04); }
+
+.work-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* The row number. The counter increments on .work-item, so a descendant can
+   read it and the markup does not have to carry an index. */
+.work-item__meta::before {
+  content: counter(work, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: var(--lh-display);
+  color: var(--accent-deep);
+}
+
+.work-item__title {
+  margin: 0;
+  font-size: var(--step-2);
+}
+
+.work-item__tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.work-item__go {
+  margin-left: auto;
+  font-size: var(--step--1);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+.work-item__summary {
+  max-width: 68ch;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 47.99rem) {
+  /* On a phone the wide shot takes nearly the full column and the square drops
+     to the bottom corner, so the cluster reads as one object instead of two
+     stamps floating in a very flat box. */
+  .work-item__stage { aspect-ratio: 100 / 70; }
+
+  .work-item__shot--wide { left: 0; top: 0; width: 82%; }
+
+  .work-item__shot--square {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    width: 46%;
+  }
+
+  .work-item:nth-child(even) .work-item__shot--wide { left: auto; right: 0; }
+  .work-item:nth-child(even) .work-item__shot--square { right: auto; left: 0; }
+
+  .work-item__go { margin-left: 0; }
+}
+
+/* The second tier: everything that is not featured, shown as its main image and
+   nothing else. The alt text names the link, so these are not unlabelled tiles. */
+
+/* The break between the two tiers. The rule and the space do the same job as the
+   heading: the featured rows caption themselves from below, so the boundary has to
+   be unmistakable or the last caption annexes the grid. */
+.work__more-heading {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid var(--line);
+  font-size: var(--step-1);
+  color: var(--ink-soft);
+}
+
+.work__more {
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Only matches when `moreHeading` is empty and the grid follows the rows directly.
+   The break still has to be there, so the grid carries the rule itself. */
+.work__list + .work__more {
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 38rem) {
+  .work__more { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 60rem) {
+  .work__more { grid-template-columns: repeat(4, 1fr); }
+}
+
+.work-thumb__link {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+
+.work-thumb__link img { transition: transform 700ms ease; }
+.work-thumb__link:hover img { transform: scale(1.04); }
+
+.work-thumb__link img,
+.work-thumb__link .placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ---------- capabilities ---------------------------------------------- */
+
+.capabilities__head { margin-bottom: clamp(1.75rem, 4vw, 3rem); }
+
+.capabilities__lead {
+  max-width: 44ch;
+  margin-top: 1rem;
+  font-size: var(--step-1);
+  color: var(--ink-soft);
+}
+
+.capabilities__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Ink text on white, outlined in the accent. Yellow reads as an edge here rather
+   than as a field, which is the rule this palette is built on. */
+.chip {
+  padding: 0.3rem 1.1rem;
+  border: 2px solid var(--accent);
+  border-radius: 100px;
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: var(--lh-display);
+  text-transform: uppercase;
+}
+
+/* ---------- bio -------------------------------------------------------- */
+
+.bio__layout {
+  display: grid;
+  gap: clamp(1.75rem, 5vw, 3.5rem);
+}
+
+@media (min-width: 55rem) {
+  .bio__layout {
+    grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.bio__figure {
+  position: relative;
+  max-width: 24rem;
+}
+
+.bio__figure img,
+.bio__figure .placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.bio__copy h2 { margin-bottom: 1rem; }
+
+.bio__lead {
+  font-size: var(--step-1);
+  margin-bottom: 1.25rem;
+}
+
+.bio__copy p { color: var(--ink-soft); }
+.bio__lead { color: var(--ink); }
+
+.bio__more { margin-top: 1.5rem; }
+
 /* ---------- strengths ------------------------------------------------ */
 
 .strengths__list {
@@ -577,6 +940,7 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
   padding-top: 1rem;
   border-top: 2px solid var(--accent);
 }
+
 .strength::before {
   content: counter(strength, decimal-leading-zero);
   display: block;
@@ -585,25 +949,36 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
   color: var(--accent-deep);
   margin-bottom: 0.35rem;
 }
+
 .strength__title { margin-bottom: 0.5rem; }
 .strength__body { color: var(--ink-soft); }
 
 /* ---------- contact -------------------------------------------------- */
 
-/* Copy on the left, the button and the quick links on the right. Below the
-   breakpoint the two stack in reading order, copy first. */
+/* Centred and full width. The two-column version put the button in a right-hand
+   gutter, which reads as a footer note; the closing line of the home page is
+   meant to be the loudest thing on the screen after the hero. */
+.contact-short { text-align: center; }
+
 .contact-short__layout {
   display: grid;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  justify-items: center;
 }
 
-@media (min-width: 48rem) {
-  .contact-short__layout {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-  }
-  .contact-short__aside { justify-self: end; text-align: right; }
-  .contact-short__aside .quick-contact { justify-content: flex-end; }
+.contact-short__copy {
+  max-width: 46ch;
+  margin-inline: auto;
+}
+
+.contact-short__copy h2 {
+  font-size: var(--step-4);
+  margin-bottom: 1rem;
+}
+
+.contact-short__copy p {
+  font-size: var(--step-1);
+  color: var(--ink-soft);
 }
 
 /* The grid gap already separates the aside from the copy, so the button only
@@ -613,6 +988,7 @@ main > section.hero { padding-block: clamp(1.25rem, 3vw, 2.5rem) 0; }
 .quick-contact {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem 1.5rem;
   font-size: var(--step--1);
 }

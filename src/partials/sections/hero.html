@@ -1,21 +1,49 @@
+<!-- Home hero. Typographic first, image second: the render used to carry the whole
+     screen, which left the page with no real <h1> and nothing for a crawler to read.
+     `headlineLines` is an array so the display face breaks where the copywriter says
+     it breaks, not where the viewport happens to wrap it. Each line takes its own
+     colour from :nth-child in main.css. -->
 <section class="hero" data-section="hero">
   <div class="shell">
-  <figure class="hero__figure">
-    {{#if section.image}}
-    <!-- The hero is held inside the shell, so above 74rem it stops growing at the
-         shell's content width (74rem less its gutters). Claiming 100vw here would
-         make the browser fetch a size larger than it will ever paint. -->
-    <img src="{{ section.image }}" srcset="{{ section.imageSet }}"
-         sizes="(min-width: 74rem) 1088px, calc(100vw - 2 * clamp(1.15rem, 4vw, 3rem))"
-         alt="{{ section.alt }}" width="1600" height="1000" fetchpriority="high">
-    {{else}}
-    <div class="placeholder placeholder--wide" role="img" aria-label="{{ section.alt }}">
-      <span>{{ strings.ui.imageComingSoon }}</span>
+    <div class="hero__intro">
+      {{#if section.greeting}}
+      <p class="hero__greeting">{{ section.greeting }}</p>
+      {{/if}}
+
+      <h1 class="hero__title">
+        {{#each section.headlineLines}}<span class="hero__line">{{ this }}</span>{{/each}}
+      </h1>
+
+      {{#if section.lead}}
+      <p class="hero__lead">{{ section.lead }}</p>
+      {{/if}}
+
+      {{#if section.cta}}
+      <p class="hero__actions">
+        <a class="cta cta--primary cta--inline" href="{{ section.cta.url }}">{{ section.cta.label }}</a>
+        {{#if section.ctaSecondary}}
+        <a class="hero__alt-link" href="{{ section.ctaSecondary.url }}">{{ section.ctaSecondary.label }}</a>
+        {{/if}}
+      </p>
+      {{/if}}
     </div>
-    {{/if}}
-    {{#if section.caption}}
-    <figcaption class="hero__caption">{{ section.caption }}</figcaption>
-    {{/if}}
-  </figure>
+
+    <figure class="hero__figure">
+      {{#if section.image}}
+      <!-- The hero is held inside the shell, so above 74rem it stops growing at the
+           shell's content width (74rem less its gutters). Claiming 100vw here would
+           make the browser fetch a size larger than it will ever paint. -->
+      <img src="{{ section.image }}" srcset="{{ section.imageSet }}"
+           sizes="(min-width: 74rem) 1088px, calc(100vw - 2 * clamp(1.15rem, 4vw, 3rem))"
+           alt="{{ section.alt }}" width="1600" height="1000" fetchpriority="high">
+      {{else}}
+      <div class="placeholder placeholder--wide" role="img" aria-label="{{ section.alt }}">
+        <span>{{ strings.ui.imageComingSoon }}</span>
+      </div>
+      {{/if}}
+      {{#if section.caption}}
+      <figcaption class="hero__caption">{{ section.caption }}</figcaption>
+      {{/if}}
+    </figure>
   </div>
 </section>

@@ -3,7 +3,7 @@
 Build plan for request 33, Nguyễn Khánh Đan.
 Written against `CLIENT-BUILD-CONTEXT.md`. Every decision below was taken by Khoa on
 2026-08-17 unless marked OPEN or CLIENT.
-
+To run locally: node build.mjs --serve
 ---
 
 ## 1. Archetype and scope check

@@ -1,0 +1,17 @@
+<!-- "What I can do for you": a heading, one lead line, then a wrapped run of chips.
+     `items` is a flat array of strings, so the CMS can add or drop one without any
+     shape to get wrong. Chip colours rotate from :nth-child in main.css. -->
+<section class="capabilities {{ band }}" data-section="capabilities" data-reveal>
+  <div class="shell">
+    <div class="capabilities__head">
+      <h2>{{ section.heading }}</h2>
+      {{#if section.lead}}<p class="capabilities__lead">{{ section.lead }}</p>{{/if}}
+    </div>
+
+    <ul class="capabilities__tags">
+      {{#each section.items}}
+      <li class="chip">{{ this }}</li>
+      {{/each}}
+    </ul>
+  </div>
+</section>

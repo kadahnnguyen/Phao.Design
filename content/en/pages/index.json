@@ -10,6 +10,22 @@
       "type": "hero",
       "visible": true,
       "pinned": true,
+      "greeting": "Hi, I'm Đan",
+      "_headlineLines": "One array entry per line of the headline. The copy decides where it breaks, not the viewport. Each line takes its own colour.",
+      "headlineLines": [
+        "3D product design",
+        "from the first idea",
+        "to a prototype you can hold"
+      ],
+      "lead": "I'm an Industrial Designer based in Ho Chi Minh City. I look hard at what already exists, ask real users, then propose a direction and build a prototype to prove it.",
+      "cta": {
+        "label": "Chat with me",
+        "url": "/en/lien-he/"
+      },
+      "ctaSecondary": {
+        "label": "See all projects",
+        "url": "/en/du-an/"
+      },
       "image": "/img/home/cover",
       "alt": "Portfolio cover for Nguyễn Khánh Đan 2026, Industrial Designer, with a collage of design, teaching, leatherwork and ceramics",
       "caption": "",
@@ -25,10 +41,33 @@
       "_background": "Page 7 of the portfolio PDF, the market research collage, with every text block painted out (see PAGE_RENDERS in tools/extract-images.py). Decorative only: empty alt, aria-hidden, hidden under prefers-contrast."
     },
     {
-      "type": "highlights",
+      "type": "work-list",
       "visible": true,
-      "heading": "Selected work",
-      "intro": "Five projects that show how I work, from user research through to a physical prototype."
+      "heading": "A slice of the work",
+      "intro": "Three projects worth a close look, with the rest below. Open any image to read the whole process, from research through to a physical prototype.",
+      "_moreHeading": "Heading for the image grid below. Do not leave it empty: each featured project carries its name under its own images, so without this heading the last project's name sits directly above the grid and reads as the name of the whole group.",
+      "moreHeading": "Other projects",
+      "_note": "This section pulls projects from content/en/projects/ and sorts by the order key. Nothing is listed by hand here. A project with featured: true gets a full row, its two images coming from its own cardImage and altImage; every other project shows its main image only. To change which projects get the close look, edit the featured key in the project's own file."
+    },
+    {
+      "type": "capabilities",
+      "visible": true,
+      "heading": "I've got you covered on…",
+      "lead": "From the first round of research, through the technical drawing, to a model you can put on the table.",
+      "items": [
+        "Product design",
+        "User research",
+        "Concept sketching",
+        "3D modelling",
+        "SolidWorks",
+        "KeyShot",
+        "Rendering",
+        "Technical drawings",
+        "Prototyping",
+        "Material selection",
+        "Ceramics",
+        "Graphic design"
+      ]
     },
     {
       "type": "strengths",
@@ -54,6 +93,25 @@
       ]
     },
     {
+      "type": "bio",
+      "visible": true,
+      "heading": "Behind the drawings",
+      "lead": "Meet the person behind these drawings, a quick look into my world.",
+      "body": [
+        "I graduated in Industrial Design from Văn Lang University. My way of working leans on product analysis and honest research.",
+        "Away from the workstation I throw ceramics, draw by hand, stitch leather, and spent a couple of years teaching drawing to children. Each one taught me a different way of reading form.",
+        "I treat every project as a chance to balance how a thing looks against how it works. Three words I like: try, learn, fix."
+      ],
+      "portrait": {
+        "src": "/img/about/portrait",
+        "alt": "Portrait of Nguyễn Khánh Đan"
+      },
+      "cta": {
+        "label": "Read the full introduction",
+        "url": "/en/gioi-thieu/"
+      }
+    },
+    {
       "type": "services-teaser",
       "visible": false,
       "_blocked": "Waiting on the service list and prices from the client. See PLAN.md sections 5 and 9.",
@@ -73,7 +131,7 @@
     {
       "type": "contact-short",
       "visible": true,
-      "heading": "Start a project",
+      "heading": "Think we vibe?",
       "body": "Tell me what you need and I will get back to you within a day or two.",
       "cta": {
         "label": "Send a request",

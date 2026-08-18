@@ -14,6 +14,9 @@
   "heroAlt": "Xe Gravity chở hai người leo dốc đá tại công trường",
   "cardImage": "/img/projects/gravity/kerb",
   "cardAlt": "Xe máy ba bánh tự cân bằng Gravity",
+  "tag": "Phương tiện, công thái học",
+  "altImage": "/img/projects/gravity/street",
+  "altImageAlt": "Gravity chở hai người trên đường phố",
   "chapters": [
     {
       "heading": "Vấn đề",

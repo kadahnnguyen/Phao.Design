@@ -15,6 +15,9 @@
   "heroAlt": "A chef tipping food waste into the Aeterna machine in a restaurant kitchen",
   "cardImage": "/img/projects/aeterna/card",
   "cardAlt": "The Aeterna composting machine in a university canteen",
+  "tag": "appliance, sustainability",
+  "altImage": "/img/projects/aeterna/kitchen",
+  "altImageAlt": "Aeterna installed in a restaurant kitchen",
 
   "chapters": [
     {

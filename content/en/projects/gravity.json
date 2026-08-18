@@ -14,6 +14,9 @@
   "heroAlt": "Gravity carrying two riders up a rocky slope at a quarry",
   "cardImage": "/img/projects/gravity/kerb",
   "cardAlt": "Gravity self-balancing three-wheeled motorcycle",
+  "tag": "mobility, ergonomics",
+  "altImage": "/img/projects/gravity/street",
+  "altImageAlt": "Gravity carrying two riders through city traffic",
   "chapters": [
     {
       "heading": "The problem",

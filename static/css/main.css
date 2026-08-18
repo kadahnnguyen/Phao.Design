@@ -800,8 +800,9 @@ main > section.hero {
   .work-item__go { margin-left: 0; }
 }
 
-/* The second tier: everything that is not featured, shown as its main image and
-   nothing else. The alt text names the link, so these are not unlabelled tiles. */
+/* The second tier: everything that is not featured. At rest it is the project's
+   main image and nothing else; the name, tag and brief description arrive on
+   hover, on the accent panel. */
 
 /* The break between the two tiers. The rule and the space do the same job as the
    heading: the featured rows caption themselves from below, so the boundary has to
@@ -838,19 +839,124 @@ main > section.hero {
 
 .work-thumb__link {
   display: block;
+  position: relative;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--bg-alt);
+  text-decoration: none;
 }
-
-.work-thumb__link img { transition: transform 700ms ease; }
-.work-thumb__link:hover img { transform: scale(1.04); }
 
 .work-thumb__link img,
 .work-thumb__link .placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* The hover panel.
+
+   Yellow as a field is the one exception to the palette rule at the top of this
+   file, and it is deliberate: the panel is transient, it never sits under body
+   copy at rest, and the client asked for exactly this. Ink on this yellow is
+   about 11:1, so the description is comfortably readable while it is up.
+
+   Only opacity moves. Using `visibility`, `display` or a zero height would pull
+   the summary out of the accessibility tree, and this is the only place the
+   second-tier projects carry a description at all. */
+.work-thumb__panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  /* Reversed, so the footer can be first in source order — see the note in
+     work-list.html — while still painting at the bottom of the tile. */
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: clamp(0.8rem, 2vw, 1.15rem);
+  background: var(--accent);
+  color: var(--on-accent);
+
+  /* The reveal runs diagonally out of the bottom-left corner towards the top
+     right, as on the reference site, rather than fading in place.
+
+     It is a triangle clipped to nothing at the bottom-left corner, growing until
+     it covers the tile. Both states are three-point polygons, which is what makes
+     clip-path interpolate: a transition between polygons with different vertex
+     counts is not animatable and would snap. The open state deliberately
+     overshoots the box (-150% / 250%) so the hypotenuse clears the top-right
+     corner instead of grazing it and leaving a sliver uncovered.
+
+     Opacity is kept as well, and kept short, so the wipe carries the motion while
+     a browser that cannot animate clip-path still gets a plain fade rather than a
+     panel stuck over the image. */
+  clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+  opacity: 0;
+  transition: clip-path 420ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 120ms ease;
+}
+
+/* A tile is a fixed 4:3 box and the summaries are not a fixed length, so the clamp
+   is the backstop. It is set to 6 rather than 5 because the footer below no longer
+   wraps: pinning the arrow and stacking the name over the tag made the footer's
+   height predictable, which bought the summary the line it was short of. Slightly
+   under --step--1, since a hover teaser can run a touch smaller than body copy. */
+.work-thumb__summary {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
+
+/* Name over tag, deliberately, rather than a wrapping row. At tile width the two
+   never fit on one line, so left to itself the row broke in a different place on
+   every tile. */
+.work-thumb__foot {
+  display: grid;
+  gap: 0.1rem;
+  padding-right: 1.75rem;
+  font-size: var(--step--1);
+  line-height: 1.35;
+}
+
+.work-thumb__name { font-weight: 600; }
+.work-thumb__tag { opacity: 0.7; }
+
+/* Out of flow, so it takes no part in the footer's height or wrapping. The
+   footer's right padding is what keeps the tag from running under it. */
+.work-thumb__arrow {
+  position: absolute;
+  right: clamp(0.8rem, 2vw, 1.15rem);
+  bottom: clamp(0.8rem, 2vw, 1.15rem);
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+/* Two conditions, both necessary.
+
+   `hover: hover` because on a touch screen the panel could never be raised without
+   following the link. Not `pointer: fine` as well: a laptop with a touchscreen
+   reports its primary pointer as coarse even with a mouse attached, which would
+   have switched the panel off for a mouse user.
+
+   `min-width: 60rem` because this is the width at which the grid goes to four
+   columns and a tile reaches ~257x193 — measured as the point where a six-line
+   summary and the footer both fit. Narrower than that the tile is too small to
+   hold the text, so it stays what it was: just the image. */
+@media (hover: hover) and (min-width: 60rem) {
+  .work-thumb__link:hover .work-thumb__panel {
+    clip-path: polygon(0% -150%, 0% 100%, 250% 100%);
+    opacity: 1;
+  }
+}
+
+/* Keyboard focus raises the panel at every width and on every pointer type. If the
+   link can be focused the description has to be reachable, and on a narrow tile the
+   line clamp cuts the text rather than breaking the layout. */
+.work-thumb__link:focus-visible .work-thumb__panel {
+  clip-path: polygon(0% -150%, 0% 100%, 250% 100%);
+  opacity: 1;
 }
 
 /* ---------- capabilities ---------------------------------------------- */
@@ -956,13 +1062,24 @@ main > section.hero {
 /* ---------- contact -------------------------------------------------- */
 
 /* Centred and full width. The two-column version put the button in a right-hand
-   gutter, which reads as a footer note; the closing line of the home page is
-   meant to be the loudest thing on the screen after the hero. */
+   gutter, which reads as a footer note.
+
+   Sized down from the first pass, which set the heading at --step-4 and gave the
+   section the full --block padding. At --step-4 this h2 matched the hero's h1,
+   which made the closing line compete with the opening one and pushed the section
+   past 700px tall on a laptop. It is a sign-off, not a second hero. */
 .contact-short { text-align: center; }
+
+/* Shorter than the standard section rhythm, on purpose: there is one heading, one
+   line of copy and a button here, so the full --block above and below left the
+   button floating in the middle of an empty screen. */
+main > section.contact-short {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
 
 .contact-short__layout {
   display: grid;
-  gap: clamp(1.5rem, 4vw, 2.5rem);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
   justify-items: center;
 }
 
@@ -971,19 +1088,27 @@ main > section.hero {
   margin-inline: auto;
 }
 
+/* --step-3 is the size every other h2 on the page uses. Matching them keeps this
+   from reading as a third tier of heading. */
 .contact-short__copy h2 {
-  font-size: var(--step-4);
-  margin-bottom: 1rem;
+  font-size: var(--step-3);
+  margin-bottom: 0.75rem;
 }
 
 .contact-short__copy p {
-  font-size: var(--step-1);
+  font-size: var(--step-0);
   color: var(--ink-soft);
+}
+
+/* Scoped, not applied to .cta itself: the same class carries the submit button on
+   /lien-he/ and both buttons on the 404, and neither should shrink with this. */
+.contact-short .cta {
+  padding: 0.85rem 1.85rem;
 }
 
 /* The grid gap already separates the aside from the copy, so the button only
    needs the space below it, before the quick links. */
-.contact-short__actions { margin: 0 0 1.5rem; }
+.contact-short__actions { margin: 0 0 1rem; }
 
 .quick-contact {
   display: flex;

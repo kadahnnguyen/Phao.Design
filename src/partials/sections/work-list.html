@@ -76,14 +76,35 @@
       <li class="work-thumb">
         <a class="work-thumb__link" href="{{ this.url }}">
           {{#if this.cardImage}}
+          <!-- Empty alt on purpose. The panel below carries the project's name, tag
+               and summary as real text, and that text is what names this link. With
+               cardAlt here as well the link would announce the project twice. -->
           <img src="{{ this.cardImage }}" srcset="{{ this.cardImageSet }}"
                sizes="(min-width: 60rem) 16rem, (min-width: 38rem) 30vw, 44vw"
-               alt="{{ this.cardAlt }}" width="800" height="600" loading="lazy" decoding="async">
+               alt="" width="800" height="600" loading="lazy" decoding="async">
           {{else}}
           <div class="placeholder" role="img" aria-label="{{ this.cardAlt }}">
             <span>{{ strings.ui.imageComingSoon }}</span>
           </div>
           {{/if}}
+
+          <!-- Revealed on hover and on keyboard focus. It is faded, never hidden with
+               `visibility` or `display`, so the summary stays in the accessibility
+               tree at all times: on a touch screen there is no hover to trigger it. -->
+          <!-- Name and tag come first in source order on purpose. This text is what
+               names the link, and a name is built by concatenating the contents in
+               DOM order, so with the summary first a screen reader announced the
+               whole description before saying which project it belonged to. The
+               panel is `column-reverse`, which puts the summary back on top
+               visually without changing the order the text is read in. -->
+          <span class="work-thumb__panel">
+            <span class="work-thumb__foot">
+              <span class="work-thumb__name">{{ this.title }}</span>
+              {{#if this.tag}}<span class="work-thumb__tag">{{ this.tag }}</span>{{/if}}
+              <span class="work-thumb__arrow" aria-hidden="true">&#187;</span>
+            </span>
+            {{#if this.summary}}<span class="work-thumb__summary">{{ this.summary }}</span>{{/if}}
+          </span>
         </a>
       </li>
       {{/each}}

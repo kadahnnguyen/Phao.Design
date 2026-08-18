@@ -372,6 +372,8 @@ async function build() {
       post.url = pageUrl(site, locale, `tin-tuc/${post.slug}`);
     }
 
+    const featuredProjects = projects.filter((p) => p.featured);
+
     const base = {
       site,
       locale,
@@ -379,7 +381,7 @@ async function build() {
       nav,
       projects,
       posts,
-      featuredProjects: projects.filter((p) => p.featured),
+      featuredProjects,
       otherProjects: projects.filter((p) => !p.featured),
       homeUrl: pageUrl(site, locale, 'index'),
       projectsUrl: pageUrl(site, locale, 'du-an'),

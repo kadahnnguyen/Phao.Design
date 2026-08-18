@@ -1,7 +1,7 @@
 /*
- * Phao Design. Four jobs only: the mobile nav, reveal on scroll, hero cross-fade,
- * and the project-rail scroll fade. No dependencies, no build step, nothing that
- * needs replacing after handover.
+ * Phao Design. Four jobs only: the mobile nav, reveal on scroll, tap-to-peek on
+ * the featured project cards, and the project-rail scroll fade. No dependencies,
+ * no build step, nothing that needs replacing after handover.
  */
 
 (() => {
@@ -71,6 +71,66 @@
 
   /* The hero is a single still image by design, so there is no third effect here.
      Two remain: reveal on entry, and the card scale on hover. */
+
+  /* ---------- tap to peek ---------- */
+
+  // A featured project card shows its description on hover. A touch screen has no
+  // hover, so without this the card would jump straight to its page and the
+  // description would never be readable at all. First tap opens the panel, second
+  // tap follows the link, a tap anywhere else closes it.
+  //
+  // Deliberately driven off `click`, not `touchstart`. A tap fires touchstart AND
+  // a synthetic click, so handling the former means the latter still arrives and
+  // navigates out from under the panel that just opened.
+
+  const peekables = document.querySelectorAll('[data-peek]');
+
+  if (peekables.length) {
+    const hoverless = window.matchMedia('(hover: none)');
+
+    // No "currently open" variable: the class on the element is the only state, and
+    // it is read back from the DOM each time. Tracking it in a local as well gives
+    // two sources of truth that can drift, and the failure mode when they do is the
+    // bad one — the card navigates on the first tap and its description is never
+    // seen. CSS reads the class, so the class is what decides.
+    const closePeek = () => {
+      const open = document.querySelector('[data-peek].is-peeking');
+      if (open) open.classList.remove('is-peeking');
+    };
+
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('[data-peek]');
+
+      // Anywhere else on the page, including another link: cancel and let the
+      // click do whatever it was going to do.
+      if (!card) {
+        closePeek();
+        return;
+      }
+
+      // Read the media query per event rather than once at startup: a tablet with
+      // a keyboard case attached, or a laptop with a touchscreen, can gain or lose
+      // hover mid-session. Where hover exists the CSS already handles this and a
+      // click has to stay immediate.
+      if (!hoverless.matches) return;
+
+      // Second tap on the same card. Fall through with no preventDefault so the
+      // browser follows the href.
+      if (card.classList.contains('is-peeking')) return;
+
+      e.preventDefault();
+      closePeek();
+      card.classList.add('is-peeking');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePeek();
+    });
+
+    // Otherwise a card left open on a touchscreen laptop would stay open once a
+    // mouse appears and the CSS hover rules take over.
+    hoverless.addEventListener('change', closePeek);
+  }
 
   /* ---------- project rail scroll fade ---------- */
 

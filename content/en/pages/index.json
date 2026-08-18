@@ -44,7 +44,8 @@
       "type": "work-list",
       "visible": true,
       "heading": "A slice of the work",
-      "intro": "Three projects worth a close look, with the rest below. Open any image to read the whole process, from research through to a physical prototype.",
+      "_intro": "Do not state how many projects are featured. The featured list comes from the featured key in each project file, so the number can change at any time and nobody will remember to update this sentence.",
+      "intro": "Featured projects worth a close look, with the rest below. Open any image to read the whole process, from research through to a physical prototype.",
       "_moreHeading": "Heading for the image grid below. Do not leave it empty: each featured project carries its name under its own images, so without this heading the last project's name sits directly above the grid and reads as the name of the whole group.",
       "moreHeading": "Other projects",
       "_note": "This section pulls projects from content/en/projects/ and sorts by the order key. Nothing is listed by hand here. A project with featured: true gets a full row, its two images coming from its own cardImage and altImage; every other project shows its main image only. To change which projects get the close look, edit the featured key in the project's own file."

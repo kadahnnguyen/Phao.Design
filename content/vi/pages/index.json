@@ -44,7 +44,8 @@
       "type": "work-list",
       "visible": true,
       "heading": "Một phần công việc",
-      "intro": "Ba dự án mình muốn bạn xem kỹ, còn lại xếp bên dưới. Bấm vào bất kỳ ảnh nào để đọc toàn bộ quá trình, từ nghiên cứu tới mẫu thật.",
+      "_intro": "Đừng nhắc số lượng dự án ở đây. Danh sách nổi bật lấy từ khoá featured trong từng file dự án, nên con số có thể đổi bất cứ lúc nào mà không ai nhớ sửa lại câu này.",
+      "intro": "Những dự án nổi bật mình muốn bạn xem kỹ, còn lại xếp bên dưới. Bấm vào bất kỳ ảnh nào để đọc toàn bộ quá trình, từ nghiên cứu tới mẫu thật.",
       "_moreHeading": "Tiêu đề cho nhóm ảnh phía dưới. Đừng bỏ trống: mỗi dự án nổi bật ghi tên ở phía dưới ảnh của nó, nên nếu không có tiêu đề này thì tên dự án cuối cùng sẽ nằm ngay trên nhóm ảnh và trông như tên của cả nhóm.",
       "moreHeading": "Các dự án khác",
       "_note": "Mục này tự lấy dự án trong content/vi/projects/, sắp theo khoá order. Không có danh sách nào phải chép tay ở đây. Dự án có featured: true được trình bày thành một dòng đầy đủ, hai ảnh lấy từ cardImage và altImage của chính nó; các dự án còn lại chỉ hiện ảnh chính. Muốn đổi dự án nào được xem kỹ thì sửa khoá featured trong file của dự án đó."

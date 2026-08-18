@@ -161,10 +161,6 @@
   --gutter: clamp(1.15rem, 4vw, 3rem);
   --block: clamp(3.5rem, 8vw, 7rem);
   --radius: 2px;
-
-  /* Width of the ring that separates the two overlapping shots in a work row.
-     A token because the shot and its two band variants all read it. */
-  --overlap-ring: 0.5rem;
 }
 
 /* ---------- reset --------------------------------------------------- */
@@ -652,152 +648,304 @@ main > section.hero {
 .card__summary { color: var(--ink-soft); font-size: var(--step--1); }
 
 /* ---------- work list ------------------------------------------------
- * The home page project list. Not the card grid — that still runs on /du-an/.
- * Each row is a two-image cluster with the name, tag and summary beneath it,
- * and rows alternate side. Both images come from the project's own JSON
- * (cardImage and altImage); nothing was added to static/img/ for this.
+ * The featured projects, laid out as three photographic prints: tilted a couple
+ * of degrees each, overlapping slightly, all on one line on a desktop and
+ * stacked on a phone. The brief description rides on top of the print as a
+ * translucent, blurred panel, so the image stays partly readable underneath.
  *
- * Geometry is all percentages of the stage width, so the whole cluster scales
- * with the column and only the numbers change at the mobile breakpoint.
+ * Two things carry the "print" reading and both are load-bearing rather than
+ * decorative: the white frame, and a soft shadow. Overlapping tilted images with
+ * neither would read as one torn collage instead of separate photographs.
+ *
+ * Interaction splits by input, not by width:
+ *   mouse   :hover opens the panel, and lifts that print above its neighbours.
+ *   touch   first tap opens it, second follows the link, a tap elsewhere closes
+ *           it. See the tap-to-peek block in main.js; it adds .is-peeking, which
+ *           is why every open state below is written three ways.
+ *   keyboard :focus-visible, at every width and on every device.
  * ------------------------------------------------------------------- */
 
 .work__list {
-  display: grid;
-  gap: clamp(3rem, 8vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Wider than it looks like it needs to be. A tilted print is taller than its
+     layout box — at 5.5deg on a 303px card the corners hang ~14px past it top and
+     bottom — so a neighbouring pair eats ~23px of this gap before any air is left.
+     At 2rem that left 9px between corners, which the 22px shadow spread closed up
+     entirely. */
+  gap: clamp(2.75rem, 8vw, 3.5rem);
+  /* This list sits outside .shell so the row can use the full width, which means
+     it has to supply the gutters the shell used to give it. */
+  padding-inline: var(--gutter);
   counter-reset: work;
 }
 
-.work-item { counter-increment: work; }
+.work-item {
+  counter-increment: work;
+  /* Positioned so z-index applies: raising the active print above its
+     neighbours is the whole point of the overlap. */
+  position: relative;
+  z-index: 1;
+  width: min(88%, 27rem);
+}
+
+/* The tilt. `rotate` and `scale` as separate properties rather than one
+   `transform`, so the hover state can straighten a print without having to
+   restate whichever angle that particular one started at. */
+/* Four steps, not three, and the signs alternate strictly: - + - +. On a
+   three-step cycle a fourth print repeated the first angle, which put two
+   left-leaning prints side by side (3rd and 4th) and the row stopped reading as
+   scattered. Four alternating angles tile cleanly at any count. */
+.work-item:nth-child(4n + 1) { rotate: -5.5deg; }
+.work-item:nth-child(4n + 2) { rotate: 3.5deg; }
+.work-item:nth-child(4n + 3) { rotate: -2.5deg; }
+.work-item:nth-child(4n + 4) { rotate: 4.5deg; }
 
 .work-item__link {
   display: block;
   text-decoration: none;
 }
 
-/* Absolutely positioned children contribute no height, so the stage has to
-   declare its own. 790 x 300 is the proportion of the reference cluster: the
-   wide shot spans a little over half the width, the square overlaps its right
-   edge and hangs below it. */
 .work-item__stage {
   position: relative;
-  aspect-ratio: 790 / 300;
-  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  /* Query container for the panel's type. `inline-size` contains the inline axis
+     only, so the stage's height still comes from the image inside it. */
+  container-type: inline-size;
+  /* No frame: the image runs to the edge of the print. That makes the shadow
+     load-bearing rather than decorative — it is the only thing separating a print
+     from the one it overlaps, so it is a step stronger than it was when a white
+     border was doing half that job. */
+  box-shadow: 0 0.4rem 1.4rem rgb(0 0 0 / 20%);
+  transition: box-shadow 250ms ease;
 }
 
 .work-item__shot {
-  position: absolute;
   margin: 0;
   overflow: hidden;
-  border-radius: var(--radius);
   background: var(--bg-alt);
 }
 
 .work-item__shot img,
 .work-item__shot .placeholder {
   width: 100%;
-  height: 100%;
+  /* 4:3 on a phone, where the print is a single column and the panel needs the
+     height: at 3:2 the panel came out 187px tall, the foot took 69 of it, and the
+     description was left with three lines and a mid-sentence cut. The extra ~27px
+     is the difference between a clamped summary and a whole one. It also matches
+     the source images, so nothing is cropped at this size. Widened to 3:2 at
+     60rem below, where three prints share the row and the panel is wider. */
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.work-item__shot--wide {
-  left: 9%;
-  top: 0;
-  width: 51%;
-  aspect-ratio: 401 / 262;
+/* Lift: straighten the print, raise it slightly, deepen its shadow, and bring it
+   above the two it overlaps. */
+.work-item:hover,
+.work-item:focus-within,
+.work-item:has(.is-peeking) {
+  z-index: 5;
 }
 
-.work-item__shot--square {
-  left: 51%;
-  top: 19%;
-  width: 30.5%;
-  aspect-ratio: 1 / 1;
+.work-item__link:hover .work-item__stage,
+.work-item__link:focus-visible .work-item__stage,
+.work-item__link.is-peeking .work-item__stage {
+  box-shadow: 0 1rem 2.4rem rgb(0 0 0 / 28%);
 }
 
-/* The square shot overlaps the wide one, so it needs an edge or the two renders
-   run together. A ring of the band's own background separates them without adding
-   a border, a shadow, or a colour this palette does not have. The band has to be
-   named explicitly: the ring is painted by the shot, which cannot read the
-   background of whichever band it happens to sit in. */
-.work.band-a .work-item__shot--square { outline: var(--overlap-ring) solid var(--bg); }
-.work.band-b .work-item__shot--square { outline: var(--overlap-ring) solid var(--bg-alt); }
+@media (hover: hover) {
+  .work-item:hover { rotate: 0deg; scale: 1.03; }
+}
 
-/* Alternating side. Swapping left for right is enough — the images are not
-   mirrored, only their positions are, so nothing ends up reading backwards. */
-.work-item:nth-child(even) .work-item__shot--wide { left: auto; right: 9%; }
-.work-item:nth-child(even) .work-item__shot--square { left: auto; right: 51%; }
+.work-item:focus-within,
+.work-item:has(.is-peeking) { rotate: 0deg; scale: 1.03; }
 
-/* The one hover effect the brief allows on a project image: the same scale the
-   cards on /du-an/ use. */
-.work-item__shot img { transition: transform 700ms ease; }
-.work-item__link:hover .work-item__shot img { transform: scale(1.04); }
+.work-item { transition: rotate 300ms ease, scale 300ms ease; }
 
-.work-item__meta {
+/* The panel.
+
+   Translucent accent over a backdrop blur, so the photograph reads through it
+   without competing with the text. The accent is held at 72%: over a black
+   photograph that still leaves ink at about 6:1, and over a white one about
+   13:1, so the description clears AA whatever the image underneath happens to
+   be. Lower than that and the worst case starts failing.
+
+   -webkit- prefix included: without it Safari paints a flat translucent wash and
+   the blur is the half of the effect that makes text on a photo legible. */
+.work-item__panel {
+  position: absolute;
+  /* Pinned on three sides, free at the bottom, and at least as tall as the print.
+     So it matches the print exactly whenever the text fits — which is every
+     realistic featured count — and grows *past* the bottom edge when it does not,
+     rather than clamping the description to fit.
+
+     It can afford to: an open panel is lifted to z-index 5, so the overspill paints
+     over its neighbours and over whatever is beneath the row. Locking it to
+     `inset: 0` was throwing away the one advantage of being on top.
+
+     Nothing clips it. The stage has no `overflow: hidden`, and its
+     `container-type: inline-size` applies layout containment, not paint. */
+  inset: 0 0 auto 0;
+  min-height: 100%;
+  display: flex;
+  /* Reversed, so the foot can be first in source order — see the note in
+     work-list.html — while the description still paints at the top. */
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: clamp(0.9rem, 2vw, 1.4rem);
+  background: color-mix(in srgb, var(--accent) 72%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--on-accent);
+
+  /* Same bottom-left to top-right wipe as the thumbnails. Both states are
+     three-point polygons in percentages, which is what lets clip-path
+     interpolate; the open state overshoots so the hypotenuse clears the
+     top-right corner rather than grazing it. */
+  clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+  opacity: 0;
+  transition: clip-path 420ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 120ms ease;
+}
+
+@media (hover: hover) {
+  .work-item__link:hover .work-item__panel {
+    clip-path: polygon(0% -150%, 0% 100%, 250% 100%);
+    opacity: 1;
+  }
+}
+
+.work-item__link:focus-visible .work-item__panel,
+.work-item__link.is-peeking .work-item__panel {
+  clip-path: polygon(0% -150%, 0% 100%, 250% 100%);
+  opacity: 1;
+}
+
+/* Sized from the print, not the viewport. A viewport-based clamp is wrong here as
+   soon as the featured count changes: at three prints a card is ~392px and 1rem
+   fits, at four it is ~305px and the same 1rem overflows, and the viewport has not
+   moved. cqw is a share of the stage's own width, so the type tracks whatever width
+   the count arithmetic below hands each print.
+
+   Upper bound 1rem because 16.11px is the size measured to fit at three across;
+   never exceed what was verified. Lower bound 0.78rem so a very long featured list
+   degrades to small-but-legible rather than unreadable.
+
+   The clamp is only a guard against pathological copy now. It used to be 7, which
+   was doing real work — cutting descriptions to fit a panel locked to the print's
+   height. The panel grows instead, so 14 sits far above anything a summary should
+   ever be and never fires in normal use. */
+.work-item__summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 14;
+  line-clamp: 14;
+  overflow: hidden;
+  font-size: clamp(0.78rem, 4.2cqw, 1rem);
+  line-height: 1.45;
+}
+
+/* Out of flow, so it plays no part in the foot's wrapping or height. The foot's
+   right padding is what keeps the tag from running under it. */
+.work-item__arrow {
+  position: absolute;
+  right: clamp(0.9rem, 2vw, 1.4rem);
+  bottom: clamp(0.9rem, 2vw, 1.4rem);
+  font-size: var(--step-2);
+  line-height: 1;
+}
+
+/* Wraps rather than being a fixed grid: on the narrower prints the tag drops
+   below the name on its own, and on the wider ones it stays alongside. */
+.work-item__foot {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.5rem 1.1rem;
-  margin-bottom: 0.75rem;
+  gap: 0.35rem 0.6rem;
+  padding-right: 2rem;
 }
 
-/* The row number. The counter increments on .work-item, so a descendant can
+/* The print number. The counter increments on .work-item, so a descendant can
    read it and the markup does not have to carry an index. */
-.work-item__meta::before {
+.work-item__foot::before {
   content: counter(work, decimal-leading-zero);
   font-family: var(--font-display);
-  font-size: var(--step-1);
+  font-size: var(--step-0);
   line-height: var(--lh-display);
-  color: var(--accent-deep);
+  /* Not --accent-deep, which was near-invisible once this moved onto the yellow
+     panel. Ink at reduced strength reads as a quiet index either way. */
+  opacity: 0.55;
 }
 
+/* Also print-relative, for the same reason as the summary: --step-1 is sized for a
+   print at three across and is too heavy once four share the row. Capped at the
+   --step-1 ceiling so it never grows past what it used to be. */
 .work-item__title {
   margin: 0;
-  font-size: var(--step-2);
+  font-size: clamp(1rem, 6cqw, 1.5rem);
 }
 
+/* Outlined, not the filled pill used elsewhere: a solid --accent tag on an
+   --accent panel would disappear. The border and text both inherit the panel's
+   ink, so it stays legible over whatever the photograph does underneath. */
 .work-item__tag {
-  padding: 0.3rem 0.8rem;
+  padding: 0.15rem 0.6rem;
+  border: 1px solid currentColor;
   border-radius: 100px;
-  background: var(--accent);
-  color: var(--on-accent);
   font-size: var(--step--1);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
 
-.work-item__go {
-  margin-left: auto;
-  font-size: var(--step--1);
-  font-weight: 600;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 2px;
-}
-
-.work-item__summary {
-  max-width: 68ch;
-  color: var(--ink-soft);
-}
-
-@media (max-width: 47.99rem) {
-  /* On a phone the wide shot takes nearly the full column and the square drops
-     to the bottom corner, so the cluster reads as one object instead of two
-     stamps floating in a very flat box. */
-  .work-item__stage { aspect-ratio: 100 / 70; }
-
-  .work-item__shot--wide { left: 0; top: 0; width: 82%; }
-
-  .work-item__shot--square {
-    left: auto;
-    right: 0;
-    top: auto;
-    bottom: 0;
-    width: 46%;
+/* Three across, overlapping. The widths are picked so the row totals exactly
+   100%: 3 x 36% less the two -4% overlaps. Vertical padding gives the rotated
+   corners somewhere to go — a tilted box is taller than its layout box, and
+   without it the top print clips into the section above. */
+@media (min-width: 60rem) {
+  .work__list {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    /* One line, always. Wrapping was tried and removed: it kept the prints large
+       but broke the row into a short second line, which reads as a mistake rather
+       than a layout. Column overlap is done with negative margins, so no gap. */
+    gap: 0;
+    padding-block: clamp(1.5rem, 3vw, 3rem);
   }
 
-  .work-item:nth-child(even) .work-item__shot--wide { left: auto; right: 0; }
-  .work-item:nth-child(even) .work-item__shot--square { right: auto; left: 0; }
+  /* Print size is fixed, not a share of the row. That is the whole point: three
+     prints should look like three prints, not like three prints stretched to fill a
+     1920 screen. They only shrink once there are enough of them to run out of room.
 
-  .work-item__go { margin-left: 0; }
+     flex: 0 1 26rem — never grow past 26rem, shrink when the row cannot hold them.
+     Flex counts the negative margins as it works out the free space, so the shrink
+     lands exactly on the available width with the overlap intact.
+
+     What that gives, measured on a 1920 screen: three prints span ~62% of it and
+     stay 416px, four span ~82%, and from five on they fill the line and start
+     shrinking. On a 1280 screen three already fill it. Adding a project spends
+     width first and only then makes the prints smaller.
+
+     This replaced a width: calc() driven by a --work-count from build.mjs. The
+     arithmetic worked, but it divided the row up between however many prints there
+     were, so three prints were handed a third of a very wide screen each and came
+     out 651px. Flex expresses the intent directly and needs no count at all. */
+  .work-item {
+    flex: 0 1 26rem;
+    width: auto;
+  }
+
+  /* Overlap in rem, not the percentage the count formula needed. A percentage was
+     of the row, so on a wide screen it grew to ~73px while the prints stayed capped
+     — the overlap has to scale with the print, not the viewport. */
+  .work-item:not(:last-child) { margin-right: -2rem; }
+
+  /* Wider crop once the prints are side by side: three 4:3 frames in a row are
+     tall enough to push the thumbnails well down the page, and the panel has the
+     width it needs at this size without the extra height. */
+  .work-item__shot img,
+  .work-item__shot .placeholder { aspect-ratio: 3 / 2; }
 }
 
 /* The second tier: everything that is not featured. At rest it is the project's

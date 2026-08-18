@@ -1,33 +1,47 @@
 <!-- The home page work list, in two tiers.
 
-     Featured projects get a full row: a loose two-image cluster, then the name,
-     tag and one-line summary, with rows alternating side. Everything else is a
-     plain thumbnail of its main image. Both tiers link through to the project.
+     Featured projects get a full row: one large image with the name, tag and a
+     link beneath it, rows alternating side. Everything else is a plain thumbnail.
+     Both tiers show the brief description on hover, on the same accent panel.
 
      The split needs no logic here — build.mjs already puts `featuredProjects` and
      `otherProjects` in the context, so the template stays flat and the engine
      never needs an expression. Which projects are featured is decided by the
      `featured` key in each project's own JSON.
 
-     Every image is the project's own cardImage or altImage. Nothing was added to
-     static/img/ for this section. -->
+     Every image is the project's own cardImage. Nothing was added to static/img/
+     for this section. -->
 <section class="work {{ band }}" data-section="work-list" data-reveal>
   <div class="shell">
     <header class="section-head">
       <h2>{{ section.heading }}</h2>
       {{#if section.intro}}<p class="section-head__intro measure">{{ section.intro }}</p>{{/if}}
     </header>
+  </div>
 
-    <ol class="work__list">
+  <!-- Deliberately outside .shell, which caps at 74rem. The prints are laid out as
+       a share of the row, so capping the row is what made them cluster in the middle
+       of a wide screen with empty space either side. This list spans the full width
+       and carries its own gutters; everything else in the section stays in the shell.
+
+       No count is passed in: each print has a preferred width and shrinks only when
+       there are enough of them to fill the row. See .work-item in main.css. -->
+  <ol class="work__list">
       {{#each featuredProjects}}
       <li class="work-item">
-        <a class="work-item__link" href="{{ this.url }}">
+        <!-- data-peek marks a link whose panel opens on a first tap rather than
+             following the href straight away. main.js reads it; without JS the
+             card is an ordinary link and the panel simply never opens on touch. -->
+        <a class="work-item__link" href="{{ this.url }}" data-peek>
           <div class="work-item__stage">
-            <figure class="work-item__shot work-item__shot--wide">
+            <figure class="work-item__shot">
               {{#if this.cardImage}}
+              <!-- Empty alt on purpose: the meta row and the panel carry the name,
+                   tag and summary as real text, and that text is what names this
+                   link. cardAlt here as well would announce it twice. -->
               <img src="{{ this.cardImage }}" srcset="{{ this.cardImageSet }}"
-                   sizes="(min-width: 60rem) 34rem, 62vw"
-                   alt="{{ this.cardAlt }}" width="800" height="600" loading="lazy" decoding="async">
+                   sizes="(min-width: 60rem) 24rem, 92vw"
+                   alt="" width="800" height="600" loading="lazy" decoding="async">
               {{else}}
               <div class="placeholder" role="img" aria-label="{{ this.cardAlt }}">
                 <span>{{ strings.ui.imageComingSoon }}</span>
@@ -35,38 +49,43 @@
               {{/if}}
             </figure>
 
-            {{#if this.altImage}}
-            <!-- Second view of the same project. Decorative in the strict sense: the
-                 row already has an alt on the wide shot and a text summary, so this
-                 one is aria-hidden rather than repeating the project twice to a
-                 screen reader. The title attribute keeps it useful on hover. -->
-            <figure class="work-item__shot work-item__shot--square" aria-hidden="true">
-              <img src="{{ this.altImage }}" srcset="{{ this.altImageSet }}"
-                   sizes="(min-width: 60rem) 20rem, 36vw"
-                   alt="" title="{{ this.altImageAlt }}" width="600" height="600" loading="lazy" decoding="async">
-            </figure>
-            {{/if}}
-          </div>
+            <!-- Everything about the project lives on the panel: name, tag and
+                 description. Below the print there is nothing, which is what stops
+                 one card's caption running under the card overlapping it.
 
-          <div class="work-item__meta">
-            <h3 class="work-item__title">{{ this.title }}</h3>
-            {{#if this.tag}}<span class="work-item__tag">{{ this.tag }}</span>{{/if}}
-            <span class="work-item__go">{{ strings.ui.viewProject }}</span>
-          </div>
+                 A div, not a span: it carries an <h3>, which is flow content and
+                 not allowed inside phrasing content.
 
-          {{#if this.summary}}<p class="work-item__summary">{{ this.summary }}</p>{{/if}}
+                 The panel is clipped and faded, never hidden with `visibility` or
+                 `display`, so the name and description stay in the accessibility
+                 tree and in the heading outline even while it is down.
+
+                 Name and tag come first in source order — that is the order the
+                 link's accessible name is built in, and leading with the
+                 description made a screen reader read the whole paragraph before
+                 saying which project it belonged to. The panel is `column-reverse`,
+                 which puts the description back on top visually. -->
+            <div class="work-item__panel">
+              <div class="work-item__foot">
+                <h3 class="work-item__title">{{ this.title }}</h3>
+                {{#if this.tag}}<span class="work-item__tag">{{ this.tag }}</span>{{/if}}
+              </div>
+              {{#if this.summary}}<span class="work-item__summary">{{ this.summary }}</span>{{/if}}
+              <span class="work-item__arrow" aria-hidden="true">&#187;</span>
+            </div>
+          </div>
         </a>
       </li>
       {{/each}}
-    </ol>
+  </ol>
 
-    <!-- The remaining projects, image only. The alt text is what names each link,
-         so these tiles are not the unlabelled squares they look like.
+  <div class="shell">
+    <!-- The remaining projects, image only at rest.
 
-         The heading is not decoration. Each featured row carries its title and
-         summary *below* its images, so without a label here the last row's caption
-         sits directly above this grid and reads as the grid's own heading — the
-         last project appears to be the name of the whole group. -->
+         The heading is not decoration. Each featured row carries its title below
+         its image, so without a label here the last row's caption sits directly
+         above this grid and reads as the grid's own heading — the last project
+         appears to be the name of the whole group. -->
     {{#if section.moreHeading}}
     <h3 class="work__more-heading">{{ section.moreHeading }}</h3>
     {{/if}}
@@ -76,9 +95,7 @@
       <li class="work-thumb">
         <a class="work-thumb__link" href="{{ this.url }}">
           {{#if this.cardImage}}
-          <!-- Empty alt on purpose. The panel below carries the project's name, tag
-               and summary as real text, and that text is what names this link. With
-               cardAlt here as well the link would announce the project twice. -->
+          <!-- Empty alt, same reason as the featured rows above. -->
           <img src="{{ this.cardImage }}" srcset="{{ this.cardImageSet }}"
                sizes="(min-width: 60rem) 16rem, (min-width: 38rem) 30vw, 44vw"
                alt="" width="800" height="600" loading="lazy" decoding="async">
@@ -88,15 +105,10 @@
           </div>
           {{/if}}
 
-          <!-- Revealed on hover and on keyboard focus. It is faded, never hidden with
-               `visibility` or `display`, so the summary stays in the accessibility
-               tree at all times: on a touch screen there is no hover to trigger it. -->
-          <!-- Name and tag come first in source order on purpose. This text is what
-               names the link, and a name is built by concatenating the contents in
-               DOM order, so with the summary first a screen reader announced the
-               whole description before saying which project it belonged to. The
-               panel is `column-reverse`, which puts the summary back on top
-               visually without changing the order the text is read in. -->
+          <!-- Revealed on hover and on keyboard focus. It is faded and clipped,
+               never hidden with `visibility` or `display`, so the summary stays in
+               the accessibility tree at all times: on a touch screen there is no
+               hover to trigger it. -->
           <span class="work-thumb__panel">
             <span class="work-thumb__foot">
               <span class="work-thumb__name">{{ this.title }}</span>

@@ -963,11 +963,32 @@ main > section.hero {
   color: var(--ink-soft);
 }
 
+/* Flex, not grid, and that is the whole reason for the rewrite. Grid packs a
+   short final row against the start of the line — seven thumbnails in fours left
+   three sitting hard left under a full row, which read as unfinished. Flex with
+   justify-content: center pulls any incomplete row into the middle of the block.
+
+   --thumb-per-row is the cap, and it is the only thing the breakpoints change. Any
+   number of thumbnails works: they wrap at the cap and the last row centres itself,
+   whether there are five of them or fifty. */
 .work__more {
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  grid-template-columns: repeat(2, 1fr);
+  --thumb-gap: clamp(0.75rem, 2vw, 1.25rem);
+  --thumb-per-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--thumb-gap);
   margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* n items plus n-1 gaps come to exactly 100%, so a full row still fills the block
+   edge to edge and the centring only shows on a short one. Subtracting 1px absorbs
+   the sub-pixel rounding of the percentage: without it a row can come out a
+   fraction over 100% and drop its last thumbnail onto a line of its own. */
+.work-thumb {
+  flex: 0 1 calc(
+    (100% - (var(--thumb-per-row) - 1) * var(--thumb-gap) - 1px) / var(--thumb-per-row)
+  );
 }
 
 /* Only matches when `moreHeading` is empty and the grid follows the rows directly.
@@ -979,10 +1000,10 @@ main > section.hero {
 }
 
 @media (min-width: 38rem) {
-  .work__more { grid-template-columns: repeat(3, 1fr); }
+  .work__more { --thumb-per-row: 3; }
 }
 @media (min-width: 60rem) {
-  .work__more { grid-template-columns: repeat(4, 1fr); }
+  .work__more { --thumb-per-row: 4; }
 }
 
 .work-thumb__link {
